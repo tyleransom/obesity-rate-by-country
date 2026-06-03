@@ -1,31 +1,31 @@
-country,iso3,survey_period,obesity_pct
-United Kingdom,GBR,1980,7.5
-United Kingdom,GBR,1993,14.9
-United Kingdom,GBR,1994,15.7
-United Kingdom,GBR,1995,16.4
-United Kingdom,GBR,1996,17.5
-United Kingdom,GBR,1997,18.4
-United Kingdom,GBR,1998,19.4
-United Kingdom,GBR,1999,20.0
-United Kingdom,GBR,2000,21.2
-United Kingdom,GBR,2001,22.4
-United Kingdom,GBR,2002,22.5
-United Kingdom,GBR,2003,22.6
-United Kingdom,GBR,2004,22.9
-United Kingdom,GBR,2005,23.2
-United Kingdom,GBR,2006,23.9
-United Kingdom,GBR,2007,24.0
-United Kingdom,GBR,2008,24.5
-United Kingdom,GBR,2009,23.0
-United Kingdom,GBR,2010,26.1
-United Kingdom,GBR,2011,24.8
-United Kingdom,GBR,2012,24.7
-United Kingdom,GBR,2013,24.9
-United Kingdom,GBR,2014,25.6
-United Kingdom,GBR,2015,26.9
-United Kingdom,GBR,2016,26.2
-United Kingdom,GBR,2017,28.7
-United Kingdom,GBR,2018,27.7
-United Kingdom,GBR,2019,28.0
-United Kingdom,GBR,2022,28.9
-United Kingdom,GBR,2024,29.9
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+United Kingdom,GBR,1980,7.5,crude,measured,published,16+,sub-national,NHWS,"England; pre-HSE anchor"
+United Kingdom,GBR,1993,14.9,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,1994,15.7,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,1995,16.4,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,1996,17.5,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,1997,18.4,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,1998,19.4,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,1999,20.0,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2000,21.2,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2001,22.4,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2002,22.5,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2003,22.6,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2004,22.9,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2005,23.2,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2006,23.9,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2007,24.0,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2008,24.5,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2009,23.0,crude,measured,published,16+,sub-national,HSE,"England; real survey dip"
+United Kingdom,GBR,2010,26.1,crude,measured,published,16+,sub-national,HSE,"England; real survey jump"
+United Kingdom,GBR,2011,24.8,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2012,24.7,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2013,24.9,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2014,25.6,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2015,26.9,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2016,26.2,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2017,28.7,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2018,27.7,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2019,28.0,crude,measured,published,16+,sub-national,HSE,"England"
+United Kingdom,GBR,2022,28.9,crude,measured,published,16+,sub-national,HSE,"England; 2020 (no survey) & 2021 (self-report) excluded"
+United Kingdom,GBR,2024,29.9,crude,measured,published,16+,sub-national,HSE,"England"

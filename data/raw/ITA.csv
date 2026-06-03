@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Italy,ITA,1998,18.0,age-standardised,measured,reconstructed,35-74,national,CUORE HES,"standardised; ages 35-74; 50/50 sex avg"
+Italy,ITA,2008,23.5,age-standardised,measured,reconstructed,35-74,national,CUORE HES,"standardised; ages 35-74; 50/50 sex avg"
+Italy,ITA,2018,21.5,age-standardised,measured,reconstructed,35-74,national,CUORE HES,"standardised; ages 35-74; 50/50 sex avg"

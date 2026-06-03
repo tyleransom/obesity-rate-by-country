@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Spain,ESP,2008-2010,22.9,crude,measured,published,18+,national,ENRICA,
+Spain,ESP,2014-2015,21.6,crude,measured,published,25-64,national,ENPE,"ages 25-64; explains dip vs ENRICA"

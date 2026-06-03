@@ -1,0 +1,6 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+South Korea,KOR,1998,2.4,crude,measured,reconstructed,20+,national,KNHANES (Khang & Yun),"50/50 sex avg; ~0.2pp low"
+South Korea,KOR,2001,3.2,crude,measured,reconstructed,20+,national,KNHANES (Khang & Yun),"50/50 sex avg; ~0.2pp low"
+South Korea,KOR,2005,3.5,crude,measured,reconstructed,20+,national,KNHANES (Khang & Yun),"50/50 sex avg; ~0.2pp low"
+South Korea,KOR,2007-2009,4.1,crude,measured,published,19+,national,KNHANES (Lee et al.),
+South Korea,KOR,2020-2022,7.4,crude,measured,published,19+,national,KNHANES (Lee et al.),

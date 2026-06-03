@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Norway,NOR,1984-1986,10.5,crude,measured,reconstructed,25-74,sub-national,HUNT1,"50/50 sex avg; Nord-Trøndelag county; ~25-74"
+Norway,NOR,1995-1997,16.4,crude,measured,reconstructed,25-74,sub-national,HUNT2,"50/50 sex avg; Nord-Trøndelag county; ~25-74"
+Norway,NOR,2006-2008,22.6,crude,measured,reconstructed,25-74,sub-national,HUNT3,"50/50 sex avg; Nord-Trøndelag county; ~25-74"

@@ -1,10 +1,10 @@
-country,iso3,survey_period,obesity_pct
-Australia,AUS,1980,7.1
-Australia,AUS,1989,11.1
-Australia,AUS,1995,18.6
-Australia,AUS,1999-2000,20.8
-Australia,AUS,2007-2008,24.6
-Australia,AUS,2011-2012,27.5
-Australia,AUS,2014-2015,27.9
-Australia,AUS,2017-2018,31.3
-Australia,AUS,2022,31.7
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Australia,AUS,1980,7.1,crude,measured,published,25-64,sub-national,NHF RFPS,"6 capital cities, ages 25-64; not national"
+Australia,AUS,1989,11.1,crude,measured,published,18+,national,NHF RFPS,"approximate"
+Australia,AUS,1995,18.6,crude,measured,published,18+,national,NNS,
+Australia,AUS,1999-2000,20.8,crude,measured,published,18+,national,AusDiab,
+Australia,AUS,2007-2008,24.6,crude,measured,published,18+,national,NHS,
+Australia,AUS,2011-2012,27.5,crude,measured,published,18+,national,AHS,
+Australia,AUS,2014-2015,27.9,crude,measured,published,18+,national,NHS,
+Australia,AUS,2017-2018,31.3,crude,measured,published,18+,national,NHS,
+Australia,AUS,2022,31.7,crude,measured,published,18+,national,NHS,"large self-report/imputed share"

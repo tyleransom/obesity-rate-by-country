@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Finland,FIN,1978-1980,14.6,crude,measured,reconstructed,25-64,national,FINRISK,"50/50 sex avg"
+Finland,FIN,2000-2001,22.4,crude,measured,reconstructed,25-64,national,FINRISK,"50/50 sex avg"
+Finland,FIN,2017,25.0,crude,measured,published,30+,national,FinHealth,"age base 30+ (vs 25-64 earlier)"

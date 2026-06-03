@@ -4,3 +4,6 @@
 .Ruserdata
 *.Rproj
 .DS_Store
+
+# scratch / large or licensed source downloads (not redistributable; e.g. national survey PDFs)
+data/tmp/

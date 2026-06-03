@@ -1,0 +1,7 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Brazil,BRA,1974-1975,5.4,crude,measured,reconstructed,20+,national,IBGE ENDEF,"50/50 sex avg"
+Brazil,BRA,1989,9.3,crude,measured,reconstructed,20+,national,IBGE PNSN,"50/50 sex avg"
+Brazil,BRA,2002-2003,11.3,crude,measured,reconstructed,20+,national,IBGE POF,"50/50 sex avg"
+Brazil,BRA,2008-2009,14.7,crude,measured,reconstructed,20+,national,IBGE POF,"50/50 sex avg"
+Brazil,BRA,2013,20.8,crude,measured,published,18+,national,PNS,
+Brazil,BRA,2019,25.9,crude,measured,published,18+,national,PNS,

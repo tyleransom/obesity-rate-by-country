@@ -1,0 +1,43 @@
+country,iso3,survey_period,men_pct,women_pct,women_minus_men_pp,basis,measurement,derivation,age_group,coverage,source,note
+Mexico,MEX,2022,32.3,41.0,8.7,crude,measured,published,20+,national,ENSANUT,
+South Korea,KOR,1998,1.7,3.0,1.3,crude,measured,published,20+,national,KNHANES (Khang & Yun),
+South Korea,KOR,2001,2.8,3.5,0.7,crude,measured,published,20+,national,KNHANES (Khang & Yun),
+South Korea,KOR,2005,3.6,3.4,-0.2,crude,measured,published,20+,national,KNHANES (Khang & Yun),
+South Korea,KOR,2007-2009,3.8,4.0,0.2,crude,measured,published,19+,national,KNHANES (Lee et al.),"underlies main-panel total 4.1"
+Japan,JPN,1976-1980,0.84,2.69,1.85,crude,measured,published,20+,national,NNS (Yoshiike 2002),
+Japan,JPN,1981-1985,1.07,2.55,1.48,crude,measured,published,20+,national,NNS (Yoshiike 2002),
+Japan,JPN,1986-1990,1.27,2.62,1.35,crude,measured,published,20+,national,NNS (Yoshiike 2002),
+Japan,JPN,1991-1995,1.86,2.79,0.93,crude,measured,published,20+,national,NNS (Yoshiike 2002),
+Japan,JPN,2000,2.2,3.5,1.3,crude,measured,published,20+,national,NNS 2000,
+Japan,JPN,2010,4.6,3.1,-1.5,crude,measured,published,20-64,national,NIPPON DATA2010,"first year men > women"
+China,CHN,2004,2.6,3.7,1.1,age-standardised,measured,published,18-69,national,CCDRFS,
+China,CHN,2007,2.4,3.6,1.2,age-standardised,measured,published,18-69,national,CCDRFS,
+China,CHN,2010,5.1,5.2,0.1,age-standardised,measured,published,18-69,national,CCDRFS,
+China,CHN,2013,6.3,6.6,0.3,age-standardised,measured,published,18-69,national,CCDRFS,
+China,CHN,2015,6.8,6.5,-0.3,age-standardised,measured,published,18-69,national,CCDRFS,
+China,CHN,2018,9.0,7.2,-1.8,age-standardised,measured,published,18-69,national,CCDRFS,"men overtook women"
+Germany,DEU,1998,18.9,22.5,3.6,crude,measured,published,18-79,national,GNHIES98,
+Germany,DEU,2008-2011,23.3,23.9,0.6,crude,measured,published,18-79,national,DEGS1,
+France,FRA,2014-2016,16.8,17.4,0.6,crude,measured,published,18-74,national,Esteban,
+Spain,ESP,2008-2010,24.4,21.4,-3.0,crude,measured,published,18+,national,ENRICA,
+Italy,ITA,1998,17.0,19.0,2.0,age-standardised,measured,published,35-74,national,CUORE HES,
+Italy,ITA,2008,24.0,23.0,-1.0,age-standardised,measured,published,35-74,national,CUORE HES,
+Italy,ITA,2018,20.0,23.0,3.0,age-standardised,measured,published,35-74,national,CUORE HES,
+Brazil,BRA,1974-1975,2.8,8.0,5.2,crude,measured,published,20+,national,IBGE ENDEF,
+Brazil,BRA,1989,5.4,13.2,7.8,crude,measured,published,20+,national,IBGE PNSN,
+Brazil,BRA,2002-2003,9.0,13.5,4.5,crude,measured,published,20+,national,IBGE POF,
+Brazil,BRA,2008-2009,12.4,16.9,4.5,crude,measured,published,20+,national,IBGE POF,
+Brazil,BRA,2013,16.8,24.4,7.6,crude,measured,published,18+,national,PNS,
+Brazil,BRA,2019,21.8,29.5,7.7,crude,measured,published,18+,national,PNS,
+India,IND,2017-2018,5.8,12.7,6.9,crude,measured,published,18-69,national,NNMS,"women >2x men"
+South Africa,ZAF,1998,10.1,29.5,19.4,crude,measured,published,18+,national,SADHS,"largest sex gap in panel"
+South Africa,ZAF,2012,10.6,39.2,28.6,crude,measured,published,15+,national,SANHANES-1,"not in main panel; brackets SADHS 1998/2016"
+South Africa,ZAF,2016,12.1,42.6,30.5,crude,measured,published,18+,national,SADHS,"largest sex gap in panel"
+Finland,FIN,1978-1980,11.3,17.9,6.6,crude,measured,published,25-64,national,FINRISK,
+Finland,FIN,2000-2001,20.7,24.1,3.4,crude,measured,published,25-64,national,FINRISK,
+Norway,NOR,1984-1986,7.7,13.3,5.6,crude,measured,published,25-74,sub-national,HUNT1,
+Norway,NOR,1995-1997,14.4,18.3,3.9,crude,measured,published,25-74,sub-national,HUNT2,
+Norway,NOR,2006-2008,22.1,23.1,1.0,crude,measured,published,25-74,sub-national,HUNT3,
+Türkiye,TUR,2017,21.6,35.9,14.3,crude,measured,published,15+,national,STEPS 2017,"men approx (WHO STEPS via World Obesity); women/total exact"
+Türkiye,TUR,2023,20.0,30.8,10.8,crude,measured,published,15+,national,STEPS 2023,"men approx; women 30.8 exact"
+Argentina,ARG,2018,31.4,33.4,2.0,crude,measured,published,18+,national,ENFR 2018 (measured),"4th ENFR mediciones antropométricas, Cuadro 6.5; non-sig sex diff"

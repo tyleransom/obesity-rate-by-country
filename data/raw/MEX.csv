@@ -1,0 +1,7 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Mexico,MEX,2000,23.5,crude,measured,published,20+,national,ENSA 2000,
+Mexico,MEX,2006,30.4,crude,measured,published,20+,national,ENSANUT,
+Mexico,MEX,2012,32.4,crude,measured,published,20+,national,ENSANUT,
+Mexico,MEX,2016,33.3,crude,measured,published,20+,national,ENSANUT,"Medio Camino; smaller sample"
+Mexico,MEX,2018-2019,36.1,crude,measured,published,20+,national,ENSANUT,
+Mexico,MEX,2022,36.9,crude,measured,published,20+,national,ENSANUT,

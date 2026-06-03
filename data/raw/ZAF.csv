@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+South Africa,ZAF,1998,20.3,crude,measured,published,18+,national,SADHS,"huge female skew (women ~3-4x men)"
+South Africa,ZAF,2016,28.0,crude,measured,published,18+,national,SADHS,"huge female skew; rise female-driven"

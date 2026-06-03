@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Ireland,IRL,1990,10.9,crude,measured,published,18-64,national,INNS,"Republic of Ireland"
+Ireland,IRL,1997-1999,18.0,crude,measured,published,18-64,national,NSIFCS,"all-island (incl. Northern Ireland)"
+Ireland,IRL,2008-2010,23.6,crude,measured,published,18-64,national,NANS,"Republic of Ireland"

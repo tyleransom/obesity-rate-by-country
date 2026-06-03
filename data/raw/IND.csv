@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+India,IND,2017-2018,9.3,crude,measured,published,18-69,national,NNMS,"single point; no trend; large female excess"

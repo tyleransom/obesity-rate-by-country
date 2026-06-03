@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Türkiye,TUR,2017,28.8,crude,measured,published,15+,national,STEPS 2017,"WHO STEPS; women 35.9 / men ~21.6"
+Türkiye,TUR,2023,25.4,crude,measured,published,15+,national,STEPS 2023,"modest decline from 2017, women-driven (35.9->30.8)"

@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Argentina,ARG,2018,32.4,crude,measured,published,18+,national,ENFR 2018 (measured),"4th ENFR objective-measurement module; overweight 33.7, excess 66.1; cf self-report 25.4"
+Argentina,ARG,2018-2019,33.9,crude,measured,published,18+,national,ENNyS 2,"urban localities >=5000 only; overweight 34.0, excess weight 67.9"

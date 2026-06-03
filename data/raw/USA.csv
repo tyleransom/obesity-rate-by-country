@@ -1,17 +1,17 @@
-country,iso3,survey_period,obesity_pct
-United States,USA,1900-1901,3.0
-United States,USA,1960-1962,13.4
-United States,USA,1971-1974,14.5
-United States,USA,1976-1980,15
-United States,USA,1988-1994,23.2
-United States,USA,1999-2000,30.9
-United States,USA,2001-2002,31.2
-United States,USA,2003-2004,32.9
-United States,USA,2005-2006,35.1
-United States,USA,2007-2008,34.3
-United States,USA,2009-2010,36.1
-United States,USA,2011-2012,35.3
-United States,USA,2013-2014,38.2
-United States,USA,2015-2016,40
-United States,USA,2017-2018,42.8
-United States,USA,2021-2023,40.3
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+United States,USA,1900-1901,3.0,crude,measured,anchor,20+,national,Helmchen & Henderson,"anthropometric anchor; derived, not a prevalence survey"
+United States,USA,1960-1962,13.4,crude,measured,published,20+,national,NHES,
+United States,USA,1971-1974,14.5,crude,measured,published,20+,national,NHANES I,
+United States,USA,1976-1980,15,crude,measured,published,20+,national,NHANES II,
+United States,USA,1988-1994,23.2,crude,measured,published,20+,national,NHANES III,
+United States,USA,1999-2000,30.9,crude,measured,published,20+,national,NHANES,
+United States,USA,2001-2002,31.2,crude,measured,published,20+,national,NHANES,
+United States,USA,2003-2004,32.9,crude,measured,published,20+,national,NHANES,
+United States,USA,2005-2006,35.1,crude,measured,published,20+,national,NHANES,
+United States,USA,2007-2008,34.3,crude,measured,published,20+,national,NHANES,
+United States,USA,2009-2010,36.1,crude,measured,published,20+,national,NHANES,
+United States,USA,2011-2012,35.3,crude,measured,published,20+,national,NHANES,
+United States,USA,2013-2014,38.2,crude,measured,published,20+,national,NHANES,
+United States,USA,2015-2016,40,crude,measured,published,20+,national,NHANES,
+United States,USA,2017-2018,42.8,crude,measured,published,20+,national,NHANES,
+United States,USA,2021-2023,40.3,crude,measured,published,20+,national,NHANES,

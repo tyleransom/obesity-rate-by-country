@@ -1,82 +1,147 @@
-country,iso3,year,survey_period,obesity_pct
-Australia,AUS,1980,1980,7.1
-Australia,AUS,1989,1989,11.1
-Australia,AUS,1995,1995,18.6
-Australia,AUS,1999.5,1999-2000,20.8
-Australia,AUS,2007.5,2007-2008,24.6
-Australia,AUS,2011.5,2011-2012,27.5
-Australia,AUS,2014.5,2014-2015,27.9
-Australia,AUS,2017.5,2017-2018,31.3
-Australia,AUS,2022,2022,31.7
-Canada,CAN,1971,1970-1972,9.7
-Canada,CAN,1978.5,1978-1979,13.8
-Canada,CAN,2004,2004,23.1
-Canada,CAN,2008,2007-2009,23.9
-Canada,CAN,2010,2009-2011,26.2
-Canada,CAN,2012.5,2012-2013,26.4
-Canada,CAN,2014.5,2014-2015,28.1
-Canada,CAN,2016.5,2016-2017,26.9
-Canada,CAN,2018.5,2018-2019,24.3
-Canada,CAN,2023,2022-2024,33.4
-New Zealand,NZL,1977,1977,10
-New Zealand,NZL,1989,1989,11
-New Zealand,NZL,1997,1997,17
-New Zealand,NZL,2011.5,2011-2012,28.6
-New Zealand,NZL,2012.5,2012-2013,30.9
-New Zealand,NZL,2013.5,2013-2014,30
-New Zealand,NZL,2014.5,2014-2015,30.9
-New Zealand,NZL,2015.5,2015-2016,31.8
-New Zealand,NZL,2016.5,2016-2017,32.4
-New Zealand,NZL,2017.5,2017-2018,32.4
-New Zealand,NZL,2018.5,2018-2019,31
-New Zealand,NZL,2019.5,2019-2020,31.3
-New Zealand,NZL,2020.5,2020-2021,34.4
-New Zealand,NZL,2022.5,2022-2023,32.5
-New Zealand,NZL,2023.5,2023-2024,33.7
-New Zealand,NZL,2024.5,2024-2025,34.2
-United Kingdom,GBR,1980,1980,7.5
-United Kingdom,GBR,1993,1993,14.9
-United Kingdom,GBR,1994,1994,15.7
-United Kingdom,GBR,1995,1995,16.4
-United Kingdom,GBR,1996,1996,17.5
-United Kingdom,GBR,1997,1997,18.4
-United Kingdom,GBR,1998,1998,19.4
-United Kingdom,GBR,1999,1999,20
-United Kingdom,GBR,2000,2000,21.2
-United Kingdom,GBR,2001,2001,22.4
-United Kingdom,GBR,2002,2002,22.5
-United Kingdom,GBR,2003,2003,22.6
-United Kingdom,GBR,2004,2004,22.9
-United Kingdom,GBR,2005,2005,23.2
-United Kingdom,GBR,2006,2006,23.9
-United Kingdom,GBR,2007,2007,24
-United Kingdom,GBR,2008,2008,24.5
-United Kingdom,GBR,2009,2009,23
-United Kingdom,GBR,2010,2010,26.1
-United Kingdom,GBR,2011,2011,24.8
-United Kingdom,GBR,2012,2012,24.7
-United Kingdom,GBR,2013,2013,24.9
-United Kingdom,GBR,2014,2014,25.6
-United Kingdom,GBR,2015,2015,26.9
-United Kingdom,GBR,2016,2016,26.2
-United Kingdom,GBR,2017,2017,28.7
-United Kingdom,GBR,2018,2018,27.7
-United Kingdom,GBR,2019,2019,28
-United Kingdom,GBR,2022,2022,28.9
-United Kingdom,GBR,2024,2024,29.9
-United States,USA,1900.5,1900-1901,3
-United States,USA,1961,1960-1962,13.4
-United States,USA,1972.5,1971-1974,14.5
-United States,USA,1978,1976-1980,15
-United States,USA,1991,1988-1994,23.2
-United States,USA,1999.5,1999-2000,30.9
-United States,USA,2001.5,2001-2002,31.2
-United States,USA,2003.5,2003-2004,32.9
-United States,USA,2005.5,2005-2006,35.1
-United States,USA,2007.5,2007-2008,34.3
-United States,USA,2009.5,2009-2010,36.1
-United States,USA,2011.5,2011-2012,35.3
-United States,USA,2013.5,2013-2014,38.2
-United States,USA,2015.5,2015-2016,40
-United States,USA,2017.5,2017-2018,42.8
-United States,USA,2022,2021-2023,40.3
+country,iso3,year,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Argentina,ARG,2018,2018,32.4,crude,measured,published,18+,national,ENFR 2018 (measured),"4th ENFR objective-measurement module; overweight 33.7, excess 66.1; cf self-report 25.4"
+Argentina,ARG,2018.5,2018-2019,33.9,crude,measured,published,18+,national,ENNyS 2,"urban localities >=5000 only; overweight 34.0, excess weight 67.9"
+Australia,AUS,1980,1980,7.1,crude,measured,published,25-64,sub-national,NHF RFPS,"6 capital cities, ages 25-64; not national"
+Australia,AUS,1989,1989,11.1,crude,measured,published,18+,national,NHF RFPS,approximate
+Australia,AUS,1995,1995,18.6,crude,measured,published,18+,national,NNS,NA
+Australia,AUS,1999.5,1999-2000,20.8,crude,measured,published,18+,national,AusDiab,NA
+Australia,AUS,2007.5,2007-2008,24.6,crude,measured,published,18+,national,NHS,NA
+Australia,AUS,2011.5,2011-2012,27.5,crude,measured,published,18+,national,AHS,NA
+Australia,AUS,2014.5,2014-2015,27.9,crude,measured,published,18+,national,NHS,NA
+Australia,AUS,2017.5,2017-2018,31.3,crude,measured,published,18+,national,NHS,NA
+Australia,AUS,2022,2022,31.7,crude,measured,published,18+,national,NHS,large self-report/imputed share
+Brazil,BRA,1974.5,1974-1975,5.4,crude,measured,reconstructed,20+,national,IBGE ENDEF,50/50 sex avg
+Brazil,BRA,1989,1989,9.3,crude,measured,reconstructed,20+,national,IBGE PNSN,50/50 sex avg
+Brazil,BRA,2002.5,2002-2003,11.3,crude,measured,reconstructed,20+,national,IBGE POF,50/50 sex avg
+Brazil,BRA,2008.5,2008-2009,14.7,crude,measured,reconstructed,20+,national,IBGE POF,50/50 sex avg
+Brazil,BRA,2013,2013,20.8,crude,measured,published,18+,national,PNS,NA
+Brazil,BRA,2019,2019,25.9,crude,measured,published,18+,national,PNS,NA
+Canada,CAN,1971,1970-1972,9.7,crude,measured,published,18-79,national,Nutrition Canada Survey,historical; pre-CHMS
+Canada,CAN,1978.5,1978-1979,13.8,crude,measured,published,18-79,national,Canada Health Survey,historical; pre-CHMS
+Canada,CAN,2004,2004,23.1,crude,measured,published,18-79,national,CCHS-Nutrition,NA
+Canada,CAN,2008,2007-2009,23.9,crude,measured,published,18-79,national,CHMS,NA
+Canada,CAN,2010,2009-2011,26.2,crude,measured,published,18-79,national,CHMS,NA
+Canada,CAN,2012.5,2012-2013,26.4,crude,measured,published,18-79,national,CHMS,NA
+Canada,CAN,2014.5,2014-2015,28.1,crude,measured,published,18-79,national,CHMS,NA
+Canada,CAN,2016.5,2016-2017,26.9,crude,measured,published,18-79,national,CHMS,NA
+Canada,CAN,2018.5,2018-2019,24.3,crude,measured,published,18-79,national,CHMS,real dip
+Canada,CAN,2023,2022-2024,33.4,crude,measured,published,18-79,national,CHMS,post-COVID jump
+China,CHN,2004,2004,3.1,age-standardised,measured,published,18-69,national,CCDRFS,standardised to 2010 census; crude would run higher
+China,CHN,2007,2007,3,age-standardised,measured,published,18-69,national,CCDRFS,standardised to 2010 census; real dip
+China,CHN,2010,2010,5.1,age-standardised,measured,published,18-69,national,CCDRFS,standardised to 2010 census
+China,CHN,2013,2013,6.4,age-standardised,measured,published,18-69,national,CCDRFS,standardised to 2010 census
+China,CHN,2015,2015,6.6,age-standardised,measured,published,18-69,national,CCDRFS,standardised to 2010 census
+China,CHN,2018,2018,8.1,age-standardised,measured,published,18-69,national,CCDRFS,standardised to 2010 census; crude likely higher
+Denmark,DNK,1987,1987,6.1,crude,self-reported,published,16+,national,SUSY,self-report (calibration-corrected); exact
+Denmark,DNK,1994,1994,9.5,crude,self-reported,published,16+,national,SUSY,self-report; read from figure (~±0.5pp)
+Denmark,DNK,2000,2000,12.3,crude,self-reported,published,16+,national,SUSY,self-report; read from figure (~±0.5pp)
+Denmark,DNK,2005,2005,14.8,crude,self-reported,published,16+,national,SUSY,self-report; read from figure (~±0.5pp)
+Denmark,DNK,2010,2010,17.6,crude,self-reported,published,16+,national,SUSY,self-report; read from figure (~±0.5pp)
+Denmark,DNK,2013,2013,18.6,crude,self-reported,published,16+,national,SUSY,self-report; read from figure (~±0.5pp)
+Denmark,DNK,2017,2017,20.5,crude,self-reported,published,16+,national,SUSY,self-report; read from figure (~±0.5pp)
+Denmark,DNK,2021,2021,18.4,crude,self-reported,published,16+,national,SUSY,self-report; exact; note 2017->2021 fall
+Finland,FIN,1979,1978-1980,14.6,crude,measured,reconstructed,25-64,national,FINRISK,50/50 sex avg
+Finland,FIN,2000.5,2000-2001,22.4,crude,measured,reconstructed,25-64,national,FINRISK,50/50 sex avg
+Finland,FIN,2017,2017,25,crude,measured,published,30+,national,FinHealth,age base 30+ (vs 25-64 earlier)
+France,FRA,2006.5,2006-2007,16.9,crude,measured,published,18-74,national,ENNS,NA
+France,FRA,2015,2014-2016,17.2,crude,measured,published,18-74,national,Esteban,change since 2006 not significant
+Germany,DEU,1998,1998,20.7,crude,measured,reconstructed,18-79,national,GNHIES98,50/50 sex avg
+Germany,DEU,2009.5,2008-2011,23.6,crude,measured,reconstructed,18-79,national,DEGS1,50/50 sex avg; rise driven by men
+India,IND,2017.5,2017-2018,9.3,crude,measured,published,18-69,national,NNMS,single point; no trend; large female excess
+Ireland,IRL,1990,1990,10.9,crude,measured,published,18-64,national,INNS,Republic of Ireland
+Ireland,IRL,1998,1997-1999,18,crude,measured,published,18-64,national,NSIFCS,all-island (incl. Northern Ireland)
+Ireland,IRL,2009,2008-2010,23.6,crude,measured,published,18-64,national,NANS,Republic of Ireland
+Italy,ITA,1998,1998,18,age-standardised,measured,reconstructed,35-74,national,CUORE HES,standardised; ages 35-74; 50/50 sex avg
+Italy,ITA,2008,2008,23.5,age-standardised,measured,reconstructed,35-74,national,CUORE HES,standardised; ages 35-74; 50/50 sex avg
+Italy,ITA,2018,2018,21.5,age-standardised,measured,reconstructed,35-74,national,CUORE HES,standardised; ages 35-74; 50/50 sex avg
+Japan,JPN,1978,1976-1980,1.8,crude,measured,reconstructed,20+,national,NNS (Yoshiike 2002),50/50 sex avg; took crude (not age-adj) rows
+Japan,JPN,1983,1981-1985,1.8,crude,measured,reconstructed,20+,national,NNS (Yoshiike 2002),50/50 sex avg
+Japan,JPN,1988,1986-1990,1.9,crude,measured,reconstructed,20+,national,NNS (Yoshiike 2002),50/50 sex avg
+Japan,JPN,1993,1991-1995,2.3,crude,measured,reconstructed,20+,national,NNS (Yoshiike 2002),50/50 sex avg
+Japan,JPN,2000,2000,2.9,crude,measured,reconstructed,20+,national,NNS 2000,50/50 sex avg
+Japan,JPN,2010,2010,3.9,crude,measured,reconstructed,20-64,national,NIPPON DATA2010,50/50 sex avg; ages 20-64
+Japan,JPN,2019,2019,4.6,crude,measured,published,15+,national,NHNS 2019 (OECD),age base 15+
+Mexico,MEX,2000,2000,23.5,crude,measured,published,20+,national,ENSA 2000,NA
+Mexico,MEX,2006,2006,30.4,crude,measured,published,20+,national,ENSANUT,NA
+Mexico,MEX,2012,2012,32.4,crude,measured,published,20+,national,ENSANUT,NA
+Mexico,MEX,2016,2016,33.3,crude,measured,published,20+,national,ENSANUT,Medio Camino; smaller sample
+Mexico,MEX,2018.5,2018-2019,36.1,crude,measured,published,20+,national,ENSANUT,NA
+Mexico,MEX,2022,2022,36.9,crude,measured,published,20+,national,ENSANUT,NA
+New Zealand,NZL,1977,1977,10,crude,measured,published,15+,national,National Diet Survey,historical wave
+New Zealand,NZL,1989,1989,11,crude,measured,published,15+,national,Life in NZ Survey,historical wave
+New Zealand,NZL,1997,1997,17,crude,measured,published,15+,national,National Nutrition Survey,historical wave
+New Zealand,NZL,2011.5,2011-2012,28.6,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2012.5,2012-2013,30.9,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2013.5,2013-2014,30,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2014.5,2014-2015,30.9,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2015.5,2015-2016,31.8,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2016.5,2016-2017,32.4,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2017.5,2017-2018,32.4,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2018.5,2018-2019,31,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2019.5,2019-2020,31.3,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2020.5,2020-2021,34.4,crude,measured,published,15+,national,NZ Health Survey,2021-22 excluded (COVID-disrupted)
+New Zealand,NZL,2022.5,2022-2023,32.5,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2023.5,2023-2024,33.7,crude,measured,published,15+,national,NZ Health Survey,NA
+New Zealand,NZL,2024.5,2024-2025,34.2,crude,measured,published,15+,national,NZ Health Survey,NA
+Norway,NOR,1985,1984-1986,10.5,crude,measured,reconstructed,25-74,sub-national,HUNT1,50/50 sex avg; Nord-Trøndelag county; ~25-74
+Norway,NOR,1996,1995-1997,16.4,crude,measured,reconstructed,25-74,sub-national,HUNT2,50/50 sex avg; Nord-Trøndelag county; ~25-74
+Norway,NOR,2007,2006-2008,22.6,crude,measured,reconstructed,25-74,sub-national,HUNT3,50/50 sex avg; Nord-Trøndelag county; ~25-74
+South Africa,ZAF,1998,1998,20.3,crude,measured,published,18+,national,SADHS,huge female skew (women ~3-4x men)
+South Africa,ZAF,2016,2016,28,crude,measured,published,18+,national,SADHS,huge female skew; rise female-driven
+South Korea,KOR,1998,1998,2.4,crude,measured,reconstructed,20+,national,KNHANES (Khang & Yun),50/50 sex avg; ~0.2pp low
+South Korea,KOR,2001,2001,3.2,crude,measured,reconstructed,20+,national,KNHANES (Khang & Yun),50/50 sex avg; ~0.2pp low
+South Korea,KOR,2005,2005,3.5,crude,measured,reconstructed,20+,national,KNHANES (Khang & Yun),50/50 sex avg; ~0.2pp low
+South Korea,KOR,2008,2007-2009,4.1,crude,measured,published,19+,national,KNHANES (Lee et al.),NA
+South Korea,KOR,2021,2020-2022,7.4,crude,measured,published,19+,national,KNHANES (Lee et al.),NA
+Spain,ESP,2009,2008-2010,22.9,crude,measured,published,18+,national,ENRICA,NA
+Spain,ESP,2014.5,2014-2015,21.6,crude,measured,published,25-64,national,ENPE,ages 25-64; explains dip vs ENRICA
+Sweden,SWE,1995,1995,9.1,crude,measured,published,25-74,non-probability,HPI,occupational health cohort; likely understates
+Sweden,SWE,2017,2017,17,crude,measured,published,25-74,non-probability,HPI,occupational health cohort; likely understates
+Türkiye,TUR,2017,2017,28.8,crude,measured,published,15+,national,STEPS 2017,WHO STEPS; women 35.9 / men ~21.6
+Türkiye,TUR,2023,2023,25.4,crude,measured,published,15+,national,STEPS 2023,"modest decline from 2017, women-driven (35.9->30.8)"
+United Kingdom,GBR,1980,1980,7.5,crude,measured,published,16+,sub-national,NHWS,England; pre-HSE anchor
+United Kingdom,GBR,1993,1993,14.9,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,1994,1994,15.7,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,1995,1995,16.4,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,1996,1996,17.5,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,1997,1997,18.4,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,1998,1998,19.4,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,1999,1999,20,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2000,2000,21.2,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2001,2001,22.4,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2002,2002,22.5,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2003,2003,22.6,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2004,2004,22.9,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2005,2005,23.2,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2006,2006,23.9,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2007,2007,24,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2008,2008,24.5,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2009,2009,23,crude,measured,published,16+,sub-national,HSE,England; real survey dip
+United Kingdom,GBR,2010,2010,26.1,crude,measured,published,16+,sub-national,HSE,England; real survey jump
+United Kingdom,GBR,2011,2011,24.8,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2012,2012,24.7,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2013,2013,24.9,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2014,2014,25.6,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2015,2015,26.9,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2016,2016,26.2,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2017,2017,28.7,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2018,2018,27.7,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2019,2019,28,crude,measured,published,16+,sub-national,HSE,England
+United Kingdom,GBR,2022,2022,28.9,crude,measured,published,16+,sub-national,HSE,England; 2020 (no survey) & 2021 (self-report) excluded
+United Kingdom,GBR,2024,2024,29.9,crude,measured,published,16+,sub-national,HSE,England
+United States,USA,1900.5,1900-1901,3,crude,measured,anchor,20+,national,Helmchen & Henderson,"anthropometric anchor; derived, not a prevalence survey"
+United States,USA,1961,1960-1962,13.4,crude,measured,published,20+,national,NHES,NA
+United States,USA,1972.5,1971-1974,14.5,crude,measured,published,20+,national,NHANES I,NA
+United States,USA,1978,1976-1980,15,crude,measured,published,20+,national,NHANES II,NA
+United States,USA,1991,1988-1994,23.2,crude,measured,published,20+,national,NHANES III,NA
+United States,USA,1999.5,1999-2000,30.9,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2001.5,2001-2002,31.2,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2003.5,2003-2004,32.9,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2005.5,2005-2006,35.1,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2007.5,2007-2008,34.3,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2009.5,2009-2010,36.1,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2011.5,2011-2012,35.3,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2013.5,2013-2014,38.2,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2015.5,2015-2016,40,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2017.5,2017-2018,42.8,crude,measured,published,20+,national,NHANES,NA
+United States,USA,2022,2021-2023,40.3,crude,measured,published,20+,national,NHANES,NA

@@ -5,8 +5,13 @@
 # multi-year ranges) can be plotted/merged on a common axis.
 #
 # Adding a new country = drop a data/raw/<ISO3>.csv with the standard columns
-# (country, iso3, survey_period, obesity_pct) and document it in data/raw/README.md;
+# (country, iso3, survey_period, obesity_pct, basis, measurement, derivation,
+# age_group, coverage, source, note) and document it in data/raw/README.md;
 # this script will pick it up automatically. Run from the repo's src/ directory.
+#
+# The quality-annotation columns (basis, measurement, derivation, age_group,
+# coverage, source, note) are carried through verbatim as character; only
+# obesity_pct is coerced to numeric and `year` (survey-period midpoint) is added.
 
 library(tidyverse)
 
@@ -24,7 +29,8 @@ panel <- map_dfr(files, ~ read_csv(.x, show_col_types = FALSE,
                                    col_types = cols(.default = col_character()))) %>%
     mutate(obesity_pct = as.numeric(obesity_pct),
            year        = mid_year(survey_period)) %>%
-    select(country, iso3, year, survey_period, obesity_pct) %>%
+    select(country, iso3, year, survey_period, obesity_pct,
+           basis, measurement, derivation, age_group, coverage, source, note) %>%
     arrange(country, year)
 
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)

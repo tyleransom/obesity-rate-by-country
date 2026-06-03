@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+France,FRA,2006-2007,16.9,crude,measured,published,18-74,national,ENNS,
+France,FRA,2014-2016,17.2,crude,measured,published,18-74,national,Esteban,"change since 2006 not significant"

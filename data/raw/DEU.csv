@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Germany,DEU,1998,20.7,crude,measured,reconstructed,18-79,national,GNHIES98,"50/50 sex avg"
+Germany,DEU,2008-2011,23.6,crude,measured,reconstructed,18-79,national,DEGS1,"50/50 sex avg; rise driven by men"
