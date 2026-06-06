@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+United Arab Emirates,ARE,2017-2018,36.9,crude,measured,published,18-69,national,UAE NHS 2017-18,"Emirati nationals only (excludes expatriate majority); men 32.2 / women 41.8; all-resident figure was 27.8 (M 25.1/F 30.6, non-Emiratis 26.3); STEPS-based NHS, ~10000 households"

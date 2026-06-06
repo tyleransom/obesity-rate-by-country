@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Uganda,UGA,2014,4.6,crude,measured,published,18-69,national,STEPS 2014,"first national STEPS; men 1.8 / women 7.5 (large female skew); overweight 14.5; n=3987; obesity excludes pregnant women; STEPS caps at 69 (no 70+)"

@@ -1,0 +1,5 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Peru,PER,1975,9.0,crude,measured,published,20+,national,ENPPE 1975,"women 10.9 / men 5.2; concentrated Lima/coast (Pajuelo 1992)"
+Peru,PER,2004-2005,14.2,crude,measured,published,20+,national,ENIN 2005 (CENAN),"ENPPE-style resurvey ~30 yr later"
+Peru,PER,2014,20.9,crude,measured,published,18+,national,ENDES,
+Peru,PER,2022,27.3,crude,measured,published,18+,national,ENDES,"cf 25.65 at 20-99 in Cardenas et al. meta-analysis"

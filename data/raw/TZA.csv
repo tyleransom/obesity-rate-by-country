@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Tanzania,TZA,2012,8.7,crude,measured,published,25-64,national,STEPS 2012,"first national measured BMI survey; men 2.5 / women 15.0 (large female skew); overweight 26.0; n=5680; STEPS sample 25-64 (no 65+)"

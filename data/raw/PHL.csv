@@ -1,0 +1,5 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Philippines,PHL,2003,5.0,crude,measured,published,20+,national,NNHeS 2003-2004,"6th NNS clinical component (NNHeS); overall BMI>=30"
+Philippines,PHL,2013,6.8,crude,measured,published,20+,national,NNS 2013,"8th NNS; men 5.2 / women 8.3 (WHO BMI>=30)"
+Philippines,PHL,2018-2019,9.6,crude,measured,published,20-59,national,ENNS 2018-2019,"FNRI shifts adult base to 20-59; WHO cutoff (Asia-Pacific obese class runs far higher)"
+Philippines,PHL,2023,10.3,crude,measured,published,20-59,national,NNS 2023,"men 8.0 / women 13.1; WHO BMI>=30"

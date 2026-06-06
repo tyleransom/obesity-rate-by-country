@@ -1,0 +1,5 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Indonesia,IDN,2007,3.7,crude,measured,published,20+,national,RISKESDAS,"BMI>=30; national reports headline the >=27 Asian cutoff"
+Indonesia,IDN,2013,5.8,crude,measured,published,20+,national,RISKESDAS,
+Indonesia,IDN,2018,9.8,crude,measured,published,20+,national,RISKESDAS,
+Indonesia,IDN,2023,10.4,crude,measured,published,20+,national,RISKESDAS,"obesity nearly tripled 2007->2023 at BMI>=30"

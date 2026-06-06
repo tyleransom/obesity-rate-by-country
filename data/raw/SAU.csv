@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Saudi Arabia,SAU,1990-1993,22.1,crude,measured,published,15+,national,Al-Nuaim 1990-93,"men 16 / women 24; n=13,177"
+Saudi Arabia,SAU,1995-2000,35.6,crude,measured,published,30-70,national,CADISS,"men 26.4 / women 44.0; age base 30-70 runs high; n=17,232"
+Saudi Arabia,SAU,2013,28.7,crude,measured,published,15+,national,SHIS,"men 24.1 / women 33.5; n=10,735; rises vs 1991 on same 15+ base (no real fall)"

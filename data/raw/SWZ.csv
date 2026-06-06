@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Eswatini,SWZ,2014,20.5,crude,measured,published,15-69,national,STEPS 2014,"survey published under name Swaziland; men 8.8 / women 30.9 (large female skew); overweight 43.8; n=3281; STEPS sample 15-69 (incl. 15-17; no 70+)"

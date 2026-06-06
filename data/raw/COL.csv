@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Colombia,COL,2005,13.7,crude,measured,published,18-64,national,ENSIN 2005,"women > men"
+Colombia,COL,2010,16.5,crude,measured,published,18-64,national,ENSIN 2010,
+Colombia,COL,2015,18.7,crude,measured,published,18-64,national,ENSIN 2015,"overweight 37.7 + obesity 18.7 = 56.4 excess weight"

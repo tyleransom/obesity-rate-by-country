@@ -1,0 +1,6 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Singapore,SGP,2010,10.5,crude,measured,published,18-74,national,NHS 2010,"crude = ASR 10.5; the older 18-69 age-standardised NHS value is 10.8"
+Singapore,SGP,2013,8.6,crude,measured,published,18-74,national,NHSS 2013,"95% CI 7.9-9.3; methodology change from the 1992-2010 NHS series; not strictly comparable with pre-2013 points"
+Singapore,SGP,2017,8.6,crude,measured,published,18-74,national,NPHS 2017,"95% CI 6.6-10.5; ASR 8.8"
+Singapore,SGP,2019-2020,10.5,crude,measured,published,18-74,national,NPHS,"95% CI 9.6-11.6; men 11.9 / women 9.3 (male-skewed, unusual for Asia)"
+Singapore,SGP,2023-2024,12.7,crude,measured,published,18-74,national,NPHS,"health exams Jul 2022-Aug 2024"

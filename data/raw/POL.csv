@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Poland,POL,2003-2005,21.0,crude,measured,reconstructed,20-74,national,WOBASZ,"50/50 of men 20.0 / women 22.0"
+Poland,POL,2013-2014,23.8,crude,measured,reconstructed,20-74,national,WOBASZ II,"50/50 of men 24.2 / women 23.4"

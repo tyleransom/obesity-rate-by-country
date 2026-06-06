@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Bahrain,BHR,2018,43.2,crude,measured,reconstructed,18+,national,Bahrain NHS 2018,"Bahraini nationals only (excludes expatriate majority); 50/50 average of men 39.2 / women 47.2; all-resident figure was 36.9 (M 30.9/F 42.5); measured; excludes pregnant women"

@@ -4,9 +4,23 @@ Harmonized panel of **adult obesity prevalence** (% of adults with body mass ind
 &ge; 30 kg/m&sup2;) drawn from each country's own national **measured** height/weight
 surveys.
 
-**Scope** (snapshot): 23 countries and 146 survey observations, earliest US 1900-1901,
-latest 2024-25; covers 16 of the 19 G20 national economies (missing: Indonesia, Russia,
-Saudi Arabia). A companion file adds sex-specific rates for 15 of them.
+**Scope** (snapshot): 53 countries and 217 survey observations, earliest US 1900-1901,
+latest 2024-25; covers all 19 G20 national economies. A companion file adds sex-specific
+rates for 30 of them.
+
+## Countries covered (53)
+
+Argentina&dagger; · Australia · Bahrain · Brazil&dagger; · Canada · Chile&dagger; · China&dagger; ·
+Colombia · Denmark · Ecuador&dagger; · Egypt&dagger; · Eswatini · Ethiopia · Finland&dagger; ·
+France&dagger; · Germany&dagger; · India&dagger; · Indonesia · Iran&dagger; · Ireland · Israel ·
+Italy&dagger; · Japan&dagger; · Kenya&dagger; · Kuwait · Malawi · Malaysia&dagger; · Mexico&dagger; ·
+Mozambique · Netherlands&dagger; · New Zealand · Norway&dagger; · Oman · Peru&dagger; ·
+Philippines&dagger; · Poland&dagger; · Qatar · Russia&dagger; · Rwanda · Saudi Arabia&dagger; ·
+Singapore&dagger; · South Africa&dagger; · South Korea&dagger; · Spain&dagger; · Sweden · Tanzania ·
+Thailand&dagger; · Türkiye&dagger; · Uganda · United Arab Emirates · United Kingdom&dagger; ·
+United States · Zambia
+
+&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (30 countries).
 
 ## Why this exists
 
@@ -25,7 +39,7 @@ obesity-rate-by-country/
 ├── data/
 │   ├── raw/                 one CSV per country (the actual survey data points)
 │   │   ├── README.md        per-country source documentation
-│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 23 total)
+│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 53 total)
 │   └── cleaned/
 │       └── obesity-rate-by-country.csv   long-format panel (built by src/combine.R)
 ├── src/
@@ -49,7 +63,7 @@ Each `data/raw/<ISO3>.csv` has eleven columns — four core columns plus seven
 | `measurement`  | `measured` or `self-reported` (self-reported only for Denmark) |
 | `derivation`   | `published` (source-reported total), `reconstructed` (50/50 male/female average), or `anchor` (derived non-survey figure — USA 1900) |
 | `age_group`    | adult age base as published, e.g. `20+`, `18-79`, `35-74` |
-| `coverage`     | `national`, `sub-national` (GBR=England, NOR=one county, AUS 1980), or `non-probability` (SWE occupational cohort) |
+| `coverage`     | `national`, `sub-national` (GBR=England, NOR=one county, AUS 1980, NLD pre-2009 RIVM monitoring towns), or `non-probability` (SWE occupational cohort) |
 | `source`       | short survey/study name (e.g. `NHANES`, `HSE`, `ENSANUT`) |
 | `note`         | short free-text caveat (quoted; may be empty) |
 
@@ -70,7 +84,7 @@ coverage, source, note`) — for the country-years where the sources report them
 panel that are sometimes `reconstructed` as their 50/50 average.) It exists because the
 male/female gap is itself a striking cross-country pattern: tiny or male-favouring in rich Western
 countries, reversing over time in East Asia (China/Japan), and enormous and female-skewed in South
-Africa (+30 pp) and India (+7 pp). The per-row `basis` notes crude vs age-standardised and any age
+Africa (+30 pp), Egypt (+24 pp) and India (+7 pp). The per-row `basis` notes crude vs age-standardised and any age
 caveat; see `data/raw/README.md` for full provenance of each figure.
 
 ## Reproduce / rebuild
@@ -116,3 +130,7 @@ before drawing comparisons.
 ## License
 
 MIT (see `LICENSE`).
+
+## Disclaimer
+
+This data was largely collected with the help of Anthropic's Claude Code (using the Opus 4.8 model). I took care to check through the outputs. Nevertheless, some minor errors may exist.

@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Israel,ISR,1999-2001,22.9,crude,measured,published,25-64,national,MABAT 1,"first national health & nutrition survey (MABAT); men 19.9 / women 25.8; overweight 39.3; Jews + Arabs (Arab women highest); n=2781"
+Israel,ISR,2014-2016,17.0,crude,measured,published,18-64,national,MABAT 2,"second MABAT (Rav-Mabat); men 17.4 / women 16.6; overweight 30.5; age base 18-64 vs 25-64 in MABAT-1, so the 22.9->17.0 dip is largely the wider base (women 45-64 still ~26.4)"

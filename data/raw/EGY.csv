@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Egypt,EGY,2011-2012,31.3,crude,measured,published,15-65,national,STEPS2012,"WHO/MoHP STEPwise, 10 governorates; includes ages 15-17"
+Egypt,EGY,2017,35.7,crude,measured,published,15-69,national,STEPS2017,"national STEPwise; men 24.8 / women 48.8; includes ages 15-17"
+Egypt,EGY,2019,39.8,crude,measured,published,18+,national,100MillionHealth,"100 Million Seha screening, 49.7M adults; men 29.5 / women 49.5"

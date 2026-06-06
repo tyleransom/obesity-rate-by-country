@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Kuwait,KWT,2014,40.3,crude,measured,published,18-69,national,STEPS 2014,"Kuwaiti nationals only (excludes expatriate majority); men 36.5 / women 44.0; ~8 in 10 overweight or obese; n=3915"

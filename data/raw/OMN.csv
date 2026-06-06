@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Oman,OMN,2017,30.7,crude,measured,published,18+,national,STEPS 2017,"Omani nationals; men 23.2 / women 39.3 (large female skew); n=6582; Jan-Apr 2017; women obesity rose ~24 (2008) to ~41 (2017)"

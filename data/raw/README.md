@@ -13,8 +13,19 @@ the bulky national source files (xlsx/explorer exports) need not be stored in th
 Where a source was a paywalled or bulky PDF, a local copy is kept untracked in `data/tmp/`
 (gitignored, not redistributable) — currently the Japan MHLW report `000894105.pdf` and the
 Yoshiike et al. 2002 *Obesity Reviews* article, the Korea KSSO 2025 Obesity Fact Sheet, the
-China Lancet paper `EMS201458.pdf` plus its supplementary `EMS201458-supplement-Appendix.pdf`, and
-the Brazil IBGE POF 2008-2009 anthropometry report `liv45419.pdf`.
+China Lancet paper `EMS201458.pdf` plus its supplementary `EMS201458-supplement-Appendix.pdf`, the
+Brazil IBGE POF 2008-2009 anthropometry report `liv45419.pdf`, and two Saudi obesity reviews used to
+vet the Saudi series for any post-2013 measured point — Al-Omar et al. 2024 *Saudi Pharm J*
+`1-s2.0-S1319016424002433-main.pdf` and the *Healthcare* 2023 anthropometry review `healthcare-11-01982.pdf`,
+and the Malaysia **NHMS 2023** NCD technical report `report-nhms-2023.pdf` (its section 4.4 Tables 4.4.1
+and 4.4.3 are the primary source for the Malaysia 2023 point and its sex split), the Singapore
+**NPHS 2020** survey report `nphs-2020-survey-report.pdf` (Table 12.6 is the primary source for the
+2010-2020 Singapore series), the HPB-MOH *Clinical Practice Guidelines: Obesity* `SMJ-57-292.pdf`
+(Fig. 1 holds the excluded 1992-2010 age-standardised NHS series), and the Ecuador **ENSANUT-ECU 2012
+Resumen Ejecutivo** `Publicacion ENSANUT 2011-2013 tomo 1.pdf` (Gráfico 21 / §4.2.4 — the adult base,
+measurement and exceso de peso 62.8%) plus the **ENSANUT 2018 Principales resultados**
+`Principales resultados ENSANUT_2018.pdf` (child-only; confirms the official summary carries no adult
+&ge; 30 figure).
 
 ## CSV columns
 
@@ -30,11 +41,22 @@ that encode, in closed vocabularies, the comparability caveats spelled out per c
 - **`age_group`** — adult age base as published (e.g. `20+`, `18-79`, `35-74`); see the
   cross-country comparability note at the foot of this file.
 - **`coverage`** — `national`, `sub-national` (GBR = England, NOR = Nord-Trøndelag county,
-  AUS 1980 = capital cities), or `non-probability` (SWE = occupational cohort).
+  AUS 1980 = capital cities, NLD 1976-2002 = RIVM monitoring municipalities), or
+  `non-probability` (SWE = occupational cohort).
 - **`source`** — short survey/study name (same vocabulary as `data/cleaned/obesity-by-sex.csv`).
 - **`note`** — short free-text caveat (double-quoted; may be empty).
 
 These are a structured summary, not a replacement for the per-point prose + URLs that follow.
+
+The cleaned panel (`data/cleaned/obesity-rate-by-country.csv`) adds two derived columns that are **not**
+in the raw files: `year` (numeric midpoint of `survey_period`) and **`age_base_varies`** (logical) —
+computed by `combine.R`, `TRUE` for every row of a country whose waves do not all share one `age_group`.
+A `TRUE` flags an **age-base seam**: a raw year-on-year change in that series can be an artifact of the
+shifting age window, not a real trend — age-match the bands before reading it (the worked example is
+Israel's MABAT 25-64 &rarr; 18-64, where the apparent 22.9&rarr;17.0 drop is mostly the base change).
+As of this writing 17 countries are flagged: AUS, BRA, CHL, EGY, ESP, FIN, IRN, ISR, JPN, KOR, MWI,
+NLD, PER, PHL, RUS, SAU, THA. The stable-base multi-wave series (e.g. MOZ 25-64, RWA 15-64) are `FALSE`
+and can be read directly.
 
 ---
 
@@ -64,6 +86,13 @@ These are a structured summary, not a replacement for the per-point prose + URLs
   obesity tables", Table 3 ("Adults' BMI by survey year, age and sex"), row "All adults" /
   "% Obesity, including severe obesity". Direct file:
   https://files.digital.nhs.uk/1E/EE2200/HSE-2024-Adult-and-child-overweight-and-obesity-tables.xlsx
+- BY SEX (in `data/cleaned/obesity-by-sex.csv`): the full HSE annual series 1993-2024 (2021
+  self-report wave excluded, as in the panel) plus the 1980 anchor (men 6 / women 9). Taken from
+  the **Men** and **Women** "All adults" / "% Obesity, including severe obesity" rows of the same
+  Table 3 — i.e. the by-sex split of the both-sexes totals above; the men/women average reproduces
+  each year's panel total (e.g. 1993 men 13.2 / women 16.4 &rarr; 14.9; 2024 men 29.2 / women 30.6
+  &rarr; 29.9). Crude, measured, England, 16+. The female excess is small (typically 1-3 pp) and a
+  few waves are male-skewed (2010, 2013, 2015), unlike the large female skews seen in MENA/Africa.
 
 ## Canada — `CAN.csv`  (national; CHMS measured, adults 18-79)
 
@@ -526,6 +555,702 @@ These are a structured summary, not a replacement for the per-point prose + URLs
   https://fagran.org.ar/wp-content/uploads/2020/01/Encuesta-nacional-de-nutricion-y-salud.pdf
   (cross-check: World Obesity Argentina report card, https://data.worldobesity.org/country/argentina-7/).
 
+## Russia — `RUS.csv`  (national; RLMS-HSE + ESSE-RF, measured)
+
+- Standard WHO **BMI &ge; 30**, crude, measured. Russia has two strong *measured* national sources,
+  and the CSV uses both: the **RLMS-HSE** (Russia Longitudinal Monitoring Survey — HSE) household
+  panel for the long trend, and the one-off multicentre **ESSE-RF** examination survey for a recent
+  published both-sexes anchor.
+- 1994 = 20.3 and 2004 = 28.0 — **RLMS-HSE**, measured anthropometry, nationally representative adult
+  sample, **published, population-weighted both-sexes** prevalences from Huffman & Rizov: obesity rose
+  exactly **+38%** across the post-Soviet transition decade (20.3 &times; 1.38 = 28.0, so both endpoints
+  are the source's own figures, not rounded). By sex: 1994 women **27.8** / men **9.5**; 2004 women
+  **36.6** / men **16.3** — note the large female excess (women ~3&times; men in 1994), narrowing only
+  slightly by 2004. VERIFIED against the article's Introduction (which states these exact values).
+  SOURCE: Huffman & Rizov, "Determinants of obesity in transition economies: the case of Russia",
+  *Economics and Human Biology* 5(3):379-391, https://pubmed.ncbi.nlm.nih.gov/17702676/.
+  - RLMS = MEASURED (not self-reported): the interviewer records height/weight with scale & stadiometer.
+    Confirmed by Jahns, Baturin & Popkin, "Obesity, diet, and poverty: trends in the Russian transition
+    to market economy", *Eur J Clin Nutr* 57:1295 (https://www.nature.com/articles/1601691 — RLMS gives
+    "measured height and weight") and by Kozlov et al. (the RLMS 1994-2012 obesity-trends paper,
+    https://rlms-hse.cpc.unc.edu/publications/bib/2785/), which reports the same measured uptrend
+    (~+0.4 pp/yr in the general adult population 2000-2012 — i.e. ~28% in 2004 drifting to ~31% by 2012,
+    which the ESSE-RF 30.3% below corroborates). So the 20.3/28.0 trend is both primary-sourced (the
+    exact Huffman & Rizov values) and triangulated across the Kozlov RLMS series + ESSE-RF.
+  - AGE BASE — CONFIRMED `18+`: Huffman & Rizov state the estimation sample is "6424 individuals
+    (age 18 and over)" (p. 381, Data and methods), so the `18+` label in the CSV is the source's own
+    explicit lower cut, not an inference from RLMS convention. (Some other RLMS analyses, e.g. Jahns,
+    restrict to working-age adults — a base that would drop high-obesity elderly and sit a touch low —
+    but that does not apply here.) The age base is now primary-sourced from the article itself.
+  - NOT USED — the Rosstat trap: the widely-circulated Rosstat "Sample Survey of Population Diets"
+    series (2013-2023; e.g. 2023 men 17.3 / women 24.2) is **self-reported** — Rosstat recorded height
+    and weight "from the respondents' words without objective measurements" from 2013 on — so it
+    understates and is excluded here (it would also clash with the measured RLMS/ESSE-RF basis).
+- 2012-2014 = 30.3 — **ESSE-RF** (Epidemiology of Cardiovascular Diseases in the Regions of the
+  Russian Federation), measured height/weight standardised to WHO protocol, **crude**, **published
+  both-sexes total**, adults **25-64**, n = 20,190 across 13 regions (men 27.5 / women 31.4).
+  SOURCE: Balanova et al. / Shalnova et al., "Overweight and Obesity in the Russian Population",
+  *Obesity Facts* 12(1):103-114, https://karger.com/ofa/article/12/1/103/239609/ (PubMed 30844809).
+- CAVEAT — two instruments, one seam: RLMS (adult household panel, 18+) and ESSE-RF (25-64 examination
+  survey) are different designs, so the 2004&rarr;2013 step (28.0&rarr;30.3) is partly a method/age-base
+  change, not all real. Both are measured and crude, so they sit on the same basis; the consistent
+  ~28-30% level across the two is reassuring. The famous female skew holds (women > men throughout),
+  with men catching up fastest after 2005.
+
+## Indonesia — `IDN.csv`  (national; RISKESDAS / Basic Health Research, adults 20+, measured)
+
+- THE BASIS PROBLEM (same as India): Indonesia uses the **Asian-Indonesian cutoff** — Gurrici et al.
+  (1998) put the obesity threshold at **BMI &ge; 27**, not 30 — so the national **RISKESDAS** reports
+  headline obesity at **&ge; 27** (10.5% in 2007 rising to 21.8% in 2018, adults 18+). Those are **not**
+  BMI &ge; 30 and must not be conflated with this repo's series (they run roughly double).
+- 2007 = 3.7, 2013 = 5.8, 2018 = 9.8, 2023 = 10.4 — the crude national **BMI &ge; 30** both-sexes
+  totals, computed from the pooled **RISKESDAS / Basic Health Research** waves (Indonesia MoH /
+  Balitbangkes), measured height/weight, adults **20+**, ~2.4 million adults pooled. Obesity at the
+  WHO &ge; 30 standard nearly **tripled** 2007&rarr;2023. These appear as the WHO-cutoff comparison in:
+  SOURCE: "Trends in the double burden of malnutrition among Indonesian adults, 2007 to 2023",
+  *Scientific Reports* (2025), https://pmc.ncbi.nlm.nih.gov/articles/PMC12504651/ (the paper's
+  *primary* analysis uses the &ge; 25 Asian cutoff; the &ge; 30 figures are its WHO-standard sensitivity
+  series — that is what is carried here).
+- WHY RISKESDAS, NOT IFLS: the **Indonesia Family Life Survey (IFLS)** also measures height/weight
+  and does reach BMI &ge; 30, but it covers only **13 of 27 provinces (~83% of the 1993 population)**
+  and publishes &ge; 30 mostly in figures / by sex (e.g. Roemling & Qaim, *Appetite* 2012, headline a
+  &ge; 27 cutoff), so it is **not** added — RISKESDAS is fully national (514 districts) with a clean
+  published &ge; 30 both-sexes total. The large female excess (as in India/Japan/Korea) holds in both.
+
+## Saudi Arabia — `SAU.csv`  (national; Al-Nuaim 1990-93, CADISS 1995-2000, SHIS 2013, measured)
+
+- Standard WHO **BMI &ge; 30**, crude, measured. Three national **measured** household/examination
+  surveys span ~1992 to 2013 — but on **different age bases**, which drives most of the wiggle.
+- 1990-1993 = 22.1 — **Al-Nuaim** national epidemiological household survey, measured, adults **15+**,
+  n = 13,177, **published both-sexes total** (men ~16 / women ~24). SOURCE: Al-Nuaim et al., "High
+  prevalence of overweight and obesity in Saudi Arabia", https://pubmed.ncbi.nlm.nih.gov/8782731/
+  (the 22.1% total is restated in Al-Nozha 2005, below).
+- 1995-2000 = 35.6 — **CADISS** (Coronary Artery Disease in Saudis Study), a 5-year national measured
+  survey, n = 17,232, **crude** both-sexes total 35.6% [95% CI 34.9-36.3] (age-adjusted 35.5% —
+  essentially identical), men 26.4 / women 44.0. CAVEAT: age base is **30-70**, not 15+ — it excludes
+  the lean 15-29 group, so it runs **high** relative to the 15+ points; the 22.1&rarr;35.6 jump is partly
+  this age-base change, not all real. SOURCE: Al-Nozha et al., "Obesity in Saudi Arabia", *Saudi Med J*
+  26(5):824-829, https://smj.org.sa/content/smj/26/5/824.full.pdf. (Consistent with the ~36% from the
+  2005 WHO STEPS-aligned national survey.)
+- 2013 = 28.7 — **SHIS** (Saudi Health Interview Survey), height/weight measured at the household,
+  **crude**, **published both-sexes total**, adults **15+**, n = 10,735 (men 24.1 / women 33.5).
+  SOURCE: Memish et al., "Obesity and Associated Factors — Kingdom of Saudi Arabia, 2013",
+  *Prev Chronic Dis* 11:E174, https://www.cdc.gov/pcd/issues/2014/14_0236.htm.
+- THE 1997&rarr;2013 "FALL" (35.6&rarr;28.7) IS NOT A REAL DECLINE — it is an **age-base artifact**. The
+  honest read holds the age base constant: the two **15+** probability surveys, **Al-Nuaim 1990-93 =
+  22.1** and **SHIS 2013 = 28.7**, rise **monotonically**. CADISS's 35.6 sits high only because it is
+  ages **30-70** (it drops the lean 15-29s); restrict SHIS to 30-70 and it climbs back to ~35% (SHIS
+  obesity peaks >40% in the 45-64 ages), i.e. the two surveys agree once the base matches. So the
+  series is a steady **rise** 1991&rarr;2013, not a hump. The female skew (women ~1.4x men) persists.
+- WHY NO POST-2013 POINT (all rejected against this repo's measured-probability-sample bar) — checked
+  in two 2023-24 Saudi reviews (Al-Omar et al., *Saudi Pharm J* 32:102192,
+  https://www.sciencedirect.com/science/article/pii/S1319016424002433; and the anthropometry review
+  *Healthcare* 2023, 11, 1982): **(a)** the widely-cited **37.7%** is **OECD-modelled** (*The Heavy
+  Burden of Obesity*, 2019) — modelled, not a survey, excluded like all NCD-RisC/GHO figures here;
+  **(b)** **Alghnam et al. 2021 = 38.96%** (n=615,768) is a **National Guard EHR / clinic** population,
+  not a probability sample (sicker/older skew, biased high); **(c)** **Althumiri et al. 2021** ("Sharik"
+  national survey, ~24%) and **(d)** **WHS-KSA 2019** (MOH, 20%) are both **self-reported** (understate).
+  None is measured + national + probability, so SHIS 2013 remains the most recent qualifying point.
+
+## Chile — `CHL.csv`  (national; ENS 2003 / 2009-2010 / 2016-2017, MINSAL / PUC, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**. Chile has a clean three-wave national
+  measured series: the **Encuesta Nacional de Salud (ENS)**, run by MINSAL and executed by the
+  Pontificia Universidad Católica de Chile — random, stratified, multistage probability samples with
+  anthropometry **measured** by trained nurses at the household.
+- THE CATEGORY-SUM POINT: the ENS reports obesity split into **`obesidad`** (BMI 30-39.9) and
+  **`obesidad mórbida`** (BMI &ge; 40) as mutually-exclusive adjacent categories. This repo's series
+  is **total BMI &ge; 30 = the sum of the two**, which is exactly how the primary trend article
+  reports it ("la obesidad, incluyendo la obesidad mórbida, aumentó de 23,2% el 2003 a 34,4% el
+  2016"). VERIFIED against the primary PDF (Vio et al. 2019) and the MINSAL *Primeros Resultados*:
+  - 2003 = **23.2** — ENS 2003 (obesidad 21.9 + mórbida 1.3), adults **17+**, n = 3,619. (Excess
+    weight 37.8 + 21.9 + 1.3 = 61.0%, the published "61%".)
+  - 2009-2010 = **27.4** — ENS 2009-2010 (obesidad 25.1 + mórbida 2.3), adults **15+**, n = 5,412.
+    (Excess weight 39.3 + 25.1 + 2.3 = 66.7%, the published "66,7%".)
+  - 2016-2017 = **34.4** — ENS 2016-2017 (obesidad 31.2 + mórbida 3.2), adults **15+**, n = 6,233.
+    (Excess weight 39.8 + 31.2 + 3.2 = 74.2%, the published "74,2%".) By sex (Primeros Resultados,
+    internally consistent with the 34.4 total): men 28.6 + 1.7 = **30.3** / women 33.7 + 4.7 =
+    **38.4** (the usual large female excess; Vio's text prints women 39.4, an apparent typo).
+  AGE-BASE SEAM (VERIFIED in the Primeros Resultados methods table): 2003 is **17 y más años**
+  while the two later waves are **15 y más años** — a minor downward base shift (adds lean 15-16s)
+  that slightly *understates* the 2003&rarr;later rise, not inflates it. All three are
+  Nacional/urbano-rural probability samples (2003 also covered the VIII región specifically).
+- THE 2009-2010 RE-TABULATION WRINKLE (why 27.4, not 25.1): the **original** ENS 2009-2010 figures
+  (obesidad 25.1 + mórbida 2.3 = 27.4, excess 66.7%) are used here — they are the survey's own
+  published headline and the source of the famous "two-thirds overweight/obese" (66.7%) statistic.
+  The ENS 2016-2017 *Primeros Resultados* **re-plots** 2009-2010 slightly lower (obesidad 22.9 +
+  mórbida 2.2 = 25.1, excess 64.4%), evidently a re-weighted reanalysis for cross-wave comparison.
+  Per this repo's "original survey observation" rule the published 27.4 is kept; the re-tabulated
+  25.1 is noted here for transparency (it would shave ~2.3 pp off the 2009-2010 point).
+- SOURCE (all three waves, with the obesidad/mórbida split and the 23.2&rarr;34.4 total trend):
+  **Vio et al.**, "Descripción de la progresión de la obesidad y enfermedades relacionadas en Chile"
+  ("Increasing frequency of obesity in Chile"), *Rev Méd Chile* 147(9):1114-1121 (2019),
+  https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872019000901114. ENS 2016-2017
+  primary results + the three-wave methods/sample table and the by-sex BMI distribution: MINSAL,
+  *Encuesta Nacional de Salud 2016-2017, Primeros resultados* (15+, n = 6,233).
+- These are **crude** survey-weighted prevalences (the ENS headline figures), not age-standardised.
+
+## Peru — `PER.csv`  (national; ENPPE 1975, ENIN 2005 (CENAN), ENDES 2014/2022, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**. Peru has one of the longer Latin-American
+  measured lineages, but stitched across two institutions: the early anchors are CENAN
+  (Centro Nacional de Alimentación y Nutrición) nutrition surveys; the recent points are INEI's
+  **ENDES** (Encuesta Demográfica y de Salud Familiar), which added **measured** adult anthropometry
+  (15+) only from ~2013-2014 — before that ENDES weighed only children and women 15-49.
+- 1975 = **9.0** — **ENPPE 1975** (Evaluación Nutricional de la Población Peruana), Peru's first
+  national adult anthropometry, measured, both sexes (women 10.9 / men 5.2). CAVEAT: obesity was
+  concentrated in Lima Metropolitana and the coast; treat the national figure as an early anchor.
+  SOURCE: Pajuelo, "Estado Nutricional del Adulto en el Perú", *Acta Méd Peru* 16:22-32 (1992),
+  restated in Pajuelo-Ramírez, "La obesidad en el Perú", *An Fac Med* 78(2):73-79 (2017),
+  http://www.scielo.org.pe/pdf/afm/v78n2/a12v78n2.pdf.
+- 2004-2005 = **14.2** — **ENIN 2005** (Encuesta Nacional de Indicadores Nutricionales, Bioquímicos,
+  Socioeconómicos y Culturales, CENAN/INS), an ENPPE-style national resurvey ~30 yr later, measured,
+  adults 20+, both sexes. SOURCE: same Pajuelo-Ramírez 2017 review (its ref 19, CENAN/INS Lima 2005).
+- 2014 = **20.9** and 2022 = **27.3** — **ENDES** (INEI), measured height/weight, **published
+  both-sexes totals**, adults **18+** — the cleanest internally-consistent recent trend (a repeated
+  cross-section on a fixed 18+ base). SOURCE: Bernabe-Ortiz, Carrillo-Larco et al., "Eligibility for
+  obesity management in Peru: Analysis of National Health Surveys from 2014 to 2022",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC11474143/ ("obesity ... increased from 20.9% to 27.3%").
+  CROSS-CHECK: a 2024 systematic review/meta-analysis (Cardenas et al.,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC11869839/) puts ENDES 2022 at 25.65% on a **20-99** base —
+  the small gap vs 27.3 is the age-base/weighting difference; the 18+ ENDES series is used here for
+  internal consistency with the 2014 point.
+- AGE-BASE SEAM: the two CENAN anchors are **20+** and the ENDES points are **18+** (a minor base
+  shift). Heterogeneous-but-honest, in the spirit of the rest of this panel.
+
+## Egypt — `EGY.csv`  (national; WHO/MoHP STEPwise 2012 & 2017, 100 Million Seha 2019, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **published both-sexes totals**. Three
+  national measured surveys span 2011-2019. WHY NO PRE-2011 BOTH-SEXES POINT: Egypt's long measured
+  anthropometry is the **DHS/EHIS** lineage (Egypt Demographic & Health Surveys 1992-2014, then the
+  Egypt Family Health Survey 2021), but those measured **only ever-married women aged 15-49** — a
+  women-only series rising ~23% (1992) &rarr; ~56% (2021), *not* a both-sexes total and not carried
+  here. Adult **men** were first measured nationally in the **2011-2012 STEPS**, so the both-sexes
+  record begins in 2011. (The frequently cited single-governorate / clinic studies — e.g. the 2004
+  4-governorate PHC survey, mean BMI 28.1 — are sub-national and excluded.)
+- 2011-2012 = 31.3 — **WHO EMRO / Ministry of Health & Population STEPwise survey**, measured
+  height/weight, **crude both-sexes total**, ages **15-65**, multistage household sample across 10
+  governorates (designed as the national NCD risk-factor baseline; released Dec 2012). Overweight
+  62.2%. SOURCE: WHO EMRO, "Results of national STEPwise survey released" (20 Dec 2012),
+  http://www.emro.who.int/egy/egypt-events/ncd-launch-dec-12.html (the 31.3% total is restated as the
+  2012 comparator in the 2017 STEPS Facts & Figures sheet below).
+- 2017 = 35.7 — **Egypt National STEPwise Survey 2017** (MoHP / CAPMAS / WHO), national household
+  survey, measured, **crude both-sexes total** [95% CI 34.1-37.3], ages **15-69**, 6,680 households
+  (94.3% response). Strong female skew: **men 24.8 / women 48.8** (mean BMI 28.2). SOURCE: WHO Egypt,
+  *Egypt STEPS Survey 2017 — Facts & Figures*,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/egpyt/steps/egypt-steps-survey-2017-facts-and-figures.pdf
+  (the same sheet's 2012-vs-2017 comparison panel gives the 31.3% &rarr; 35.7% rise).
+- 2019 = 39.8 — **"100 Million Seha" (100 Million Healthy Lives) initiative**, the mass national
+  screening that measured ~49.7 million adults, **crude both-sexes total**, ages **18+**
+  (men 29.5 / women 49.5). Not a probability *survey* but a near-census screening; included as a
+  published measured both-sexes total. SOURCE: Aboulghate et al., "The Burden of Obesity in Egypt",
+  *Front Public Health* 9:718978, https://pmc.ncbi.nlm.nih.gov/articles/PMC8429929/.
+- AGE-BASE SEAM: the two STEPS points are **15+** (15-69 / 15-65, so they include the lean 15-17s and
+  run marginally below an 18+/20+ base — same seam as Türkiye 15+ and NZ); the 2019 point is **18+**.
+  Part of the 35.7&rarr;39.8 jump is therefore the base change, not all real growth — but the direction
+  (a steep rise, women ~2x men) is unambiguous and consistent across all three.
+
+## Netherlands — `NLD.csv`  (RIVM monitoring projects + Nederland de Maat, measured) — SUB-NATIONAL / RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**. THE DUTCH MEASUREMENT PROBLEM: the long
+  *national* Dutch obesity series (CBS / RIVM Health Survey, 1981&rarr;2023, ~5%&rarr;16%) is
+  **self-reported** — RIVM/CBS themselves note "a lack of data on national prevalence based on
+  **measured** height and weight." To stay on this repo's measured bar we instead use the **RIVM
+  measured monitoring projects**, which are **measured** but **sub-national** (specific municipalities,
+  not a national probability sample) and published **by sex only** — so every total here is
+  **RECONSTRUCTED** as the 50/50 male/female average (same convention as JPN/DEU). Carried for
+  coverage; treat the level cautiously and watch the age-base seams.
+- 1976-1980 = 5.6 — **Consultation Bureau Heart Project (CBHP)**, measured, **50/50 of men 4.9 / women
+  6.2**. CAVEAT: this early anchor is the narrow **37-43** age band (the only band followable back to
+  the 1970s), so it is *not* on the 20-59 base of the next two points — being middle-aged it if
+  anything runs **high** vs a 20-59 figure, so the true rise off a constant base is even steeper.
+- 1993-1997 = 9.1 — **MORGEN** (Monitoring Project on Risk Factors for Chronic Diseases), measured,
+  ages **20-59**, **50/50 of men 8.5 / women 9.6**. Run in three municipalities (Amsterdam, Doetinchem,
+  Maastricht) &mdash; hence sub-national.
+- 1998-2002 = 11.2 — **REGENBOOG** (the Health Examination Survey of the Risk Factors & Health project,
+  RIVM + municipal health centres), measured, ages **20-59**, **50/50 of men 11.5 / women 11.0**
+  (n = 1809 men + 1882 women). This is the cleanest comparator to MORGEN (same RIVM monitoring lineage,
+  same **20-59** base): a real ~9.1&rarr;11.2 rise across the 1990s. SOURCE: Visscher et al. (2006),
+  "Underreporting of BMI in adults...", *Obesity* 14(11):2054-2063 (the measured arm of that
+  underreporting study; reported/self-report obesity in the same sample was only men 8.5 / women 7.7 —
+  the ~3 pp measured-vs-self-report gap this repo screens for).
+- 2009-2010 = 13.5 — **Nederland de Maat Genomen** ("The Netherlands Measured", RIVM health
+  examination survey), measured, **national sample** (n &asymp; 4,500), ages **30-70**,
+  **50/50 of men 13 / women 14**. The one *national* measured point; note its **30-70** base (drops the
+  lean 20-29s, adds the 60-70s) runs a touch high vs the 20-59 points, so part of the 11.2&rarr;13.5 gap
+  is the base change. SOURCE: RIVM, *Nederland de Maat Genomen, 2009-2010*,
+  https://www.rivm.nl/nederland-maat-genomen/wat-zijn-belangrijkste-resultaten.
+- SOURCE for the 1976-1997 measured trend: Visscher, Kromhout & Seidell (2002), "Long-term and recent
+  time trends in the prevalence of obesity among Dutch men and women", *Int J Obes* 26:1218-1224,
+  https://pubmed.ncbi.nlm.nih.gov/12187399/ (CBHP 1976-80, Monitoring Cardiovascular Diseases 1987-91,
+  MORGEN 1993-97; long-term band ages 37-43, recent band ages 20-59).
+- WHY NO POST-2010 POINT: after Nederland de Maat (2009-2010) the national monitoring reverted to the
+  **self-reported** CBS Health Survey (excluded here); the Doetinchem Cohort continued (rounds to
+  2013-17) but is a **closed, ageing** cohort (the same people get older each round), so its rising
+  prevalence is confounded by ageing and it is not a repeated cross-section — not used.
+- AGE-BASE SEAM: bands shift **37-43 &rarr; 20-59 &rarr; 20-59 &rarr; 30-70** across the four points; the
+  trend (a clear secular rise) is robust to this, but the *levels* are not strictly comparable
+  point-to-point. Sub-national + reconstructed + heterogeneous base — the weakest series in the panel,
+  kept only because there is no national measured Dutch alternative.
+
+## Thailand — `THA.csv`  (national; TFCS 2004-05, NHES V 2014 & VI 2019-20, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. THE CUTOFF PROBLEM: almost every
+  Thai obesity figure in circulation uses the **Asia-Pacific cutoff BMI &ge; 25** (e.g. NHES VI headline
+  "obese" = 37.8% men / 46.4% women) — *not* the WHO BMI &ge; 30 used in this repo. The WHO &ge;30 numbers
+  exist but are buried inside the NHES report BMI-distribution tables; the values here are read from the
+  **&ge;30 row** of those tables, so they are the genuine crude BMI &ge; 30 prevalences, not the &ge;25
+  headline.
+- 2004-2005 = 4.8 — **National Thai Food Consumption Survey (TFCS)**, measured, **published total**
+  (men 2.2 / women 7.3), adults **19+**, n = 4,286. CAVEAT: this is a *different instrument* from the
+  NHES and reads **low** (a food-consumption survey with an anthropometry module); used only as the
+  early crude anchor — do not read the 4.8&rarr;10.8 step as all-real, part is the instrument change.
+  SOURCE: Aekplakorn et al., "Prevalence of overweight and obesity in Thai population: Results of the
+  National Thai Food Consumption Survey", https://pmc.ncbi.nlm.nih.gov/articles/PMC5824639/.
+- 2014 = 10.8 — **5th National Health Examination Survey (NHES V)**, measured, **50/50 reconstructed**
+  from men 8.5 / women 13.1, adults **15+** (n = 8,160 men + 11,171 women). Crude, read from NHES V
+  report Table 5.1.3 (the &ge;30 row). SOURCE: Aekplakorn (ed.), *Thai NHES V report* (HSRI),
+  ch.5 ภาวะสุขภาพ, https://www.hiso.or.th/hiso5/report/sreport.php?y=2014&l=sreport5.
+- 2019-2020 = 13.2 — **6th NHES (NHES VI)**, measured, **50/50 reconstructed** from men 10.0 / women
+  16.4, adults **15+** (n = 9,390 men + 13,069 women). Crude, NHES VI report Table 5.1.3 (&ge;30 row);
+  the chapter text states it outright: "BMI &ge; 30 kg/m²: men 10%, women 16.4%". SOURCE: Aekplakorn
+  (ed.), *Thai NHES VI report 2019-2020* (HSRI),
+  https://www.hiso.or.th/hiso/picture/reportHealth/report/sreport6/sreport6_7.pdf.
+- THE LONG NHES TREND IS PUBLISHED ONLY **AGE-STANDARDISED** (not carried as crude rows). Aekplakorn
+  et al. (*J Obes* 2014, https://pmc.ncbi.nlm.nih.gov/articles/PMC3976913/) give the NHES BMI &ge; 30
+  trend **standardised to the 2004 Thai population**, ages 20-59: men/women **1.7/5.9** (1991, NHES I),
+  **4.3/8.8** (1997, NHES II), **5.4/10.3** (2004, NHES III), **6.8/12.1** (2009, NHES IV). These show
+  the real long climb but are the wrong *basis* for this crude repo (cf. China/Italy), and crude &ge;30
+  for those waves sits only in the gated HSRI NHES IV report — so 1991-2009 is documented here as
+  context but not added as data points. (NHES IV 2009 crude could extend the series to four NHES waves
+  if that report PDF is obtained.)
+- AGE-BASE SEAM: the two NHES points are **15+** (include the lean 15-17s, like Türkiye/NZ); TFCS is
+  **19+**. Crude, measured, national throughout — but instrument-mixed (TFCS vs NHES) at the early end.
+
+---
+
+## Philippines — `PHL.csv`  (national; FNRI NNS / NNHeS / ENNS, adults 20+ &rarr; 20-59, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. THE CUTOFF PROBLEM (as in
+  Thailand): Philippine headlines use the **Asia-Pacific cutoff BMI &ge; 25** ("overweight and obese"
+  = 57.1% of adults in 2023); the WHO BMI &ge; 30 "obese" row is reported separately by FNRI and is
+  what is carried here.
+- AGE-BASE SEAM: the FNRI adult base is **20+** through the 8th NNS (2013) and shifts to **20-59**
+  from the Expanded NNS (ENNS) onward (2018-2019, 2023). Read the 2013&rarr;2018-2019 step as partly a
+  base change (dropping the leaner 60+).
+- 2003 = 5.0 — **NNHeS 2003-2004** (National Nutrition and Health Survey, the clinical component of the
+  6th NNS, FNRI-DOST), measured, adults 20+, n = 4,753; overall BMI &ge; 30 = 5.0%. SOURCE: Velandria
+  et al., "Nutrition and Health Status of Filipino Adults (Excerpts from NNHeS 2003-2004)", FNRI,
+  https://fnri.dost.gov.ph/images/images/nutristat/health.pdf.
+- (2008 = the 7th NNS is **not carried**: FNRI publishes the 1993-2013 adult trend only as the
+  *overweight+obese* combined &ge;25 series — 16.6/20.2/24.0/26.6/28.4/31.1 for 1993/1998/2003/2008/
+  2011/2013 — and never breaks out crude BMI &ge; 30 by year, so a 2008 &ge;30 point could not be
+  sourced.)
+- 2013 = 6.8 — **8th NNS (2013)**, FNRI-DOST, measured, adults 20+ (172,323 persons surveyed), men 5.2
+  / women 8.3, WHO BMI &ge; 30. SOURCE: FNRI / Philippine Heart Association, "8th National Nutrition
+  Survey — NCD risk factors", https://www.philheart.org/images/8thNNSResultsNCD.pdf.
+- 2018-2019 = 9.6 — **ENNS 2018-2019** (Expanded National Nutrition Survey), FNRI-DOST, measured,
+  adults 20-59; overweight 28.8 + obese 9.6 on the WHO cutoff.
+- 2023 = 10.3 — **2023 NNS**, FNRI-DOST, measured, adults 20-59, men 8.0 / women 13.1, WHO BMI &ge; 30
+  (overweight 29.5). SOURCE: DOST-FNRI, "Nutritional Status of Adults (20 to 59 years old)", 2023 NNS,
+  https://enutrition.fnri.dost.gov.ph/uploads/7_2023_NNS_ADULTS.pdf.
+- The COVID-truncated **2021 ENNS** round (a ~7.2% WHO-obesity reference appears in the 2023 deck) is
+  **omitted** as not comparable with the full survey rounds.
+
+## Iran — `IRN.csv`  (national; WHO STEPS 2011 / 2016 / 2021, adults 20+/18+, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Iran's **STEPS** (STEPwise
+  approach to NCD risk-factor surveillance) waves report a national crude obesity headline; a large
+  female excess throughout (women run ~13-14 pp above men).
+- AGE-BASE SEAM: the 2011 figure is for adults **&ge;20**; the 2016 and 2021 waves are **18+**
+  (by-age tables begin at 18-24).
+- NOT carried: the earlier **2005 / 2007 first-nationwide surveys** (Janghorbani et al.) report
+  **age-standardised** obesity (men 11.1 / women 25.2 in 2005) — the wrong *basis* for this crude
+  repo (cf. China/Italy) — so they are context here, not added as rows.
+- 2011 = 22.3 — **STEPS 2011**, measured, adults &ge;20 (n = 8,639), men 14.7 / women 27.7. SOURCE:
+  Tabrizi et al., "Obesity and Related Factors in Iran: The STEPS Survey, 2011",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC4552963/.
+- 2016 = 22.7 — **STEPS 2016** (SuRFNCD-2016), measured, adults 18+, men 15.3 / women 29.8 (95% CI
+  22.2-23.2). SOURCE: Djalalinia et al., "Patterns of Obesity and Overweight in the Iranian
+  Population: Findings of STEPs 2016", https://pmc.ncbi.nlm.nih.gov/articles/PMC7055062/.
+- 2021 = 25.0 — **STEPS 2021**, measured, adults 18+, men 17.2 / women 31.2 (24.96%, 95% CI
+  24.39-25.53); the first national STEPS during the COVID-19 pandemic. SOURCE: "The levels of BMI and
+  patterns of obesity and overweight during the COVID-19 pandemic: Experience from the Iran STEPs 2021
+  survey", https://pmc.ncbi.nlm.nih.gov/articles/PMC9798439/.
+
+## Colombia — `COL.csv`  (national; ENSIN 2005 / 2010 / 2015, adults 18-64, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. **ENSIN** (Encuesta Nacional de
+  la Situación Nutricional), led by ICBF with MinSalud, INS and Universidad Nacional, is Colombia's
+  national measured-anthropometry survey, fielded roughly every five years among adults **18-64**;
+  obesity (obesidad) is the source-published both-sexes total. Women run above men throughout.
+- 2005 = 13.7 — **ENSIN 2005**, measured, adults 18-64.
+- 2010 = 16.5 — **ENSIN 2010**, measured, adults 18-64 (anthropometry module n &asymp; 162,331).
+- 2015 = 18.7 — **ENSIN 2015**, measured, adults 18-64; sobrepeso 37.7 + obesidad 18.7 = 56.4 exceso
+  de peso, +5.2 pp on 2010. SOURCE (all waves): ICBF/MinSalud ENSIN,
+  https://www.icbf.gov.co/nutricion/ensin-encuesta-nacional-de-situacion-nutricional; the 13.7 (2005)
+  &rarr; 16.5 (2010) trend is restated in Escobar-Velásquez et al., "Desigualdad social y obesidad en
+  la población adulta colombiana", *Arch Med* 17(2) (2017),
+  https://www.redalyc.org/journal/2738/273854673013/273854673013.pdf.
+
+## Poland — `POL.csv`  (national; WOBASZ 2003-2005 & WOBASZ II 2013-2014, adults 20-74, measured) — RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. **WOBASZ** (Wieloośrodkowe
+  Ogólnopolskie Badanie Stanu Zdrowia Ludności) is Poland's multicentre national health survey, with
+  weight/height **measured by nurses**. Both points are **50/50 male/female reconstructions** (the
+  papers publish by sex, not a both-sexes total), using the **crude** (not age-standardised) by-sex
+  figures.
+- 2003-2005 = 21.0 — **WOBASZ**, measured, adults 20-74, **reconstructed** from crude men 20.0 /
+  women 22.0.
+- 2013-2014 = 23.8 — **WOBASZ II**, measured, adults 20-74, **reconstructed** from crude men 24.2 /
+  women 23.4. NOTE: the widely-quoted WOBASZ II "24.4% men / 25.0% women" are the **age-standardised**
+  figures; the crude values used here are slightly lower. SOURCE: Stepaniak et al., "Prevalence of
+  general and abdominal obesity ... WOBASZ II (2013-2014) and comparison with the WOBASZ study
+  (2003-2005)", *Pol Arch Med Wewn* (2016), PMID 27535012; crude by-sex values restated in Kucharska
+  et al., *Ann Agric Environ Med* 30(2):322-330 (2023), https://www.aaem.pl/pdf-165913-89770.
+
+## Malaysia — `MYS.csv`  (national; NHMS II/III/IV/V + 2019/2023, adults 18+, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. The
+  **National Health and Morbidity Survey (NHMS)** is run by the Institute for Public Health (IPH/IKU)
+  under the Ministry of Health; height and weight are **measured** in the household. Each point is a
+  **published both-sexes total**. A clean six-wave rise — roughly a **fivefold** increase
+  1996&rarr;2023.
+- THE CUTOFF CAVEAT (as in Indonesia/Philippines): Malaysia's own **Clinical Practice Guidelines**
+  define obesity at the **Asian BMI &ge; 27.5**, so some Malaysian reports headline a much higher
+  "obese" figure. The numbers carried here are the **WHO BMI &ge; 30** prevalences, to match the rest
+  of this repo.
+- 1996 = 4.4 (**NHMS II**; overweight 16.6 / obese 4.4, adults 18+), 2006 = 14.5 (**NHMS III**,
+  95% CI 13.6-15.4) &mdash; obesity roughly **tripled** over the decade. 2011 = 15.1 (**NHMS IV**,
+  95% CI 14.3-15.9), 2015 = 17.7 (**NHMS V**, 95% CI 16.9-18.5). The 2006/2011/2015 figures (and
+  measured-height/weight method, n = 17,261 in 2015) are stated in the NHMS 2015 paper.
+  SOURCE: Chan YY et al., "Physical activity and overweight/obesity among Malaysian adults: findings
+  from the 2015 NHMS", *BMC Public Health* 17:733 (2017),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC5609047/ (the 1996 = 4.4 back-point — NHMS II, overweight
+  16.6 / obese 4.4 — is corroborated by the systematic review "Trends in overweight and obese adults
+  in Malaysia, 1996-2009", PMID 20233309).
+- 2019 = 19.7 (**NHMS 2019**), **published** both-sexes total, men 15.3 / women 24.7 (large female
+  excess, as across Asia). SOURCE: Chong et al., "Prevalence of Obesity and Its Associated Factors
+  Among Malaysian Adults: Finding From the NHMS 2019", *Asia Pac J Public Health* 34(8) (2022),
+  https://journals.sagepub.com/doi/abs/10.1177/10105395221129113.
+- 2023 = 21.8 (**NHMS 2023**), 95% CI 20.5-23.2, men 17.9 / women 26.0. **Verified against the primary
+  report**: NHMS 2023 Technical Report Vol. (Non-Communicable Diseases), section 4.4 "Overweight and
+  Obesity" — **Table 4.4.1** gives the 2011-2023 trend (obesity 15.1 / 17.7 / 19.7 / 21.8), and
+  **Table 4.4.3** the crude BMI &ge; 30 (WHO 1998) prevalence by subgroup (Malaysia 21.8; male 17.9
+  [16.3-19.7], female 26.0 [24.3-27.8]; n = 10,130). Height/weight **measured** twice with a SECA
+  scale + stadiometer and averaged. The 2011/2015/2019 totals in Table 4.4.1 corroborate the points
+  above. (The report also reports the Malaysian CPG &ge; 27.5 cutoff at 36.3% — not used here.)
+  SOURCE: Institute for Public Health (IPH), Ministry of Health Malaysia, *NHMS 2023* (untracked local
+  copy `data/tmp/report-nhms-2023.pdf`); summarised in CodeBlue (2024),
+  https://codeblue.galencentre.org/2024/05/nhms-2023-over-half-of-malaysian-adults-overweight-or-obese/.
+
+## Singapore — `SGP.csv`  (national; NHS 2010, NHSS 2013 & NPHS 2017-2024, adults 18-74, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-74**. Singapore's
+  measured series runs from the Ministry of Health / Health Promotion Board **National Health Survey
+  (NHS, 2010)** through the **National Health Surveillance Survey (NHSS, 2013)** into the **National
+  Population Health Survey (NPHS, 2017 on)**; height/weight are **measured** at a health examination.
+  All carried points are the **crude** prevalence on the consistent **18-74** base.
+- 2010 = 10.5, 2013 = 8.6, 2017 = 8.6, 2019-2020 = 10.5, 2023-2024 = 12.7. The 2013/2017 dip-then-rise
+  is what the crude series shows; note a **methodology change** at 2013 means pre-2013 figures are not
+  strictly comparable. **Verified against the primary report**: NPHS 2020 report **Table 12.6**
+  ("Crude prevalence (%) of obesity among Singapore residents aged 18 to 74 years, 2010, 2013, 2017
+  and 2019-2020") gives Total 10.5 / 8.6 (7.9-9.3) / 8.6 (6.6-10.5) / 10.5 (9.6-11.6), with the
+  **age-standardised** rates essentially identical (10.5 / 8.6 / 8.8 / 10.7) &mdash; so crude is safe
+  here. Unusually for Asia, Singapore obesity is **male-skewed** (2019-2020 men 11.9 / women 9.3).
+  The latest point (12.7% in 2023-2024, health exams Jul 2022-Aug 2024) is the highest in the series.
+  SOURCE: MOH/HPB, *National Population Health Survey 2020* (untracked local copy
+  `data/tmp/nphs-2020-survey-report.pdf`), Table 12.6; the 2023-2024 point from MOH, "National
+  Population Health Survey 2024 ..." (2024),
+  https://www.moh.gov.sg/newsroom/national-population-health-survey-2024-shows-singaporeans-are-adopting-healthier-lifestyles---but-rising-obesity-is-a-concern/.
+- WHY THE EARLY NHS POINTS ARE **NOT** ADDED (documented but excluded): the classic NHS doubling is
+  published **age-standardised** on an **18-69** base &mdash; **1992 = 5.5, 1998 = 6.3, 2004 = 6.8,
+  2010 = 10.8** (then NHSS **2013 = 8.6**), per the HPB-MOH *Clinical Practice Guidelines: Obesity*
+  Fig. 1 (*Singapore Med J* 2016; 57(6):292-300, untracked copy `data/tmp/SMJ-57-292.pdf`). That is a
+  different basis and age base from the crude 18-74 series carried here, and not crude (so it would be
+  a basis exception like China/Italy). To keep Singapore on a single crude, comparable footing, only
+  the 18-74 crude NHS/NHSS/NPHS points are added; the 1992-2010 age-standardised series is recorded
+  here in prose for reference.
+
+## Ecuador — `ECU.csv`  (national; ENSANUT-ECU 2012 & ENSANUT 2018, adults 19-59, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. The **Encuesta Nacional de
+  Salud y Nutrición (ENSANUT)**, run by INEC / MSP, measures height/weight by trained fieldworkers
+  (portable stadiometers + electronic scales). Both points are **published both-sexes totals** for
+  adults **19-59**. AGE CAP: ENSANUT's adult anthropometry stops at **59** (no 60+), so these run
+  **low** versus the open-ended series — like Colombia (18-64) and Ireland (18-64).
+- 2011-2013 = 22.2 — **ENSANUT-ECU 2012** (fieldwork 2011-2013). WHAT THE OFFICIAL REPORT STATES
+  (verified, *Resumen Ejecutivo* §4.2.4, adults "mayores de 19 años a menores de 60 años"): height/
+  weight **measured**, national **exceso de peso (IMC &ge; 25) = 62.8%** (women 65.5 / men 60.0), and
+  obesity **IMC &ge; 30 by age decade** 13.4 / 22.7 / 28.4 / 32.7 (ages 20-29 → 50-59). The executive
+  summary headlines the &ge; 25 combined figure and does **not** print a single national &ge; 30 total
+  — the **22.2** carried here is the crude national &ge; 30 prevalence from the fuller ENSANUT
+  tabulations, corroborated by a peer-reviewed **age-standardised re-analysis = 22.3%** (women 25.9 /
+  men 15.4, ages 18-59, n = 10,318), i.e. crude ≈ age-standardised, so the figure is safe. The by-sex
+  &ge; 30 split (women 28.1 / men 17.0) is likewise from the fuller tabulations, not the exec summary.
+  SOURCE: Freire WB et al., *ENSANUT-ECU 2011-2013, Tomo I* (INEC/MSP), untracked copy
+  `data/tmp/Publicacion ENSANUT 2011-2013 tomo 1.pdf` (Gráfico 21, p. 40); age-standardised
+  re-analysis: Orces & Lorenzo, *J Endocrinol Invest* (2020),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC7796886/.
+- 2018 = 25.7 — **ENSANUT 2018** (INEC), adults 19-59. CAVEAT ON SOURCING: the official
+  *Principales resultados* slide deck reports only **child** obesity (5-11 yrs = 35.4% sobrepeso+
+  obesidad) and carries **no adult &ge; 30 figure**; the adult **25.7** (with exceso &ge; 25 ≈ 63.6%,
+  n = 89,212, OW+OB women 67.4 / men 59.7) is from **secondary analyses of the ENSANUT 2018 microdata**,
+  not a primary national-report table — treat as the one less-verified Ecuador point. SOURCE
+  (child-only summary): INEC, *ENSANUT 2018, Principales resultados*, untracked copy
+  `data/tmp/Principales resultados ENSANUT_2018.pdf`; adult figure via secondary microdata analyses
+  (e.g. *Nutr Hosp* / RECIAMUC 2023). (Do not confuse with the separate **STEPS Ecuador 2018** survey
+  — the ENSANUT nutrition survey, with its large measured sample, is the one used here.)
+
+## Kenya — `KEN.csv`  (national; WHO STEPS 2015, adults 18-69, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2015
+  Kenya STEPwise (STEPS) Survey** (MoH / KNBS / WHO) was the **first nationally representative survey
+  to objectively measure BMI** in Kenya — a stratified multistage probability sample, height/weight
+  measured at the household. AGE CAP: STEPS caps at **69** (no 70+).
+- 2015 = 9.1 — **published both-sexes total**, men 4.4 / women 13.8 (a very large female skew, typical
+  of sub-Saharan Africa), overweight 18.9 (men 13.2 / women 24.7), n = 4,283 adults. SOURCE: Mkuu et
+  al., "The prevalence and associated factors of underweight and overweight/obesity among adults in
+  Kenya", *Pan Afr Med J* 36:338 (2020), https://pmc.ncbi.nlm.nih.gov/articles/PMC7603835/ (analysing
+  the 2015 Kenya STEPS microdata); the 9.1% both-sexes total is restated in Mohamed et al.,
+  *PLoS One* (2018), https://pmc.ncbi.nlm.nih.gov/articles/PMC8170142/. This is Kenya's only national
+  measured BMI &ge; 30 point — a single STEPS wave, no panel yet.
+
+---
+
+## Tanzania — `TZA.csv`  (national; WHO STEPS 2012, adults 25-64, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2012
+  Tanzania STEPS Survey** (NIMR / MoH / WHO, fieldwork Feb–Oct 2012) was a multistage cluster
+  probability sample of adults 25-64; height/weight measured at Step 2. n = 5,680, response rate 94.7%.
+  AGE BASE: 25-64 (no 65+).
+- 2012 = 8.7 — **published both-sexes total**, men 2.5 / women 15.0 (very large female skew, typical of
+  sub-Saharan Africa), overweight (BMI &ge; 25) 26.0. SOURCE: WHO STEPS Tanzania 2012 Fact Sheet,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/united-republic-of-tanzania/steps/ur_tanzania_factsheet_2012.pdf
+  (cached at `data/tmp/TZA_steps_2012_factsheet.pdf`). Tanzania's only national measured BMI &ge; 30 point.
+
+---
+
+## Malawi — `MWI.csv`  (national; WHO STEPS 2009 & 2017, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Two STEPS waves; note the
+  **age base differs between waves**: 2009 = 25-64, 2017 = 18-69 (the 2017 survey lowered the floor to
+  18 and included up to 69).
+- 2009 = 4.6 — adults **25-64**, **published both-sexes total**, men 2.0 / women 7.3 (large female
+  skew), overweight (BMI &ge; 25) 21.9. n = 4,845 (BMI subsample), response rate 95.5%, fieldwork
+  Jul–Sep 2009. SOURCE: WHO STEPS Malawi 2009 Fact Sheet,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/malawi/steps/2009-malawi-factsheet-en.pdf
+  (cached at `data/tmp/MWI_steps_2009_factsheet.pdf`).
+- 2017 = 5.1 — adults **18-69**, **published both-sexes total**, men 1.2 / women 9.0, overweight
+  (BMI &ge; 25) 18.9 (Table 46). n = 3,799 (BMI), fieldwork to Oct 2017. The report's own 25-64
+  comparison shows overweight essentially flat (21.9 in 2009 &rarr; 21.5 in 2017), so the apparent
+  4.6&rarr;5.1 obesity rise is partly the wider 18-69 base — treat the trend cautiously. SOURCE: WHO
+  STEPS Malawi 2017 Country Report (no standalone fact sheet),
+  https://www.who.int/publications/m/item/2017-steps-country-report-malawi
+  (cached at `data/tmp/MWI_steps_2017_report.pdf`).
+
+---
+
+## Eswatini — `SWZ.csv`  (national; WHO STEPS 2014, adults 15-69, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-69**. The **2014
+  STEPS Survey** (published under the country's former name **Swaziland**; MoH / WHO, fieldwork Nov–Dec
+  2014) was a multistage cluster probability sample; height/weight measured. n = 3,281, response rate
+  76%. AGE BASE: 15-69 — includes adolescents 15-17 (broader low end than most series), no 70+.
+- 2014 = 20.5 — **published both-sexes total**, men 8.8 / women 30.9 (very large female skew; among the
+  highest obesity levels in the African series), overweight (BMI &ge; 25) 43.8. SOURCE: WHO STEPS
+  Swaziland 2014 Fact Sheet,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/eswatini/steps/2014-steps-swaziland-factsheet.pdf
+  (cached at `data/tmp/SWZ_steps_2014_factsheet.pdf`). Eswatini's only national measured BMI &ge; 30 point.
+
+---
+
+## Zambia — `ZMB.csv`  (national; WHO STEPS 2017, adults 18-69, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2017
+  Zambia STEPS Survey** (MoH / WHO, fieldwork Jul–Sep 2017) — Zambia's first national STEPS — was a
+  multistage cluster probability sample; height/weight measured. n = 4,302, response rate 74% (Steps 1-2).
+  AGE CAP: STEPS caps at 69 (no 70+).
+- 2017 = 7.5 — **published both-sexes total**, men 3.0 / women 12.3 (large female skew), overweight
+  (BMI &ge; 25) 24.2. SOURCE: WHO STEPS Zambia 2017 Fact Sheet,
+  https://www.afro.who.int/sites/default/files/2018-05/STEPS%20SURVEY%20Zambia-fact-sheet.pdf
+  (cached at `data/tmp/ZMB_steps_2017_factsheet.pdf`; full report:
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/zambia/steps/zambia-ncd-steps-survey-report-2017.pdf).
+  Zambia's only national measured BMI &ge; 30 point.
+
+---
+
+## Uganda — `UGA.csv`  (national; WHO STEPS 2014, adults 18-69, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2014
+  Uganda STEPS Survey** (UBOS / MoH / WHO, fieldwork Apr–Jun 2014) — Uganda's first national STEPS —
+  was a multistage cluster probability sample; height/weight measured (obesity computed excluding
+  pregnant women). n = 3,987. AGE CAP: STEPS caps at 69 (no 70+).
+- 2014 = 4.6 — **published both-sexes total**, men 1.8 / women 7.5 (large female skew), overweight
+  (BMI &ge; 25) 14.5. SOURCE: WHO STEPS Uganda 2014 Report (no standalone fact sheet was issued; obesity
+  figures in the Physical Measurements section, restated in the executive summary),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/uganda/steps/uganda_2014_steps_report.pdf
+  (cached at `data/tmp/UGA_steps_2014_report.pdf`). Uganda's only national measured BMI &ge; 30 point.
+
+---
+
+## Ethiopia — `ETH.csv`  (national; WHO STEPS 2015, adults 15-69, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-69**. The **2015
+  Ethiopia STEPS Survey** (Ethiopian Public Health Institute / WHO; Ethiopia's third STEPS) was a
+  three-stage cluster probability sample; height/weight measured. n = 9,801, response rate 95.5%. AGE
+  BASE: 15-69 — includes adolescents 15-17, no 70+.
+- 2015 = 1.2 — **published both-sexes total**, men 0.5 / women 2.0; overweight (BMI &ge; 25) 6.3. Among
+  the lowest obesity levels in the whole panel (mean BMI 20.4). SOURCE: WHO/EPHI STEPS Ethiopia 2015
+  Fact Sheet,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/ethiopia/steps/ethiopia-2015-steps-factsheet.pdf
+  (cached at `data/tmp/ETH_steps_2015_factsheet.pdf`). Ethiopia's only national measured BMI &ge; 30 point.
+
+---
+
+## Mozambique — `MOZ.csv`  (national; WHO STEPS 2005 & 2014/15, adults 25-64, measured) — RECONSTRUCTED 2-point panel
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. Two STEPS waves, compared on
+  a consistent 25-64 base by Jessen et al., "Prevalence of overweight and obesity in Mozambique in 2005
+  and 2015", *Public Health Nutrition* 22(17):3119-3128 (2019),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC10260445/ (cached extract). The source publishes obesity
+  **by sex only** (no both-sexes total), so both points are **reconstructed** as the 50/50 male/female
+  average — consistent with the JPN/DEU/NLD/early-BRA convention in this repo.
+- 2005 = 4.7 — reconstructed from men 2.3 / women 7.0.
+- 2014/15 = 9.0 — reconstructed from men 5.0 / women 13.0; 2014/15 survey n = 2,595 (18-64), restricted
+  to 25-64 for cross-wave comparability. A steep rise (overweight+obesity rose 11.7&rarr;18.2 in men and
+  18.3&rarr;30.5 in women over the decade).
+
+---
+
+## Rwanda — `RWA.csv`  (national; WHO STEPS 2012/13 & 2021/22, adults 15-64, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-64** (includes
+  adolescents 15-17, no 65+). Two STEPS waves, both **published both-sexes totals**.
+- 2012/13 = 2.8 — men 0.8 / women 4.7 (large female skew), overweight (BMI &ge; 25) 14.3. SOURCE: Rwanda
+  2012-2013 STEPS Country Report (MoH / RBC / WHO),
+  https://www.who.int/publications/m/item/2012-2013-steps-country-report-rwanda (figures restated in the
+  Rwanda country report, *PLoS* PMC9562790).
+- 2021/22 = 4.3 — men 1.3 / women 7.4 (large female skew), overweight (BMI &ge; 25) 14.3; obesity
+  excludes pregnant women. n = 5,776 adults, fieldwork from Nov 2021. SOURCE: "STEPS: Prevalence of
+  Non-Communicable Disease risk factors in the Republic of Rwanda, 2022" final report (fact-sheet table,
+  both-sexes obese 4.3%),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/rwanda/rwanda_final_report_steps_survey_2021-2022.pdf
+  (cached at `data/tmp/RWA_steps_2021_report.pdf`).
+
+---
+
+## Kuwait — `KWT.csv`  (national; WHO STEPS 2014, adults 18-69, measured) — KUWAITI NATIONALS
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **18-69**. The **2014 Kuwait STEPS
+  Survey** (Kuwait MoH / WHO) was a cross-sectional measured survey of **Kuwaiti nationals only** — a
+  major coverage caveat, since citizens are a minority of Kuwait's resident population (the expatriate
+  majority is not sampled). Same nationals-only basis as the Saudi series.
+- 2014 = 40.3 — **published both-sexes total** [95% CI 38.6-42.0], men 36.5 / women 44.0, n = 3,915.
+  Nearly 8 in 10 Kuwaiti adults were overweight or obese. SOURCE: Weiderpass et al., "The Prevalence of
+  Overweight and Obesity in an Adult Kuwaiti Population in 2014", *Front Endocrinol* 10:449 (2019),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC6629831/.
+
+---
+
+## Qatar — `QAT.csv`  (national; WHO STEPS 2012, adults 18-64, measured) — QATARI NATIONALS
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **18-64**. The **2012 Qatar STEPS
+  Survey** (Supreme Council of Health / WHO, fieldwork Mar–May 2012, response 88%) sampled **Qatari
+  nationals only** (expatriate majority not covered — same caveat as Kuwait).
+- 2012 = 41.4 — **published both-sexes total** [95% CI 38.8-44.0], men 39.5 / women 43.2, n = 2,496
+  (multistage cluster sample, fieldwork Mar–May 2012, mean BMI 29.2). One of the highest measured
+  national obesity levels in the whole panel. SOURCE (PRIMARY): Qatar STEPwise Report 2012 (Supreme
+  Council of Health / WHO), Table 3.35,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/qatar/steps/qatar-2012-stepwise-report.pdf
+  (cached at `data/tmp/QAT_steps_2012_report.pdf`; the 41.4% both-sexes total is stated verbatim in the
+  report's BMI section and fact-sheet table).
+
+---
+
+## Oman — `OMN.csv`  (national; WHO STEPS 2017, adults 18+, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. The **2017 Oman
+  STEPS Survey** (Ministry of Health / WHO, fieldwork Jan–Apr 2017, all governorates) measured
+  height/weight on n = 6,582 Omani adults.
+- 2017 = 30.7 — **published both-sexes total** [95% CI 26.0-35.7], men 23.2 / women 39.3 (large female
+  skew). The report compares to the 2008 World Health Survey, where Omani obesity was ~24% (women rising
+  ~24 &rarr; ~41 by 2017) — a steep decade rise, but the 2008 comparator is a different instrument so it
+  is noted in prose rather than carried as a second data row. SOURCE: Al-Mawali et al., "Prevalence of
+  risk factors of non-communicable diseases in the Sultanate of Oman: STEPS survey 2017",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC8553065/.
+- WHY NO EARLIER ROW (measured secular trend documented but not carried): Oman has measured national
+  surveys back to 1991, but the earlier obesity figures are published **age-adjusted, by sex only** —
+  not crude both-sexes totals — so carrying them would break the crude basis of the 2017 point and
+  require reconstruction. For the record (Al-Lawati & Jousilahti, "Prevalence and 10-year secular trend
+  of obesity in Oman", *Saudi Med J* 25(3):346-351, 2004, https://smj.org.sa/content/smj/25/3/346.full.pdf,
+  cached at `data/tmp/OMN_allawati_2004.pdf`; Omani citizens 20+): **age-adjusted** obesity men
+  10.5 (1991) &rarr; 16.7 (2000), women 25.1 (1991) &rarr; 23.8 (2000); the 2008 Oman World Health Survey
+  put obesity at ~24%; a 2025 STEPS is in the pipeline. The crude 2017 STEPS point (30.7) is the only
+  one carried; a future crude both-sexes series could be built if the earlier microdata are reprocessed.
+
+---
+
+## United Arab Emirates — `ARE.csv`  (national; UAE National Health Survey 2017-18, EMIRATI nationals, adults 18-69, measured)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **18-69**. The **UAE National Health
+  Survey 2017-2018** (Ministry of Health & Prevention; IQVIA fieldwork) was a STEPS-structured
+  household survey (height/weight measured at Step 2) of ~10,000 households across all seven emirates.
+  The survey samples **all residents**, but to match the nationals-only basis of the rest of the Gulf
+  (Kuwait/Qatar/Oman/Bahrain) we record the **Emirati-national** subgroup, which the report publishes
+  directly.
+- 2017-18 = 36.9 — **published Emirati-national both-sexes total**, men 32.2 / women 41.8. CONTEXT: the
+  all-resident total was far lower at **27.8** (men 25.1 / women 30.6; non-Emiratis 26.3) — the gap is
+  the (leaner, younger, male) labour-migrant majority. SOURCE: UAE National Health Survey Report
+  2017-2018 (MoHAP / WHO), obesity-by-nationality table,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/united-arab-emirates/uae-national-health-survey-report-2017-2018.pdf
+  (cached at `data/tmp/ARE_nhs_2017-2018_report.pdf`).
+
+---
+
+## Bahrain — `BHR.csv`  (national; Bahrain National Health Survey 2018, BAHRAINI nationals, adults 18+, measured) — RECONSTRUCTED
+
+- **BMI &ge; 30**, **crude**, **measured**, adults **18+**. The **Bahrain National Health Survey 2018**
+  (Ministry of Health) measured height/weight (n = 2,948, excludes pregnant women). Like UAE it samples
+  all residents, but the **Bahraini-national** breakdown is published by sex only (no nationals
+  both-sexes total), so this point is **reconstructed** as the 50/50 male/female average — same
+  convention as the JPN/DEU/MOZ points.
+- 2018 = 43.2 — reconstructed from Bahraini-national men 39.2 / women 47.2. CONTEXT: the all-resident
+  total was 36.9 (men 30.9 / women 42.5), overweight (BMI 25-29.9) 35.5. SOURCE: Bahrain NHS 2018, as
+  reported in Al-Sayyad et al. (WHO EMRO), "Bodyweight and obesity perceptions among adults in Bahrain",
+  *East Mediterr Health J* 30(3) (2024), https://pubmed.ncbi.nlm.nih.gov/39584434/, and the World
+  Obesity Federation Global Obesity Observatory (survey type: measured),
+  https://data.worldobesity.org/country/bahrain-15/ (cached: `data/tmp/BHR_worldobesity_reportcard.pdf`).
+
+---
+
+## Israel — `ISR.csv`  (national; MABAT National Health & Nutrition Surveys, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Two MABAT waves from the Israel
+  Center for Disease Control, both height/weight measured, covering Jews and Arabs. NOTE the **age base
+  differs between waves**: MABAT-1 = 25-64, MABAT-2 = 18-64 (the second wave lowered the floor to 18).
+- 1999-2001 = 22.9 — adults **25-64**, **both-sexes total**, computed from Table 2 by-sex: men 19.9
+  (class I 17.1 + class II/III 2.8) / women 25.8 (16.5 + 9.3); overweight (BMI 25-29.9) men 45.8 / women
+  33.1 (~39.3 combined). Highest among Arab women (55-64: ~70%). n = 2,781. SOURCE (PRIMARY):
+  Keinan-Boker, Kaluski et al., "Overweight and Obesity Prevalence in Israel: Findings of the First
+  National Health and Nutrition Survey (MABAT)", *Isr Med Assoc J* 7:219-223 (2005),
+  https://www.ima.org.il/filesupload/IMAJ/0/50/25159.pdf (cached at `data/tmp/ISR_MABAT1_IMAJ.pdf`).
+- 2014-2016 = 17.0 — adults **18-64**, **published both-sexes total** (47.5% overweight-or-obese: 30.5%
+  overweight + 17.0% obese), men 17.4 / women 16.6. SOURCE (PRIMARY): ICDC, *Mabat — Second National
+  Health and Nutrition Survey, Ages 18-64, 2014-2016* (English edition), §2.1 measured-BMI table,
+  https://www.gov.il/BlobFolder/reports/mabat-adults-2014-2016-383/en/files_publications_units_ICDC_mabat_adults_2014_2016_383_en.pdf
+  (cached at `data/tmp/ISR_MABAT2_2014-2016_adults_en.pdf`).
+- THE 22.9&rarr;17.0 "FALL" IS NOT A REAL DECLINE — it is mostly an **age-base artifact** plus noise.
+  MABAT-2 is **18-64** (adds the lean 18-24s); MABAT-1 was **25-64**. AGE-MATCHED, the picture is
+  essentially **flat**: men 35-44 20.9&rarr;20.0 and 45-64 ~24.5&rarr;27.3 (flat to marginally up, within
+  CI); women 35-44 22.0&rarr;18.5 and 45-64 ~36&rarr;26.4 (flat to lower, but MABAT-1's 55-64 women had
+  n=255 with wide CIs, so the older-women drop is partly regression-to-mean). So do **not** read a male
+  rise: the narrowing of the female&gt;male gap is driven by the older-women estimate coming down, not by
+  men climbing. NET: roughly flat 2000&rarr;2015. This agrees with the **NCD-RisC / OWID** modelled series
+  (age-standardised, hierarchical-Bayes smoothed), which shows Israeli obesity flattening over the same
+  period — reassuring that our two *crude, unmodelled* survey points carry no real signal of change once
+  the age base is matched. Same age-base-seam caveat class as Malawi and Saudi Arabia.
+
 ---
 
 ## Cross-country comparability notes
@@ -537,7 +1262,15 @@ These are a structured summary, not a replacement for the per-point prose + URLs
   the restricted age base — no young adults), Brazil 20+ (PNS 2013/2019 points are 18+),
   India 18-69 (single NNMS point), South Africa 18+, Finland 25-64 (2017 point is 30+),
   Norway/Sweden ~25-74 working-age (see their sections), Türkiye **15+** (WHO STEPS),
-  Argentina 18+ (single ENNyS 2 point).
+  Argentina 18+ (single ENNyS 2 point), Russia 18+ (RLMS adult sample, age cut confirmed in
+  Huffman & Rizov; the ESSE-RF point is 25-64),
+  Indonesia 20+ (RISKESDAS), Saudi Arabia 15+ (the CADISS 1995-2000 point is **30-70** — much
+  higher base, runs high), Chile 15+ (the ENS 2003 point is 17+), Peru 18-20+ (CENAN anchors 20+,
+  ENDES points 18+),
+  Philippines 20+ &rarr; **20-59** (FNRI base shifts at the 2018-2019 ENNS), Iran 20+/18+ (STEPS 2011
+  is &ge;20, 2016/2021 are 18+), Colombia 18-64 (ENSIN, note the upper cap), Poland 20-74 (WOBASZ),
+  Malaysia 18+ (NHMS), Singapore **18-74** (the NPHS base; the older NHS series is 18-69),
+  Ecuador **19-59** (ENSANUT caps at 59 — no 60+, runs low), Kenya 18-69 (STEPS caps at 69).
 - **Coverage / basis caveats**: GBR = England (HSE) only; Norway = HUNT, one county (Nord-Trøndelag),
   not national; Sweden = an employed occupational cohort, not a probability sample; **Denmark = the
   only self-reported series** (understates — not comparable head-to-head); Argentina = ENNyS 2,
@@ -550,3 +1283,10 @@ These are a structured summary, not a replacement for the per-point prose + URLs
 - Pre-continuous-survey points are isolated waves; treat early anchors cautiously (esp. AUS 1980
   capital-cities-only and the US 1890s anthropometric anchor).
 - The UK series is **England** (HSE), not the whole United Kingdom.
+
+---
+
+## Disclaimer
+
+This data was largely collected with the help of Anthropic's Claude Code (using the Opus 4.8 model).
+I took care to check through the outputs. Nevertheless, some minor errors may exist.

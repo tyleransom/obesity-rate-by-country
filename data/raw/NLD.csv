@@ -1,0 +1,5 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Netherlands,NLD,1976-1980,5.6,crude,measured,reconstructed,37-43,sub-national,CBHP,"50/50 sex avg (men 4.9 / women 6.2); narrow 37-43 age band"
+Netherlands,NLD,1993-1997,9.1,crude,measured,reconstructed,20-59,sub-national,MORGEN,"50/50 sex avg (men 8.5 / women 9.6)"
+Netherlands,NLD,1998-2002,11.2,crude,measured,reconstructed,20-59,sub-national,REGENBOOG,"50/50 sex avg (men 11.5 / women 11.0)"
+Netherlands,NLD,2009-2010,13.5,crude,measured,reconstructed,30-70,national,NLdeMaat,"50/50 sex avg (men 13 / women 14); national sample n~4500"

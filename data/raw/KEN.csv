@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Kenya,KEN,2015,9.1,crude,measured,published,18-69,national,STEPS 2015,"first national survey to measure BMI; men 4.4 / women 13.8; overweight 18.9; STEPS caps at 69 (no 70+)"

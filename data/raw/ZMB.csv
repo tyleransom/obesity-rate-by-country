@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Zambia,ZMB,2017,7.5,crude,measured,published,18-69,national,STEPS 2017,"first national STEPS; men 3.0 / women 12.3 (large female skew); overweight 24.2; n=4302; STEPS caps at 69 (no 70+)"

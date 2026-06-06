@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Chile,CHL,2003,23.2,crude,measured,published,17+,national,ENS 2003,"obesidad 21.9 + obesidad mórbida 1.3 (BMI>=30 total)"
+Chile,CHL,2009-2010,27.4,crude,measured,published,15+,national,ENS 2009-2010,"obesidad 25.1 + obesidad mórbida 2.3 (BMI>=30 total)"
+Chile,CHL,2016-2017,34.4,crude,measured,published,15+,national,ENS 2016-2017,"obesidad 31.2 + obesidad mórbida 3.2; men 30.3 / women 38.4"

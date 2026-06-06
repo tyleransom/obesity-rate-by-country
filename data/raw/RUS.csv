@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Russia,RUS,1994,20.3,crude,measured,published,18+,national,RLMS,"women 27.8 / men 9.5; weighted total (Huffman & Rizov)"
+Russia,RUS,2004,28.0,crude,measured,published,18+,national,RLMS,"women 36.6 / men 16.3; +38% over 1994 (Huffman & Rizov)"
+Russia,RUS,2012-2014,30.3,crude,measured,published,25-64,national,ESSE-RF,"men 27.5 / women 31.4; n=20,190"

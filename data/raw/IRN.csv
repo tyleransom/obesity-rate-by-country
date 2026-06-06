@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Iran,IRN,2011,22.3,crude,measured,published,20+,national,STEPS 2011,"men 14.7 / women 27.7; n=8,639"
+Iran,IRN,2016,22.7,crude,measured,published,18+,national,STEPS 2016,"men 15.3 / women 29.8"
+Iran,IRN,2021,25.0,crude,measured,published,18+,national,STEPS 2021,"men 17.2 / women 31.2; first STEPS during COVID-19"

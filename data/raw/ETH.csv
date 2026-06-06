@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Ethiopia,ETH,2015,1.2,crude,measured,published,15-69,national,STEPS 2015,"third Ethiopia STEPS; very low prevalence; men 0.5 / women 2.0; overweight 6.3; n=9801; STEPS sample 15-69 (incl. 15-17; no 70+)"

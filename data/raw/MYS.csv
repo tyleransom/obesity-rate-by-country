@@ -1,0 +1,7 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Malaysia,MYS,1996,4.4,crude,measured,published,18+,national,NHMS II,"BMI>=30 (WHO); Malaysian CPG obese cutoff is >=27.5 (runs higher)"
+Malaysia,MYS,2006,14.5,crude,measured,published,18+,national,NHMS III,"95% CI 13.6-15.4; obesity roughly tripled 1996->2006 at BMI>=30"
+Malaysia,MYS,2011,15.1,crude,measured,published,18+,national,NHMS IV,
+Malaysia,MYS,2015,17.7,crude,measured,published,18+,national,NHMS V,"95% CI 16.9-18.5"
+Malaysia,MYS,2019,19.7,crude,measured,published,18+,national,NHMS 2019,"men 15.3 / women 24.7"
+Malaysia,MYS,2023,21.8,crude,measured,published,18+,national,NHMS 2023,"95% CI 20.5-23.2; men 17.9 / women 26.0; ~5x the 1996 level"

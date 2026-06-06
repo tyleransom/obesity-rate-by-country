@@ -12,6 +12,12 @@
 # The quality-annotation columns (basis, measurement, derivation, age_group,
 # coverage, source, note) are carried through verbatim as character; only
 # obesity_pct is coerced to numeric and `year` (survey-period midpoint) is added.
+#
+# One derived flag is added: `age_base_varies` (logical) — TRUE for every row of a
+# country whose waves do NOT all share the same `age_group`. These series carry an
+# age-base seam, so a raw year-on-year change can be an artifact of the shifting age
+# window rather than a real trend (e.g. ISR 25-64 -> 18-64, MWI 25-64 -> 18-69, SAU).
+# Age-match the bands before reading such trends; see data/raw/README.md.
 
 library(tidyverse)
 
@@ -29,8 +35,12 @@ panel <- map_dfr(files, ~ read_csv(.x, show_col_types = FALSE,
                                    col_types = cols(.default = col_character()))) %>%
     mutate(obesity_pct = as.numeric(obesity_pct),
            year        = mid_year(survey_period)) %>%
+    group_by(iso3) %>%
+    mutate(age_base_varies = n_distinct(age_group) > 1) %>%
+    ungroup() %>%
     select(country, iso3, year, survey_period, obesity_pct,
-           basis, measurement, derivation, age_group, coverage, source, note) %>%
+           basis, measurement, derivation, age_group, coverage,
+           age_base_varies, source, note) %>%
     arrange(country, year)
 
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
