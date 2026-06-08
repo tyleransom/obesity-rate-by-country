@@ -54,8 +54,8 @@ computed by `combine.R`, `TRUE` for every row of a country whose waves do not al
 A `TRUE` flags an **age-base seam**: a raw year-on-year change in that series can be an artifact of the
 shifting age window, not a real trend — age-match the bands before reading it (the worked example is
 Israel's MABAT 25-64 &rarr; 18-64, where the apparent 22.9&rarr;17.0 drop is mostly the base change).
-As of this writing 17 countries are flagged: AUS, BRA, CHL, EGY, ESP, FIN, IRN, ISR, JPN, KOR, MWI,
-NLD, PER, PHL, RUS, SAU, THA. The stable-base multi-wave series (e.g. MOZ 25-64, RWA 15-64) are `FALSE`
+As of this writing 21 countries are flagged: AUS, BRA, CHL, DZA, EGY, ESP, FIN, IRN, ISR, JPN, KOR, MAR,
+MWI, NLD, PER, PHL, PSE, RUS, SAU, THA, TUN. The stable-base multi-wave series (e.g. MOZ 25-64, RWA 15-64) are `FALSE`
 and can be read directly.
 
 ---
@@ -1250,6 +1250,184 @@ and can be read directly.
   (age-standardised, hierarchical-Bayes smoothed), which shows Israeli obesity flattening over the same
   period — reassuring that our two *crude, unmodelled* survey points carry no real signal of change once
   the age base is matched. Same age-base-seam caveat class as Malawi and Saudi Arabia.
+
+---
+
+## Jordan — `JOR.csv`  (national; WHO STEPS 2019, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2019
+  Jordan National STEPS Survey** (Ministry of Health / WHO EMRO) measured height/weight on a
+  representative sample of n = 5,713 adults aged 18-69 resident in Jordan (Jordanians and Syrians).
+- 2019 = 32.3 — **published both-sexes total**, men 24.5 / women 40.5 (strong female skew), mean BMI
+  27.5; 60.8% overweight-or-obese. SOURCE (PRIMARY): Jordan STEPS Survey 2019 Fact Sheet (WHO / MoH),
+  https://cdn.who.int/media/docs/default-source/ncds/jordan-steps-2019_fact-sheets_all.pdf (cached at
+  `data/tmp/JOR_steps_2019_factsheet.pdf`); official summary, WHO EMRO,
+  https://www.emro.who.int/jordan/news/results-of-jordan-national-stepwise-survey-steps-of-noncommunicable-diseases-and-their-risk-factors-2019.html.
+- WHY ONLY ONE ROW (earlier measured trend documented but not carried): Jordan has earlier measured
+  surveys, but on age bases / samples not comparable to the crude both-sexes 18-69 STEPS basis, so they
+  are noted here rather than carried (same conservative convention as Oman). Ajlouni, Jaddou, Batieha,
+  "Obesity in Jordan", *Int J Obes* 1998;22:624-628, https://pubmed.ncbi.nlm.nih.gov/9705020/ — four
+  semi-urban towns, adults **25+**, n=2,836: obesity 49.7 (men 32.7 / women 59.8), which runs high on
+  the 25+ base and semi-urban sample. A 2017 national follow-up (Ajlouni, Khader, Batieha et al., "An
+  alarmingly high and increasing prevalence of obesity in Jordan", *Epidemiol Health* 2020;42:e2020040,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC7871146/) — adults **18-90**, n=4,056 (female-skewed sample):
+  crude obesity ~44 (men 36.1 / women 48.2), higher than STEPS 2019 chiefly because of the wider/older
+  age base and the female-heavy sample. The clean crude 18-69 STEPS 2019 point (32.3) is the only one
+  carried; the secular direction (rising) is not in doubt.
+
+---
+
+## Lebanon — `LBN.csv`  (national; Sibai 1997 + AUB 2008-09 surveys, adults 20+, measured) — 2-point panel, EARLY POINT RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **20+** — the same age
+  base in both waves, so **no age-base seam**. Two national cross-sectional surveys with measured
+  height/weight.
+- 1997 = 16.6 — **RECONSTRUCTED** as the 50/50 male/female average of the by-sex figures (men 14.3 /
+  women 18.8); the source reports obesity by sex but no both-sexes total. First national epidemiological
+  study, representative sample (n=2,104 ages 3+; adults 20+ subset), measured. SOURCE (PRIMARY): Sibai,
+  Hwalla, Adra, Rahal, "Prevalence and Covariates of Obesity in Lebanon: Findings from the First
+  Epidemiological Study", *Obes Res* 2003;11:1353-1361,
+  https://onlinelibrary.wiley.com/doi/full/10.1038/oby.2003.183 (cached at `data/tmp/LBN_sibai_2003.pdf`).
+- 2008-2009 = 26.1 — **published both-sexes total**, men 26.4 / women 25.9 — a **rare near-zero /
+  slightly male-skewed gap**, unusual for the region (contrast the large female skews in Egypt, Jordan,
+  Palestine, Syria). Adults 20+, n=2,608, measured height/weight, AUB national STEPwise survey (fieldwork
+  May 2008–Apr 2009). SOURCE (PRIMARY): Naja, Hwalla, Itani et al. national study, "Dietary patterns and
+  odds of ... obesity in Lebanese adults" / Chamieh et al., "Diet, physical activity and socio-economic
+  disparities of obesity in Lebanese adults: findings from a national study", *BMC Public Health*
+  2015;15:279, https://pmc.ncbi.nlm.nih.gov/articles/PMC4373105/. Trend context (1997 vs 2009):
+  Nasreddine et al., "Trends in overweight and obesity in Lebanon", *BMC Public Health* 2012;12:798,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC3527186/.
+
+---
+
+## Palestine — `PSE.csv`  (national; FNHANS 2000 + WHO STEPS 2010-11 & 2022, measured) — 3-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national** (West Bank + Gaza combined). NOTE
+  an **age-base seam** (`age_base_varies` = TRUE): the 2000 survey is **18-64**, the two STEPS waves are
+  **18-69** — the small 18-64 &rarr; 18-69 widening adds a little to the later figures, so the rise is
+  real but marginally overstated by the base change.
+- 1999-2000 = 24.4 — **published both-sexes total**, men 17.5 / women 31.5, adults 18-64, n=3,378,
+  measured. First Palestinian National Health and Nutrition Survey (Al-Quds Nutrition and Health Research
+  Institute, Al-Quds University). SOURCE (PRIMARY): Abdeen, Jildeh, Dkeideek et al., "Overweight and
+  Obesity among Palestinian Adults: Analyses of the Anthropometric Data from the First National Health
+  and Nutrition Survey (1999-2000)", *J Obes* 2012;2012:213547,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC3317185/.
+- 2010-2011 = 26.8 — **published both-sexes total**, adults 18-69, n=5,503, WHO STEPS (West Bank + Gaza).
+  No by-sex row is carried for this wave (the sources consulted do not report a both-sexes-comparable sex
+  split). SOURCE: Palestine STEPS 2010-2011, as reported in the 2022 STEPS report (below) and the review
+  by Abu Sieneh et al., "Analysis of the nutritional status in the Palestinian territory", *Front Nutr*
+  2023;10:1206090, https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2023.1206090/full.
+- 2022 = 31.6 — **published both-sexes total** [95% CI 29.8-33.4], men 24.7 (22.1-27.3) / women 38.8
+  (36.8-40.8); **West Bank 35.1 > Gaza 27.6**; adults 18-69, n=5,503 (of 5,775 sampled), measured (SECA
+  stadiometers/scales). SOURCE (PRIMARY): Palestinian National Institute of Public Health / WHO,
+  *Occupied Palestinian Territory National STEPwise Survey (STEPS) 2022* report,
+  https://cdn.who.int/media/docs/default-source/2021-dha-docs/steps_2022_reportfinal.pdf (cached at
+  `data/tmp/PSE_steps_2022_report.pdf`); peer-reviewed write-up: "Noncommunicable diseases: a silent
+  epidemic in occupied Palestine: results from the WHO STEPS survey 2022",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC12337375/.
+
+---
+
+## Syria — `SYR.csv`  (Aleppo Household Survey 2004, adults 18-65, measured) — SUB-NATIONAL (Aleppo city)
+
+- **BMI &ge; 30**, **crude**, **measured**, adults **18-65**, but **sub-national**: the only measured
+  population obesity survey available for Syria is the **Aleppo Household Survey** (Syrian Center for
+  Tobacco Studies, Aleppo). There is no national measured survey, and the post-2011 civil war makes one
+  unlikely for the foreseeable future, so this single Aleppo-city point is carried as a broadly
+  indicative anchor (same sub-national-used-as-national status class as Norway's HUNT / county series).
+- 2004 = 38.2 — **published both-sexes total**, men 28.8 / women 46.4 (very large female skew), adults
+  18-65, n=2,038, response rate 86%, height/weight measured (digital scale + stadiometer). Runs high
+  relative to neighbours partly because of the urban Aleppo sample and the high female rate. SOURCE
+  (PRIMARY): Fouad, Rastam, Ward, Maziak, "Prevalence of obesity and its associated factors in Aleppo,
+  Syria", *Prev Control* 2006;2(2):85-94, https://pmc.ncbi.nlm.nih.gov/articles/PMC2094121/
+  (doi:10.1016/j.precon.2006.09.001).
+
+---
+
+## Morocco — `MAR.csv`  (national; 2000 NCD survey + WHO STEPS 2017-2018, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. NOTE a small **age-base seam**
+  (`age_base_varies` = TRUE): the 2000 figure is adults **20+**, the STEPS wave is **18+** (adding 18-19s
+  lowers the rate slightly) — minor, but it means the 13.2 &rarr; 20.0 rise is if anything understated.
+- 2000 = 13.2 — **published both-sexes total**, adults **20+**. From Morocco's **2000 national NCD
+  risk-factor survey** (the last nationally representative such study before STEPS). Carried as reported
+  in the STEPS 2017-18 report background, which states verbatim that Moroccan obesity "a augmenté par
+  rapport à la valeur enregistrée en l'an 2000 (13.2%)" — i.e. the report itself treats 13.2 &rarr; 20 as
+  one national series. (Secondary attribution: the primary 2000 survey report — footnote 4 of the STEPS
+  document — is not independently transcribed here; same secondary-citation status class as the Libya
+  2009 figure carried via the El Taguri review.)
+- 2017-2018 = 20.0 — **published both-sexes total** [95% CI 18.9-21.1], men 11.0 (9.5-12.6) / women 29.0
+  (27.4-30.6) — women ~2.6&times; men, one of the widest male/female gaps in the panel; mean BMI 25.9
+  (men 24.4 / women 27.3); 53.0% overweight-or-obese; excess weight higher in cities (57.6%) than rural
+  (44.7%). Adults **18+**, n = 5,429 (sample 6,100, response 89%; sample skews female, 65% women).
+  SOURCE (PRIMARY): *Enquête nationale STEPS Maroc 2017-2018 — rapport final* (Ministère de la Santé /
+  WHO), https://www.who.int/publications/m/item/2017-2018-steps-country-report-morocco (cached at
+  `data/tmp/steps-report-2017-2018-morocco-final.pdf`; obesity 20% / 11.0 / 29.0 stated verbatim, §
+  anthropométrie).
+- NOT USED (modelled, for contrast only): the WHO EMRO/NCD-RisC **age-standardised modelled** series puts
+  Moroccan adult obesity at ~16.7 (2000) &rarr; 26.1 (2016) — a Bayesian hierarchical estimate, *not* a
+  survey observation, so deliberately excluded here (the whole point of this repo). The crude measured
+  survey figures (13.2, 20.0) are the carried values.
+
+---
+
+## Algeria — `DZA.csv`  (national; TAHINA 2005 + WHO STEPS 2016-2017, measured) — 2-point panel, EARLY POINT RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. NOTE an **age-base seam**
+  (`age_base_varies` = TRUE): TAHINA is **35-70**, STEPS is **18-69**, so the two are not directly
+  comparable (the 35-70 base omits young adults; age-match before reading the change).
+- 2005 = 19.6 — **RECONSTRUCTED** as the 50/50 male/female average (men 9.1 / women 30.1; the source
+  reports by sex, no both-sexes total), adults **35-70**, n=4,746, measured. **TAHINA** project
+  (Transition épidémiologique et impact sur la santé en Afrique du Nord), a national measured survey run
+  in Algeria and Tunisia. SOURCE (PRIMARY): Atek, Traissac, El Ati et al., "Obesity and Association with
+  Area of Residence, Gender and Socio-Economic Factors in Algerian and Tunisian Adults", *PLoS One*
+  2013;8(10):e75640, https://pmc.ncbi.nlm.nih.gov/articles/PMC3792975/.
+- 2016-2017 = 21.8 — **published both-sexes total** [95% CI 20.5-23.1], men 14.1 (12.7-15.5) / women 30.1
+  (28.3-31.9), mean BMI 26.4; adults **18-69**, n=6,989 (of 7,450 sampled, response 93.8%), measured.
+  National **STEPwise Algérie 2016-2017** (Ministère de la Santé / WHO). The male rate rose 9.1 &rarr;
+  14.1 from 2005 while the female rate held near 30. SOURCE (PRIMARY): *Enquête nationale STEPS Algérie
+  2016-2017 — fascicule de résultats* (WHO AFRO / MSPRH),
+  https://www.afro.who.int/sites/default/files/2018-12/fascicule%20resultats%20steps%2014%20novembre%202018_1.pdf
+  (cached at `data/tmp/DZA_steps_2016-2017_fascicule.pdf`, obesity table — verbatim 21.8 / 14.1 / 30.1).
+
+---
+
+## Tunisia — `TUN.csv`  (national; TAHINA 2005 + THES 2016, measured) — 2-point panel, EARLY POINT RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. **Age-base seam**
+  (`age_base_varies` = TRUE): TAHINA is **35-70**, THES is **20+** — the 2016 base adds younger adults
+  (which pulls the rate *down*), so the measured 25.2 &rarr; 30.0 rise is real and if anything understated
+  by the base change.
+- 2005 = 25.2 — **RECONSTRUCTED** 50/50 average (men 13.3 / women 37.0 — a very large female skew),
+  adults **35-70**, n=5,343, measured. **TAHINA** project (same survey as Algeria above). SOURCE
+  (PRIMARY): Atek et al., *PLoS One* 2013;8(10):e75640,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC3792975/.
+- 2016 = 30.0 — **published both-sexes total** (preliminary national result; the finalised by-sex
+  breakdown is not carried), adults **20+**, n &asymp; 7,963, measured. **THES** (Tunisian Health
+  Examination Survey 2016), National Institute of Health-Tunisia with the Ministry of Health and WHO;
+  fieldwork Mar–Jun 2016; 64.5% overweight-or-obese. SOURCE: THES-2016 preliminary results (Institut
+  National de la Santé), survey record at GHDx,
+  https://ghdx.healthdata.org/record/tunisia-health-examination-survey-2016, microdata DOI
+  10.23708/PRDTYS; reported figure via Middle East Monitor (16 Feb 2018),
+  https://www.middleeastmonitor.com/20180216-half-of-tunisians-are-overweight/. (As with Morocco, the
+  EMRO/NCD-RisC *modelled* age-standardised series — ~18.2 &rarr; 26.9, 2000-2016 — is excluded.)
+
+---
+
+## Libya — `LBY.csv`  (national; WHO STEPS 2009, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2009 Libya
+  STEPS Survey** (Ministry of Health / WHO, fieldwork Feb–Nov 2009) was a multi-stage cluster sample of
+  adults 25-64 with measured height/weight; n=3,590.
+- 2009 = 30.5 — **published both-sexes total**, men 21.4 / women 40.1, mean BMI 27.7 (26.4 men / 29.0
+  women); 63.5% overweight-or-obese. SOURCE (PRIMARY): *Libya STEPS 2009 Fact Sheet* (WHO / MoH),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/libya/steps/libya-2009-steps-factsheet.pdf
+  (cached at `data/tmp/LBY_steps_2009_factsheet.pdf` — confirms 25-64, n=3,590); the obesity breakdown
+  (30.5 / 21.4 / 40.1, mean BMI 27.7) is reported from this survey in El Taguri et al., "Obesity in
+  Libya: a review", https://pmc.ncbi.nlm.nih.gov/articles/PMC3419838/.
+- WHY NO EARLIER ROW: the only older figure (Rao et al., Tripoli 1984, obesity 12.6) used **non-standard
+  BMI cut-offs** (&ge;27 for men, &ge;25 for women), so it is not comparable to BMI &ge; 30 and is noted
+  here rather than carried.
 
 ---
 

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Libya,LBY,2009,30.5,crude,measured,published,25-64,national,STEPS 2009,"WHO/MoH national STEPS (Feb-Nov 2009); men 21.4 / women 40.1; mean BMI 27.7; n=3,590"

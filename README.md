@@ -4,23 +4,24 @@ Harmonized panel of **adult obesity prevalence** (% of adults with body mass ind
 &ge; 30 kg/m&sup2;) drawn from each country's own national **measured** height/weight
 surveys.
 
-**Scope** (snapshot): 53 countries and 217 survey observations, earliest US 1900-1901,
+**Scope** (snapshot): 61 countries and 231 survey observations, earliest US 1900-1901,
 latest 2024-25; covers all 19 G20 national economies. A companion file adds sex-specific
-rates for 30 of them.
+rates for 38 of them.
 
-## Countries covered (53)
+## Countries covered (61)
 
-Argentina&dagger; · Australia · Bahrain · Brazil&dagger; · Canada · Chile&dagger; · China&dagger; ·
-Colombia · Denmark · Ecuador&dagger; · Egypt&dagger; · Eswatini · Ethiopia · Finland&dagger; ·
-France&dagger; · Germany&dagger; · India&dagger; · Indonesia · Iran&dagger; · Ireland · Israel ·
-Italy&dagger; · Japan&dagger; · Kenya&dagger; · Kuwait · Malawi · Malaysia&dagger; · Mexico&dagger; ·
-Mozambique · Netherlands&dagger; · New Zealand · Norway&dagger; · Oman · Peru&dagger; ·
+Algeria&dagger; · Argentina&dagger; · Australia · Bahrain · Brazil&dagger; · Canada · Chile&dagger; ·
+China&dagger; · Colombia · Denmark · Ecuador&dagger; · Egypt&dagger; · Eswatini · Ethiopia ·
+Finland&dagger; · France&dagger; · Germany&dagger; · India&dagger; · Indonesia · Iran&dagger; · Ireland ·
+Israel · Italy&dagger; · Japan&dagger; · Jordan&dagger; · Kenya&dagger; · Kuwait · Lebanon&dagger; ·
+Libya&dagger; · Malawi · Malaysia&dagger; · Mexico&dagger; · Morocco&dagger; · Mozambique ·
+Netherlands&dagger; · New Zealand · Norway&dagger; · Oman · Palestine&dagger; · Peru&dagger; ·
 Philippines&dagger; · Poland&dagger; · Qatar · Russia&dagger; · Rwanda · Saudi Arabia&dagger; ·
-Singapore&dagger; · South Africa&dagger; · South Korea&dagger; · Spain&dagger; · Sweden · Tanzania ·
-Thailand&dagger; · Türkiye&dagger; · Uganda · United Arab Emirates · United Kingdom&dagger; ·
-United States · Zambia
+Singapore&dagger; · South Africa&dagger; · South Korea&dagger; · Spain&dagger; · Sweden · Syria&dagger; ·
+Tanzania · Thailand&dagger; · Tunisia&dagger; · Türkiye&dagger; · Uganda · United Arab Emirates ·
+United Kingdom&dagger; · United States · Zambia
 
-&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (30 countries).
+&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (38 countries).
 
 ## Why this exists
 
@@ -39,7 +40,7 @@ obesity-rate-by-country/
 ├── data/
 │   ├── raw/                 one CSV per country (the actual survey data points)
 │   │   ├── README.md        per-country source documentation
-│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 53 total)
+│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 61 total)
 │   └── cleaned/
 │       └── obesity-rate-by-country.csv   long-format panel (built by src/combine.R)
 ├── src/
@@ -63,7 +64,7 @@ Each `data/raw/<ISO3>.csv` has eleven columns — four core columns plus seven
 | `measurement`  | `measured` or `self-reported` (self-reported only for Denmark) |
 | `derivation`   | `published` (source-reported total), `reconstructed` (50/50 male/female average), or `anchor` (derived non-survey figure — USA 1900) |
 | `age_group`    | adult age base as published, e.g. `20+`, `18-79`, `35-74` |
-| `coverage`     | `national`, `sub-national` (GBR=England, NOR=one county, AUS 1980, NLD pre-2009 RIVM monitoring towns), or `non-probability` (SWE occupational cohort) |
+| `coverage`     | `national`, `sub-national` (GBR=England, NOR=one county, AUS 1980, NLD pre-2009 RIVM monitoring towns, SYR=Aleppo city), or `non-probability` (SWE occupational cohort) |
 | `source`       | short survey/study name (e.g. `NHANES`, `HSE`, `ENSANUT`) |
 | `note`         | short free-text caveat (quoted; may be empty) |
 

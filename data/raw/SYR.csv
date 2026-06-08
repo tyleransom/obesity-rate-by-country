@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Syria,SYR,2004,38.2,crude,measured,published,18-65,sub-national,Aleppo HHS 2004,"Aleppo city only — no national measured survey exists; men 28.8 / women 46.4; n=2,038; response 86%"

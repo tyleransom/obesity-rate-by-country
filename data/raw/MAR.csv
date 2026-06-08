@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Morocco,MAR,2000,13.2,crude,measured,published,20+,national,MoH survey 2000,"2000 national NCD risk-factor survey, both-sexes total, as cited in the STEPS 2017-18 report background"
+Morocco,MAR,2017-2018,20.0,crude,measured,published,18+,national,STEPS 2017-18,"WHO/MoH national STEPS; men 11.0 / women 29.0; mean BMI 25.9; n=5,429; response 89%"

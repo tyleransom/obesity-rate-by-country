@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Algeria,DZA,2005,19.6,crude,measured,reconstructed,35-70,national,TAHINA 2005,"50/50 reconstruction of men 9.1 / women 30.1; age base 35-70 (no adults <35); n=4,746"
+Algeria,DZA,2016-2017,21.8,crude,measured,published,18-69,national,STEPS 2016-17,"WHO/MoH national STEPS; men 14.1 / women 30.1; mean BMI 26.4; n=6,989"

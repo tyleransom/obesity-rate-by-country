@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Jordan,JOR,2019,32.3,crude,measured,published,18-69,national,STEPS 2019,"WHO/MoH national STEPS; men 24.5 / women 40.5; mean BMI 27.5; n=5,713 (Jordanian + Syrian residents 18-69)"

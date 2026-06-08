@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Palestine,PSE,1999-2000,24.4,crude,measured,published,18-64,national,FNHANS 2000,"first National Health & Nutrition Survey (Al-Quds); men 17.5 / women 31.5; n=3,378"
+Palestine,PSE,2010-2011,26.8,crude,measured,published,18-69,national,STEPS 2010-11,"WHO STEPS, West Bank + Gaza; n=5,503; by-sex total not published in both-sexes form"
+Palestine,PSE,2022,31.6,crude,measured,published,18-69,national,STEPS 2022,"WHO STEPS, West Bank + Gaza; men 24.7 / women 38.8; West Bank 35.1 > Gaza 27.6; n=5,503"

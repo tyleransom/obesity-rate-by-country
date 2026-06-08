@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Tunisia,TUN,2005,25.2,crude,measured,reconstructed,35-70,national,TAHINA 2005,"50/50 reconstruction of men 13.3 / women 37.0; age base 35-70 (no adults <35); n=5,343"
+Tunisia,TUN,2016,30.0,crude,measured,published,20+,national,THES 2016,"preliminary THES national result; by-sex breakdown not finalised; n approx 7,963 (20+)"
