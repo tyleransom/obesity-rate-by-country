@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Nepal,NPL,2019,4.3,crude,measured,published,15-69,national,STEPS 2019,"men 3.2 / women 5.3; NHRC/WHO; n=5,593; overweight+obese (>=25) = 24.3"

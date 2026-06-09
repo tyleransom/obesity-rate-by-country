@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Tonga,TON,2004,68.7,crude,measured,published,25-64,national,STEPS 2004,"men 60.7 / women 76.3; restated in the 2012 STEPS report trend tables (Table 70); among the highest obesity levels on Earth"
+Tonga,TON,2012,67.6,crude,measured,published,25-64,national,STEPS 2012,"men 57.2 / women 77.6; n=2,273 (BMI, both sexes); overweight (BMI>=25) 90.7; slight non-significant decline from 2004 (68.7); same 25-64 base both waves"

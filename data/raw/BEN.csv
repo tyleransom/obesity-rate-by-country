@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Benin,BEN,2008,9.4,crude,measured,published,25-64,national,STEPS 2008,"men 4.3 / women 14.0; n=6,904; women significantly more obese; age base 25-64 (vs 18-69 in 2015)"
+Benin,BEN,2015,7.4,crude,measured,published,18-69,national,STEPS 2015,"men 4.6 / women 10.1; n=5,126; response 98.6%; overweight+obese (>=25) = 23.2; apparent drop from 2008 partly the wider 18-69 base"

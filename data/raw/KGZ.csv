@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Kyrgyzstan,KGZ,2013,23.1,crude,measured,published,25-64,national,STEPS 2013,"men 17.6 / women 29.0 (p<0.05); n=2,623; nationally representative (130 PSUs of 1,884, PPS, 40% urban/60% rural); age base 25-64 (narrower than the 18-69 of the rest of Central Asia); MoH / National Center of Cardiology report"

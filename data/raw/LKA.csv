@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Sri Lanka,LKA,2014-2015,5.9,crude,measured,published,18-69,national,STEPS 2015,"men 3.5 / women 8.4; MoH/WHO; fieldwork Jul 2014-May 2015; n=5,188; overweight+obese (>=25) = 29.3"

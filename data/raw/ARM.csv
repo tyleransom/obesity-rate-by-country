@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Armenia,ARM,2016,19.5,crude,measured,published,18-69,national,STEPS 2016,"men 14.0 / women 25.0; n=2,349 (18-69); Armenia's first national STEPS; response rate only 42%"

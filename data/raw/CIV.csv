@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Côte d'Ivoire,CIV,2005,9.1,crude,measured,published,15-64,sub-national,STEPS 2005,"SUB-NATIONAL: Lagunes health regions 1-2 (Abidjan area), urban-skewed so runs above national; men 5.7 / women 11.6; n=4,530; fieldwork Sep-Oct 2005; overweight+obese (>=25) = 32.2"

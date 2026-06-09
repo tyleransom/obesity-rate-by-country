@@ -1,0 +1,5 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Mongolia,MNG,2005,9.8,crude,measured,published,15-64,national,STEPS 2005,"men 7.2 / women 12.5; n=3,411 (15-64); first national STEPS; the 2013 STEPS trend table later restated 2005 as 10.2"
+Mongolia,MNG,2009,12.5,crude,measured,published,15-64,national,STEPS 2009,"men 11.1 / women 14.1; n=5,638 (15-64)"
+Mongolia,MNG,2013,19.7,crude,measured,published,15-64,national,STEPS 2013,"men 15.2 / women 24.2; n=6,013 (15-64); sharp rise from 2009 on the same 15-64 base"
+Mongolia,MNG,2019,18.5,crude,measured,published,15-69,national,STEPS 2019,"men 16.6 / women 20.4; n=6,654 (15-69); age base widened to 15-69 (adds older, heavier 65-69) yet obesity fell vs 2013 (19.7) -> plateau is real, not an age artifact"

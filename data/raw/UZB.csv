@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Uzbekistan,UZB,2019,23.5,crude,measured,published,18-69,national,STEPS 2019,"men 21.5 / women 25.5; n=3,686 (BMI, 18-69); second national STEPS (first 2014 used non-standard age bands, gave 20.2); report in Russian"

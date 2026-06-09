@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Kazakhstan,KAZ,2021-2022,21.4,crude,measured,reconstructed,18-69,national,STEPS 2021-2022,"both-sexes total computed by pooling the published urban (873/4,401=19.8) and rural (568/2,319=24.5) BMI>=30 counts from Table 1 -> 1,441/6,720=21.4; n=6,720 (18-69), all 17 regions; Nazarbayev University national STEPS-method survey (NCT05122832); by-sex not separately published"

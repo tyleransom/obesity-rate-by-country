@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Tuvalu,TUV,2015,62.2,crude,measured,published,18-69,national,STEPS 2015,"men 55.2 / women 70.7; n=1,020 (BMI; 1,155 participants); first STEPS for Tuvalu; overweight (BMI>=25) 85.4; Polynesian"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Azerbaijan,AZE,2017,20.6,crude,measured,published,18-69,national,STEPS 2017,"men 14.7 / women 26.5; n=2,801 (18-69); Azerbaijan's first national STEPS; fieldwork Aug-Oct 2017, response 97.3%"

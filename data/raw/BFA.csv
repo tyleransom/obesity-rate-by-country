@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Burkina Faso,BFA,2013,4.5,crude,measured,published,25-64,national,STEPS 2013,"men 2.9 / women 6.0; n~4,800; fieldwork Sep-Nov 2013; overweight 13.4 (>=25 = 17.9)"

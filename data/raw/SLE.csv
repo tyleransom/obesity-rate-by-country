@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Sierra Leone,SLE,2009,8.0,crude,measured,published,25-64,national,STEPS 2009,"men 5 / women 11 (report rounds to whole %); n=5,483; overweight (25-29.9) men 16 / women 29"

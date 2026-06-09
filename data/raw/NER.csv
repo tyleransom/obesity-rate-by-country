@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Niger,NER,2021,4.9,crude,measured,published,18-69,national,STEPS 2021,"men 3.9 / women 6.3; n=5,709; overweight+obese (>=25) = 14.8; mean BMI 21.6"

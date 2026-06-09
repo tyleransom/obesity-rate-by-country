@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Nauru,NRU,2015-2016,70.2,crude,measured,published,18-69,national,STEPS 2015-2016,"men 71.0 / women 69.4; n=1,036 (BMI, 18-69); overweight (BMI>=25) 90.1; the highest measured obesity in the whole panel; rose from 63.6 in the 2004 first STEPS (on a matched 18-64 base)"

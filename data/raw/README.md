@@ -41,8 +41,8 @@ that encode, in closed vocabularies, the comparability caveats spelled out per c
 - **`age_group`** — adult age base as published (e.g. `20+`, `18-79`, `35-74`); see the
   cross-country comparability note at the foot of this file.
 - **`coverage`** — `national`, `sub-national` (GBR = England, NOR = Nord-Trøndelag county,
-  AUS 1980 = capital cities, NLD 1976-2002 = RIVM monitoring municipalities), or
-  `non-probability` (SWE = occupational cohort).
+  AUS 1980 = capital cities, NLD 1976-2002 = RIVM monitoring municipalities, SYR = Aleppo city,
+  CIV = Lagunes/Abidjan regions), or `non-probability` (SWE = occupational cohort).
 - **`source`** — short survey/study name (same vocabulary as `data/cleaned/obesity-by-sex.csv`).
 - **`note`** — short free-text caveat (double-quoted; may be empty).
 
@@ -54,8 +54,8 @@ computed by `combine.R`, `TRUE` for every row of a country whose waves do not al
 A `TRUE` flags an **age-base seam**: a raw year-on-year change in that series can be an artifact of the
 shifting age window, not a real trend — age-match the bands before reading it (the worked example is
 Israel's MABAT 25-64 &rarr; 18-64, where the apparent 22.9&rarr;17.0 drop is mostly the base change).
-As of this writing 21 countries are flagged: AUS, BRA, CHL, DZA, EGY, ESP, FIN, IRN, ISR, JPN, KOR, MAR,
-MWI, NLD, PER, PHL, PSE, RUS, SAU, THA, TUN. The stable-base multi-wave series (e.g. MOZ 25-64, RWA 15-64) are `FALSE`
+As of this writing 23 countries are flagged: AUS, BEN, BRA, CHL, DZA, EGY, ESP, FIN, IRN, ISR, JPN, KOR, MAR,
+MWI, NLD, PER, PHL, PSE, RUS, SAU, THA, TGO, TUN. The stable-base multi-wave series (e.g. MOZ 25-64, RWA 15-64) are `FALSE`
 and can be read directly.
 
 ---
@@ -406,6 +406,60 @@ and can be read directly.
   stitched to NFHS: NFHS measures height/weight but reports BMI &ge; 23/25 and covers only reproductive
   age (women 15-49, men 15-54), so its BMI &ge; 30 (computable only from microdata) is a different,
   younger age base and not comparable to NNMS 18-69.
+
+---
+
+## Bangladesh — `BGD.csv`  (national; WHO STEPS 2018, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2018
+  Bangladesh NCD Risk Factor Survey (STEPS)** — conducted by NIPSOM (National Institute of Preventive
+  and Social Medicine) with WHO technical assistance, fieldwork Sep 2017–Jun 2018 — was the **first**
+  time all three STEPS steps (behavioural, anthropometric, biochemical) were completed in a single
+  nationwide survey. Multistage, geographically stratified probability sample over BBS census-2011
+  PSUs covering all divisions; height/weight measured at Step 2 (n = 7,208 with anthropometry).
+- 2017-2018 = 5.4 — **published both-sexes total**, men 2.3 / women 8.6 (the large female excess
+  typical of South Asia, women ~3.7x men), mean BMI 22.7, overweight band (BMI 25.0-29.9) 20.5
+  (so BMI &ge; 25 totals ~25.9). SOURCE: WHO/NIPSOM, *Bangladesh NCD Risk Factor Survey 2018* fact
+  sheet, https://cdn.who.int/media/docs/default-source/searo/bangladesh/bangladesh-ncd-risk-factor-survey-2018.pdf
+  (full report: https://www.who.int/bangladesh/about-us/publications/m/item/2018-national-steps-survey-for-non-communicable-diseases-risk-factors-in-bangladesh).
+- SINGLE POINT — the earlier **STEPS 2010** wave used a different age base (25+) and its reports give
+  BMI &ge; 25 (~17% overweight), not a clean published both-sexes BMI &ge; 30 total, so it is not
+  stitched on; no comparable national measured &ge; 30 panel exists yet. **Not** NCD cutoffs: like
+  India, much Bangladeshi literature uses Asian BMI &ge; 23/25 — those figures are ~4-8x the &ge; 30
+  number; do not conflate.
+
+---
+
+## Nepal — `NPL.csv`  (national; WHO STEPS 2019, adults 15-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-69**. The **2019
+  Nepal STEPS Survey** (Nepal Health Research Council / MoHP / WHO) was a population-based household
+  survey with a multistage sample producing nationally representative data for ages 15-69; height and
+  weight measured at the household. n = 5,593, response rate 86.4%.
+- 2019 = 4.3 — **published both-sexes total**, men 3.2 / women 5.3, mean BMI 22.7, overweight+obese
+  (BMI &ge; 25) 24.3. SOURCE: NHRC, *Nepal STEPS Survey 2019 Fact Sheet*,
+  https://nhrc.gov.np/wp-content/uploads/2019/11/National-Factsheet-English-1.pdf
+  (results paper: Dhimal et al., *PLoS One* 2021, https://pmc.ncbi.nlm.nih.gov/articles/PMC8323895/).
+  AGE BASE: 15-69 — the floor is **15**, lower than the 18-69 STEPS countries; comparable in band to
+  countries flagged 15+ in the cross-country note. Nepal's only national measured BMI &ge; 30 point —
+  the 2013 STEPS wave (15-69) reports BMI &ge; 25 (~21%) but no clean published &ge; 30 total to anchor
+  a panel.
+
+---
+
+## Sri Lanka — `LKA.csv`  (national; WHO STEPS 2015, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The Sri Lanka
+  **STEPS Survey 2014-2015** (Ministry of Health / WHO, fieldwork Jul 2014–May 2015) used a multistage
+  sample representative of adults 18-69; height/weight measured at Step 2. n = 5,188.
+- 2014-2015 = 5.9 — **published both-sexes total**, men 3.5 / women 8.4 (large female excess, women
+  ~2.4x men), mean BMI 22.9, overweight+obese (BMI &ge; 25) 29.3. SOURCE: WHO STEPS Sri Lanka 2015
+  Fact Sheet, https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/sri-lanka/steps/steps-2015-fact-sheet-sri-lanka.pdf
+  (catalogue: https://ghdx.healthdata.org/record/sri-lanka-steps-noncommunicable-disease-risk-factors-survey-2014-2015).
+  Sri Lanka's only national measured BMI &ge; 30 point; the earlier SLDCS (Katulanda et al. 2005-06)
+  reported on Asian cutoffs, so it is not added.
+
+---
 
 ## South Africa — `ZAF.csv`  (national; SADHS, adults 18+, measured)
 
@@ -1140,6 +1194,173 @@ and can be read directly.
 
 ---
 
+## Ghana — `GHA.csv`  (national; WHO STEPS 2023, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2023
+  Ghana STEPS Survey** (Ghana Health Service / WHO; report launched Oct 2024) was the country's **first
+  nationwide NCD risk-factor survey** — multistage stratified probability sample, height/weight measured
+  at Step 2 (stadiometer + scale). Data collected from 5,438 participants weighted to the national 18-69
+  population.
+- 2023 = 13.4 — **published both-sexes total**, men 4.5 / women 22.8 (an enormous female skew, women
+  ~5x men), overweight band (BMI 25.0-29.9) 20.9 (so BMI &ge; 25 totals ~34.3), urban 16.9 vs rural 8.2.
+  The highest BMI &ge; 30 figure in the West Africa block — driven almost entirely by Ghanaian women.
+  SOURCE: Ghana Health Service / WHO, *Ghana STEPS Report 2023* (§3.14.4, Table 3.14.4.3 both-sexes;
+  Tables 3.14.4a-c by sex),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/ghana/steps/ghana-2023-steps-report.pdf
+  Ghana's only national measured BMI &ge; 30 point.
+
+---
+
+## Benin — `BEN.csv`  (national; WHO STEPS 2008 & 2015, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Two national STEPS waves; note the
+  **age base differs between waves**: 2008 = 25-64, 2015 = 18-69 (the 2015 survey lowered the floor to 18
+  and raised the cap to 69) — same age-seam structure as Malawi, so read the trend with that in mind.
+- 2008 = 9.4 — adults **25-64**, **published both-sexes total** [IC95% 8.7-10.1], men 4.3 (151/3,485) /
+  women 14.0 (479/3,419) — women significantly more obese; n = 6,904 (BMI). SOURCE: Ministère de la Santé /
+  OMS, *Rapport final de l'enquête STEPS Bénin 2008* (§5.7.1 Prévalence de l'obésité),
+  https://extranet.who.int/ncdsmicrodata/index.php/catalog/723 (analysis: Houehanou et al., "Magnitude of
+  Cardiovascular Risk Factors in Rural and Urban Areas in Benin: Findings from a Nationwide STEPS Survey",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC4422555/).
+- 2015 = 7.4 — adults **18-69**, **published both-sexes total**, men 4.6 / women 10.1 (large female skew),
+  overweight+obese (BMI &ge; 25) 23.2. SOURCE: OMS/Bénin, *Enquête STEPS 2015* note de synthèse (fact sheet),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/benin/steps/2015-steps-benin-factsheet-fr.pdf
+- TREND CAUTION: the apparent **9.4 &rarr; 7.4** fall is largely an **age-base artifact** — 2015 adds
+  low-obesity 18-24-year-olds to the base. Men are essentially flat (4.3 &rarr; 4.6); the headline drop is
+  carried entirely by the women's figure (14.0 &rarr; 10.1), much of which is the wider age window, not a
+  real decline. Age-match before reading the change.
+
+---
+
+## Senegal — `SEN.csv`  (national; WHO STEPS 2015, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. Senegal's
+  **first national STEPS** (2015, ANSD / MoH / WHO) — a three-stage nationally representative sample of
+  6,306 individuals (10% oversample), fieldwork Aug–Dec 2015; height/weight measured at Step 2. Pregnant
+  women and residents <6 months excluded; coverage rate 94.2%.
+- 2015 = 6.4 — **published both-sexes total**, men 2.5 / women 10.0 (large female skew, women 4x men),
+  overweight+obese (BMI &ge; 25) 22.1. SOURCE: OMS/Sénégal, *Enquête STEPS 2015* note de synthèse,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/senegal/steps/senegal_2015_steps_fs.pdf
+  Senegal's only national measured BMI &ge; 30 point.
+
+---
+
+## Togo — `TGO.csv`  (national; WHO STEPS 2010 & 2021, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Two national STEPS waves; the
+  **age base differs**: 2010 = 15-64, 2021 = 18-69 (the 2021 wave raised the floor to 18 and the cap to 69),
+  so the series is flagged `age_base_varies = TRUE` — but here the change is a strong **rise**, robust to
+  the base shift (see below).
+- 2010 = 6.2 — adults **15-64**, **published both-sexes total**, men 2.3 / women 9.8 (large female skew),
+  mean BMI 22.8, overweight+obese (BMI &ge; 25) 21.5; two-stage stratified cluster sample, n = 4,370,
+  response 91%, fieldwork Dec 2010–Jan 2011. SOURCE: OMS/Togo, *Enquête STEPS 2010* note de synthèse,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/togo/steps/2010_factsheettogo_fr.pdf
+- 2021 = 11.7 — adults **18-69**, **published both-sexes total** [IC95% 10.3-13.2], men 5.3 / women 18.1
+  (large female skew), overweight band (BMI 25.0-29.9) 19.1 (so BMI &ge; 25 totals 30.8); n = 3,880,
+  response 90%, fieldwork Dec 6 2021–Feb 21 2022. SOURCE: Ministère de la Santé / OMS, *Rapport final de
+  l'enquête STEPS Togo 2021* (§4.3.2, obésité IMC &ge; 30 = 11,7%) — the live MoH copy is currently offline,
+  so cite the Internet Archive snapshot,
+  https://web.archive.org/web/20250812045806/http://sante.gouv.tg/wp-content/uploads/2024/04/Togo-rapport-enquete-STEPS_2021_VF-10.06-2023-divsmnt_clean-FR-2.pdf
+  (cached at `data/tmp/TGO_steps_2021_report.pdf`).
+- TREND: obesity **nearly doubled** 2010&rarr;2021 (6.2 &rarr; 11.7), and the rise holds in **both sexes**
+  (men 2.3 &rarr; 5.3, women 9.8 &rarr; 18.1, each ~2x) — a genuine increase, not an age-base artifact: the
+  15-64&rarr;18-69 shift (drop 15-17, add 65-69) is small and partly self-cancelling next to a doubling.
+
+---
+
+## Niger — `NER.csv`  (national; WHO STEPS 2021, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2021 Niger
+  STEPS Survey** sampled adults 18-69 across the eight regions (multistage: ZD → households → individuals);
+  height/weight measured. 5,709 of 6,830 expected participated (response 83.6%).
+- 2021 = 4.9 — **published both-sexes total**, men 3.9 / women 6.3, mean BMI 21.6, overweight+obese
+  (BMI &ge; 25) 14.8. NOTE: the male/female gap here is **much narrower** than the rest of the West Africa
+  block (women only ~1.6x men, vs 4-5x in Ghana/Senegal) — Niger's overall BMI is the lowest in the block.
+  SOURCE: Niger MoH / WHO, *Rapport de l'enquête nationale sur les facteurs de risque des MNT — STEPS 2021*
+  (obese row in the summary indicators table),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/niger/rapport-de-l-enqu-te-nationale-sur-les-facteurs-final.pdf
+  Niger's only national measured BMI &ge; 30 point.
+
+---
+
+## Burkina Faso — `BFA.csv`  (national; WHO STEPS 2013, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2013 Burkina
+  Faso STEPS Survey** was a nationally representative countrywide sample of adults 25-64 (fieldwork
+  Sep 26–Nov 18, 2013); height/weight measured at Step 2. n &asymp; 4,800 (4,737 with data). AGE BASE:
+  25-64 (no 15-24, no 65+) — the narrowest adult window in the West Africa block.
+- 2013 = 4.5 — **published both-sexes total**, men 2.9 / women 6.0 (female skew), overweight band
+  (BMI 25.0-29.9) 13.4 (so BMI &ge; 25 totals ~17.9). SOURCE: OMS/Burkina Faso, *Enquête STEPS 2013* note
+  de synthèse,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/burkina-faso/steps/burkinafaso-2013-steps-factsheet.pdf
+  Burkina Faso's only national measured BMI &ge; 30 point.
+
+---
+
+## Côte d'Ivoire — `CIV.csv`  (WHO STEPS 2005, adults 15-64, measured) — SUB-NATIONAL (Lagunes / Abidjan)
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **15-64** — but **SUB-NATIONAL**: the
+  2005 Côte d'Ivoire STEPS (Ministère de la Santé / WHO, fieldwork Sep 10–Oct 7, 2005) covered only the
+  **Régions sanitaires des Lagunes 1 & 2** (the Abidjan metropolitan area), not the whole country. A
+  two-stage cluster sample (56 clusters × 30 households) representative of the Lagunes regions; n = 4,530
+  adults 15-64, height/weight measured at Step 2. Côte d'Ivoire has **no national STEPS** (the only other
+  recent measured source is the 2021 DHS, women 15-49 only), so this is the best available measured
+  BMI &ge; 30 point — flagged sub-national, in the same category as GBR (England), SYR (Aleppo), NOR
+  (one county) and the AUS 1980 capital-cities point.
+- 2005 = 9.1 — **published both-sexes total**, men 5.7 / women 11.6, overweight+obese (BMI &ge; 25) 32.2.
+  Because the Lagunes region is **urban/Abidjan-heavy**, this runs **above** what a national Ivorian figure
+  would be (the report's own urban/rural split shows obesity concentrated in town) — do not read 9.1% as a
+  national rate. SOURCE: Ministère de la Santé et de l'Hygiène Publique / OMS, *Enquête STEPS 2005 —
+  Régions sanitaires des Lagunes* (summary indicators table; obésité globale 9.1%),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/c%C3%B4te-d-ivoire/steps/steps-report-cotedivoire-2005.pdf
+
+---
+
+## The Gambia — `GMB.csv`  (national; WHO STEPS 2010, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2010 Gambia
+  STEPS Survey** (a nationwide population-based health examination survey) used probability-proportional-to-size
+  sampling; height/weight measured. n = 4,111 recruited (BMI analysis on 3,533 non-pregnant adults with valid
+  measurements), response 78%, fieldwork Jan–Mar 2010. AGE BASE: 25-64 (no 15-24, no 65+).
+- 2010 = 12.1 — **published both-sexes total**, men 7.9 / women 16.5 (large female skew), overweight+obese
+  (BMI &ge; 25) 39.5 ("almost half of women and more than a third of men"). SOURCE: WHO, *2010 STEPS Fact
+  Sheet — The Gambia*,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/gambia/steps/gambia-2010-steps-factsheet.pdf
+  (obesity analysis: Cham et al., "The silent epidemic of obesity in The Gambia", *BMJ Open* 2020,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC7265034/). The Gambia's only national measured BMI &ge; 30 point.
+
+---
+
+## Sierra Leone — `SLE.csv`  (national; WHO STEPS 2009, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2009 Sierra
+  Leone STEPS Survey** (Steps 1-2) was a multistage probability sample; height/weight measured. n = 5,483
+  recruited (BMI subsample ~4,986). AGE BASE: 25-64.
+- 2009 = 8 — **published both-sexes total** (the report rounds BMI categories to **whole percentages**), men 5
+  / women 11; overweight band (BMI 25.0-29.9) men 16 / women 29. SOURCE: Ministry of Health & Sanitation / WHO,
+  *The Prevalence of the Common Risk Factors of Non-Communicable Diseases in Sierra Leone — 2009 STEPS Report*
+  (executive summary: "5%, 11% and 8% of males, females and both sexes respectively were classified as obese
+  (BMI &ge; 30)"),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/sierra-leone/steps/2009_steps_report_sierraleone.pdf
+  Sierra Leone's only national measured BMI &ge; 30 point — recorded as 8.0 (integer-rounded source).
+
+---
+
+## Cabo Verde — `CPV.csv`  (national; IDNT II / WHO STEPS 2020, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2020 IDNT II**
+  (*II Inquérito às Doenças Não Transmissíveis*, Cabo Verde's second WHO STEPS) used a multistage cluster sample
+  (one adult per household); height/weight measured. n = 3,721, response 64%.
+- 2020 = 14.3 — **published both-sexes total**, men 6.7 / women 22.5 (very large female skew, women >3x men),
+  overweight+obese (BMI &ge; 25) 44.2, urban 15.8 vs rural 11.4. SOURCE: Ministério da Saúde / OMS, *Relatório
+  IDNT II* (§3.1, both-sexes obesity table "Percentagem da população adulta obesa (IMC &ge; 30) = 14,3%"),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/cabo-verde/relat-rio-idnt-ii---14-12-2022---final.pdf
+- The report states the earlier **IDNT 2007** (first STEPS, n = 1,760) measured obesity at **10.5%**, implying a
+  ~4-point rise 2007&rarr;2020 — but the 2007 figure carries a source caveat (asterisk) and its age base / by-sex
+  total were not re-verified here, so only the 2020 point is added (2007 noted as context, not stitched on).
+
+---
+
 ## Kuwait — `KWT.csv`  (national; WHO STEPS 2014, adults 18-69, measured) — KUWAITI NATIONALS
 
 - Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **18-69**. The **2014 Kuwait STEPS
@@ -1431,6 +1652,327 @@ and can be read directly.
 
 ---
 
+## Fiji — `FJI.csv`  (national; WHO STEPS 2011, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2011 Fiji
+  STEPS Survey** (Ministry of Health / WHO; Fiji's second STEPS after 2002) measured height/weight on
+  n = 2,586 adults (response 53%).
+- 2011 = 32.1 — **published both-sexes total**, women far above men (women ~40 / men ~22). Fiji is
+  **multiethnic** and obesity splits sharply by ethnicity: iTaukei (Melanesian Fijian) men 28.9 / women
+  52.9 vs Indo-Fijian men 9.4 / women 26.6 — so the national figure is a population-weighted blend and
+  runs well below the Polynesian/Micronesian Pacific. Obesity rose **8.5 points** from the 2002 STEPS
+  (~23.6 both-sexes); the 2002 wave is noted as context, not carried as a second row (its both-sexes
+  total was not re-verified from a primary table here). SOURCE: WHO/MoH, *Fiji NCD STEPS Report 2011*,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/fiji/steps/fijistepsreport.pdf
+  (cached at `data/tmp/FJI_steps_2011_report.pdf` — a **scanned image PDF, no text layer**; the 32.1%
+  headline is restated by the Fiji Ministry of Health, https://www.health.gov.fj/obesity/how-prevalent-is-obesity-in-fiji/,
+  and the ethnic/sex breakdown in Lin et al., "Diabetes and obesity trends in Fiji over 30 years",
+  *J Diabetes* 2016, https://pubmed.ncbi.nlm.nih.gov/26201444/). Fiji's only carried measured BMI &ge; 30 point.
+
+---
+
+## Tonga — `TON.csv`  (national; WHO STEPS 2004 & 2012, adults 25-64, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64** (same age base
+  both waves — no age seam). Two national STEPS waves, both **published both-sexes totals**. Tonga sits
+  among the highest obesity levels on Earth.
+- 2004 = 68.7 — men 60.7 / women 76.3. SOURCE: restated in the 2012 report's cross-wave comparison
+  (Table 70), from the **2004 Tonga STEPS**.
+- 2012 = 67.6 [&plusmn;2.9] — men 57.2 / women 77.6; n = 2,273 (BMI, both sexes), overweight (BMI &ge; 25)
+  90.7. SOURCE: *Kingdom of Tonga NCD Risk Factors STEPS Report 2012* (§4.6.2, Table 39 both-sexes;
+  Tables 68-70 the 2004 vs 2012 comparison),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/tonga/steps/2012-tonga-steps-report.pdf
+  (cached at `data/tmp/TON_steps_2012_report.pdf`).
+- TREND: a slight, **non-significant decline** 2004 &rarr; 2012 (68.7 &rarr; 67.6) — essentially flat at a
+  very high level; women edged up (76.3 &rarr; 77.6) while men fell (60.7 &rarr; 57.2). Same 25-64 base, so
+  not an age artifact.
+
+---
+
+## Samoa — `WSM.csv`  (national; WHO STEPS 2002 & 2013, adults 25-64, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64** (same age base both
+  waves). Two national STEPS waves. NOTE: Samoan reports commonly headline the **Polynesian-specific
+  BMI &ge; 32 cutoff** (which gives lower numbers); the rows here are the **standard BMI &ge; 30** figures,
+  taken from Lin et al.'s reanalysis of the STEPS microdata so the basis matches the rest of the panel.
+- 2002 = 55.6 — men 43.0 / women 66.4; n = 2,554 (Polynesian &ge; 32 cutoff would give 42.6 both-sexes).
+- 2013 = 65.2 — men 53.1 / women 73.4; n = 1,725 (Polynesian &ge; 32 cutoff = 53.4); a **+9.6-point rise**
+  over the decade, holding in both sexes. SOURCE: Lin et al., "Trends in diabetes and obesity in Samoa
+  over 35 years, 1978-2013", *Diabetic Medicine* 34(5):654-661 (2017),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC5411261/ (Table reporting both standard BMI &ge; 30 and the
+  Polynesian &ge; 32 cutoff for the 2002 and 2013 WHO Samoa STEPS). Both are **published both-sexes totals**.
+
+---
+
+## Cook Islands — `COK.csv`  (national; WHO STEPS 2003-04 & 2013-15, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Two national STEPS waves; the
+  **age base differs**: 2003-04 = 25-64, 2013-15 = 18-64 (the second wave lowered the floor to 18), so the
+  series is flagged `age_base_varies = TRUE`.
+- 2003-04 = 61.4 [&plusmn;2.7] — adults **25-64**, men 57.4 / women 65.7; n = 2,036, response 90%, fieldwork
+  Sep 2003-May 2004 across 9 islands; overweight (BMI &ge; 25) 88.5. SOURCE: *Cook Islands NCD Risk Factors
+  STEPS Report* (§Table 40 both-sexes),
+  https://www.fao.org/fileadmin/templates/agphome/documents/horticulture/WHO/fiji/steps/cookislandsSTEPS-final_1_.pdf
+  (cached at `data/tmp/COK_steps_2003_report.pdf`).
+- 2013-15 = 69.8 [67.8-71.8] — adults **18-64**, men 68.7 / women 70.7; n = 1,272, response 63%, fieldwork
+  Feb 2013-Apr 2015; overweight (BMI &ge; 25) 89.5. SOURCE: *Cook Islands STEPS Survey 2013-2015 Fact Sheet*,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/cook-islands/cook-islands-fact-sheet-steps-survey-2013-2015.pdf
+  (cached at `data/tmp/COK_steps_2013_factsheet.pdf`).
+- TREND CAUTION: the 61.4 &rarr; 69.8 rise is partly an **age-base artifact** — the 2013-15 wave adds
+  lower-obesity 18-24-year-olds to the base, which would *lower* the figure, so the true secular rise on a
+  matched base is likely even steeper than the headline. Age-match before reading the change.
+
+---
+
+## Vanuatu — `VUT.csv`  (national; WHO STEPS 2011, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2011 Vanuatu
+  STEPS Survey** (Ministry of Health / WHO; Vanuatu's second NCD survey) was a six-province probability
+  sample, height/weight measured; n = 4,413 (BMI), response 94%, fieldwork Aug-Oct 2011.
+- 2011 = 18.8 [16.9-20.8] — **published both-sexes total**, men 13.9 / women 23.3, overweight (BMI &ge; 25)
+  50.9. The **lowest obesity in the Pacific block** — Vanuatu is Melanesian, and even its rate sits below
+  most of the Polynesian/Micronesian neighbours. SOURCE: *Vanuatu NCD Risk Factors STEPS Report* (§4.8.2,
+  Table 43 both-sexes),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/vanuatu/steps/vanuatu-steps-report-2013.pdf
+  (cached at `data/tmp/VUT_steps_2013_report.pdf`).
+- WHY NO EARLIER ROW: the 1998 SPC/MoH NCD survey (Carlot-Tary et al. 2000, n = 1,620, three villages per
+  province) put obesity at 15.9 (men 12.2 / women 19.6), but the report itself states it is "not directly
+  comparable" in sample design — so 1998 is noted here, not stitched on. Vanuatu's only carried point.
+
+---
+
+## Solomon Islands — `SLB.csv`  (national; WHO STEPS 2005-06, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2005-06
+  Solomon Islands STEPS Survey** (MoH / WHO, fieldwork Dec 2005-Nov 2006) was a multistage probability
+  sample across the main provinces; height/weight measured. n = 1,665 (BMI, 25-64).
+- 2005-06 = 32.8 [&plusmn;3.3] — **published both-sexes total**, men 25.8 / women 40.4, overweight (BMI &ge; 25)
+  67.4. Like Vanuatu, **Melanesian and well below** the Polynesian/Micronesian Pacific. SOURCE: *Solomon
+  Islands NCD Risk Factors STEPS Report* (§Table 45 both-sexes),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/solomon-islands/steps/2006-solomon-islands-steps-report.pdf
+  (cached at `data/tmp/SLB_steps_2006_report.pdf`). Solomon Islands' only national measured BMI &ge; 30 point.
+
+---
+
+## Kiribati — `KIR.csv`  (national; WHO STEPS 2004-06, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2004-06
+  Kiribati STEPS Survey** (MoH / WHO) sampled South Tarawa, the rest of Tarawa, and four outer islands
+  (Butaritari, Makin, Onotoa, Beru), fieldwork May 2004-Sep 2006; height/weight measured. n = 1,755 (BMI,
+  25-64), response 88%.
+- 2004-06 = 50.6 — **published both-sexes total**, men 41.7 / women 58.9, overweight (BMI &ge; 25) 81.5.
+  Micronesian — among the highest in the panel. SOURCE: *Kiribati NCD Risk Factors STEPS Report* (§Table 39
+  both-sexes),
+  https://www.fao.org/fileadmin/templates/agphome/documents/horticulture/WHO/fiji/steps/Kiribati_STEPS_Report.pdf
+  (cached at `data/tmp/KIR_steps_2006_report.pdf`). Kiribati's only national measured BMI &ge; 30 point.
+
+---
+
+## Nauru — `NRU.csv`  (national; WHO STEPS 2015-16, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2015-16 Nauru
+  STEPS Survey** (Nauru's second STEPS, after 2004) measured height/weight on n = 1,036 (BMI, 18-69).
+- 2015-16 = 70.2 [67.2-73.3] — **published both-sexes total**, men 71.0 / women 69.4 (no significant sex
+  difference — unusual; most of the panel is strongly female-skewed), overweight (BMI &ge; 25) 90.1. **The
+  highest measured obesity in the entire panel.** SOURCE: *Nauru NCD Risk Factors STEPS Report 2015-2016*
+  (Table 151 both-sexes),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/nauru/nauru-2015-steps-report.pdf
+  (cached at `data/tmp/NRU_steps_2015_report.pdf`).
+- WHY NO EARLIER ROW: Nauru's first STEPS (2004, adults 15-64) is referenced in the 2015 report's own
+  trend section, which on a **matched 18-64 base** shows obesity rising **63.6 &rarr; 70.5** — a real
+  increase. The 2004 published both-sexes total on its own 15-64 base was not re-verified from a primary
+  table here, so only the 2015-16 point is carried (2004 noted as context).
+
+---
+
+## Tuvalu — `TUV.csv`  (national; WHO STEPS 2015, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2015 Tuvalu
+  STEPS Survey** was **Tuvalu's first STEPS** — ~1,155 adults 18-69 participated (n = 1,020 with BMI);
+  height/weight measured.
+- 2015 = 62.2 [57.4-67.0] — **published both-sexes total**, men 55.2 / women 70.7, overweight (BMI &ge; 25)
+  85.4. Polynesian — among the highest in the panel. SOURCE: *Tuvalu NCD Risk Factors STEPS Report 2015*
+  (Table 129 both-sexes),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/tuvalu/tuvalu-steps-report-2015.pdf
+  (cached at `data/tmp/TUV_steps_2015_report.pdf`). Tuvalu's only national measured BMI &ge; 30 point.
+
+---
+
+## Mongolia — `MNG.csv`  (national; WHO STEPS 2005 / 2009 / 2013 / 2019, measured) — 4-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, all **published both-sexes totals**.
+  Four national STEPS waves — a full panel. AGE-BASE SEAM: 2005, 2009, 2013 are adults **15-64**; the 2019
+  wave widened the upper bound to **15-69**, so the series is flagged `age_base_varies = TRUE`. Like the
+  rest of the panel, women run well above men.
+- 2005 = 9.8 — adults **15-64**, men 7.2 / women 12.5; n = 3,411. **First national STEPS.** SOURCE:
+  *Mongolian STEPS Survey on the Prevalence of NCD Risk Factors 2005* (Dec 2006 report, summary table
+  "Percentage who are obese (BMI &ge; 30)"),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/mongolia/steps/december-2006-mongolia-steps-survey.pdf
+  (cached at `data/tmp/MNG_2005.pdf`). NOTE: the 2013 report's cross-wave trend table later **restated 2005
+  as 10.2** (re-weighted); the row keeps the **9.8** from the primary 2005 report.
+- 2009 = 12.5 [10.8-14.3] — adults **15-64**, men 11.1 / women 14.1; n = 5,638. SOURCE: *Mongolia STEPS
+  Survey 2009* (summary table, "Percentage who are obese (BMI &ge; 30)"),
+  https://extranet.who.int/fctcapps/sites/default/files/2023-04/mongolia_annex1_steps_survey_2009.pdf
+  (cached at `data/tmp/MNG_2009.pdf`).
+- 2013 = 19.7 [18.0-21.5] — adults **15-64**, men 15.2 / women 24.2; n = 6,013. A **sharp rise** from 2009
+  on the **same 15-64 base** (12.5 &rarr; 19.7, +7.2 pp) — a genuine secular increase, not an age artifact.
+  SOURCE: *Third national STEPS Survey 2013* (summary table b. "Proportion of population who are obese
+  (BMI &ge; 30)"),
+  https://extranet.who.int/fctcapps/sites/default/files/2023-04/mongolia_2018_annex-3_STEPs_report_2013.pdf
+  (cached at `data/tmp/MNG_2013.pdf`).
+- 2019 = 18.5 [17.3-19.7] — adults **15-69**, men 16.6 / women 20.4; n = 6,654. SOURCE: *Fourth national
+  STEPS Survey 2019, Brief Summary* (English; "Percentage of population who are obese (BMI &ge; 30)"),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/mongolia/mongolia-steps-survey---2019_brief-summary_english.pdf
+  (cached at `data/tmp/MNG_2019.pdf`).
+- TREND CAUTION (the right direction): 2013 &rarr; 2019 shows a slight **fall** (19.7 &rarr; 18.5) *despite* the
+  age base widening to 15-69 — adding the older, heavier 65-69 group should *raise* the headline, so the
+  underlying change on a matched base is a genuine **plateau (or slight decline)**, not an age artifact. The
+  big move in the series is the 2009&rarr;2013 jump; obesity has been flat-to-easing since.
+- NOT carried as separate rows: the Chimeddamba et al. 2016 trend paper (*Obesity* 24(10)) reports
+  **age-standardised** by-sex obesity (men 10.8&rarr;17.6, women 18.9&rarr;26.4, 2005&rarr;2013) — the wrong
+  *basis* for this crude repo (cf. China/Italy), so it is context, not data.
+
+---
+
+## Georgia — `GEO.csv`  (national; WHO STEPS 2010 & 2016, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, both **published both-sexes totals**.
+  Two national STEPS waves. AGE-BASE SEAM: 2010 = adults **18-64**, 2016 = adults **18-69** (the second wave
+  raised the ceiling), so the series is flagged `age_base_varies = TRUE`. Female excess throughout.
+- 2010 = 25.1 [23.3-26.8] — adults **18-64**, men 21.8 / women 28.5; n = 6,497, fieldwork Aug-Dec 2010.
+  **Georgia's first national STEPS.** SOURCE: *Georgia STEPS Survey 2010* (summary table "Percentage who
+  are obese (BMI &ge; 30)"),
+  https://extranet.who.int/fctcapps/sites/default/files/2023-04/georgia_2016_annex1_STEPS_2010.pdf
+  (cached at `data/tmp/GEO_2010.pdf`); the same 25.1 both-sexes figure is restated in Sturua et al.,
+  "The burden of NCDs and their related risk factors in Georgia, 2015", https://pmc.ncbi.nlm.nih.gov/articles/PMC6696664/.
+- 2016 = 33.2 [31.3-35.2] — adults **18-69**, men 30.2 / women 36.0; n = 5,554, response 75.7%, fieldwork
+  Jun-Sep 2016. SOURCE: *NCD Risk-Factor STEPS Survey, Georgia, 2016* (English summary, "Percentage who are
+  obese (BMI &ge; 30)"),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/georgia/steps_georgia_2016_eng_summary_2016_final.pdf
+  (cached at `data/tmp/GEO_2016.pdf`).
+- TREND CAUTION: the **+8.1-point** jump (25.1 &rarr; 33.2) is partly an age-base artifact — the 2016 wave adds
+  the older, heavier **65-69** group to the base, which *raises* the headline, so the secular rise on a
+  matched 18-64 base is smaller than 8 pp (but still real). Age-match before reading the change.
+
+---
+
+## Armenia — `ARM.csv`  (national; WHO STEPS 2016, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. **Armenia's first
+  national STEPS** (fieldwork Sep-Dec 2016); height/weight measured. n = 2,349; the **response rate was only
+  42%** (low for STEPS — noted as a quality caveat, but the both-sexes total is the published headline).
+- 2016 = 19.5 [17.4-21.6] — **published both-sexes total**, men 14.0 / women 25.0, overweight (BMI &ge; 25)
+  47.7. The female excess is large (women 1.8&times; men). SOURCE: *Armenia STEPS Survey 2016 — Prevalence of
+  NCD Risk Factors* (full national report, p. of executive summary: "One-fifth of respondents (19.5%) were
+  obese"; §obesity gives 19.5% [17.4-21.6] of the 18-69 population), cached at
+  `data/tmp/ARMENIA  STEPS Survey 2016-.pdf`; the same table is in the 2-page *WHO Fact Sheet* on the NCD
+  microdata catalog, https://extranet.who.int/ncdsmicrodata/index.php/catalog/102/download/1011
+  (cached at `data/tmp/ARM_2016_fs.pdf`). NOTE: the widely-cited 19.5 from the 2016 Global Nutrition Report
+  is a **modelled** estimate; the row here is the **survey** figure, which coincidentally matches. Armenia's
+  only national measured BMI &ge; 30 point.
+
+---
+
+## Azerbaijan — `AZE.csv`  (national; WHO STEPS 2017, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. **Azerbaijan's first
+  national STEPS** (fieldwork 24 Aug-24 Oct 2017, response 97.3%); height/weight measured. n = 2,801 (1,136
+  men / 1,665 women).
+- 2017 = 20.6 [18.5-22.7] — **published both-sexes total**, men 14.7 / women 26.5, overweight (BMI &ge; 25)
+  55.5. Large female excess (women 1.8&times; men). SOURCE: *Prevalence of NCD Risk Factors in Azerbaijan
+  Republic 2017* (English STEPS report, summary table "Percentage who are obese (BMI &ge; 30)"; Table 45),
+  https://isim.az/upload/File/docs/STEPS_Azerbaijan_2017_eng.pdf
+  (cached at `data/tmp/AZE_2017.pdf`). Azerbaijan's only national measured BMI &ge; 30 point.
+
+---
+
+## Tajikistan — `TJK.csv`  (national; WHO STEPS 2016, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. **Tajikistan's first
+  national STEPS** (height/weight measured); n = 2,718 (1,100 men / 1,618 women), response 94.3%. The report
+  is in **Russian** (*&laquo;Оба пола / Мужчины / Женщины&raquo;* = both sexes / men / women).
+- 2016 = 13.5 [11.4-15.5] — **published both-sexes total**, men 11.9 / women 15.4, overweight (BMI &ge; 25)
+  46.7. Among the lower rates in the Central Asia block. SOURCE: *Распространенность факторов риска НИЗ в
+  Республике Таджикистан (STEPS 2016)* — full national report (summary table "Доля населения, страдающего
+  ожирением (ИМТ&ge;30)"; exec summary "13,5% живут с ожирением"),
+  https://extranet.who.int/ncdsmicrodata/index.php/catalog/270/download/6033
+  (cached at `data/tmp/TJK_2016.pdf`). Tajikistan's only national measured BMI &ge; 30 point.
+
+---
+
+## Turkmenistan — `TKM.csv`  (national; WHO STEPS 2013-2014 & 2018, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, both **published both-sexes totals**.
+  Two national STEPS waves. AGE-BASE SEAM: 2013-2014 = adults **18-64**, 2018 = **18-69** (the second wave
+  raised the ceiling), so the series is flagged `age_base_varies = TRUE`. Both reports in **Russian**.
+  Women run above men in both waves (the regional pattern). The lowest obesity in the Central Asia block.
+- 2013-2014 = 14.8 [13.3-16.2] — adults **18-64**, men 12.0 / women 17.9; n = 5,308, response 88.5%.
+  **Turkmenistan's first STEPS** (fieldwork Sep-Oct 2013 + Jan 2014). SOURCE: *STEPS Туркменистан 2013* —
+  country report (Russian), summary table "Процент страдающих ожирением (ИМТ &ge; 30)",
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/turkmenistan/2013_tkm_steps_report.pdf
+  (cached at `data/tmp/TKM_2013.pdf`). **DATA-ENTRY CAUTION:** the report's *prose* (§Физические измерения)
+  swaps the sexes — it reads "мужчины 17.9 / женщины 12.0", but the **summary table** gives men 12.0 / women
+  17.9 (women higher, consistent with the overweight row, with 2018, and with every neighbour). The table is
+  authoritative; the prose is a typo. Don't "correct" the row back to the prose values.
+- 2018 = 15.0 [—] — adults **18-69**, men 12.7 / women 17.5; n = 4,053 (1,716 men / 2,337 women), response
+  93.8% (*&laquo;Каждый седьмой респондент (15.0%) страдает ожирением&raquo;* — "one in seven is obese").
+  SOURCE: *STEPS Туркменистан 2018* — country report (Russian),
+  https://extranet.who.int/ncdsmicrodata/index.php/catalog/854/download/6018
+  (cached at `data/tmp/TKM_2018.pdf`).
+- TREND: essentially **flat** (14.8 &rarr; 15.0) — and since the 2018 base added the older, heavier 65-69
+  group, the underlying change on a matched 18-64 base is flat-to-slightly-down. Age-match before reading it.
+
+---
+
+## Uzbekistan — `UZB.csv`  (national; WHO STEPS 2019, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. **Uzbekistan's
+  second nationwide STEPS** (the 2014 first wave used non-standard age bands — 18-24 / 30-44 / 45-64 with
+  gaps — so it is not carried; 2019 covers 18-69 continuously). Height/weight measured; n = 3,686 (with BMI).
+  Report in **Russian**.
+- 2019 = 23.5 [21.2-25.9] — **published both-sexes total**, men 21.5 / women 25.5, overweight (BMI &ge; 25)
+  32.9 (Таблицы 109-110). The high end of the Central Asia block. SOURCE: *Распространенность факторов риска
+  НИЗ в Республике Узбекистан (STEPS 2019)* (WHO/Europe; IRIS),
+  https://iris.who.int/server/api/core/bitstreams/b2c8ef03-ccf3-42b6-a618-030f29c22135/content
+  (cached at `data/tmp/UZB_2019.pdf`). NOTE: the 2014 first STEPS reported 20.2% obesity (cited in the 2019
+  report's intro for comparison) — context, not a carried row, because of its broken age bands.
+
+---
+
+## Kazakhstan — `KAZ.csv`  (national; STEPS 2021-2022, adults 18-69, measured) — single point, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. A nationally
+  representative WHO-STEPS-methodology survey (all 17 regions), **n = 6,720**, fieldwork Dec 2021-May 2022,
+  led by Nazarbayev University (ClinicalTrials NCT05122832). Height/weight measured.
+- 2021-2022 = 21.4 — **RECONSTRUCTED both-sexes total**: the published Table 1 reports BMI categories split
+  by **urban vs rural**, not a single total column, so the national figure is computed by pooling the obese
+  (BMI &ge; 30) counts — urban 873/4,401 = 19.8, rural 568/2,319 = 24.5 &rarr; **1,441/6,720 = 21.4**. By-sex
+  is not separately published in that table. SOURCE: *Socio-demographic, behavioral, and biological risk
+  factors of hypertension in Kazakhstan: results of a national study* (Table 1),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC12888478/ (full-text XML cached at `data/tmp/KAZ_htn.xml`).
+- NOT carried: an earlier 2015-17 STEPS-method study (Supiyev et al., diabetes) is **sub-national** (4
+  oblasts) with a 76%-female sample — not nationally representative, so context only. The widely-quoted
+  modelled NCD-RisC figures (women 25.3 / men 21.4) agree with the 21.4 national crude here.
+
+---
+
+## Kyrgyzstan — `KGZ.csv`  (national; WHO STEPS 2013, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. AGE BASE **25-64** (narrower than the
+  **18-69** of the rest of the Central Asia block — age-match before comparing). The 2013 Kyrgyzstan STEPS
+  was a **nationally representative** multistage sample: 130 primary sampling units drawn from 1,884
+  nationwide (probability-proportional-to-size), urban/rural per the national split (~40% urban / 60% rural),
+  Kish-method household selection, stage weights applied; n = 2,623. Height/weight measured.
+- 2013 = 23.1 — **published both-sexes total**, men 17.6 / women 29.0 (p &lt; 0.05; large female excess),
+  overweight (BMI 25-29.9) 33.1. SOURCE: *Распространенность факторов риска НИЗ в Кыргызстане (оценка
+  методом ВОЗ STEPS)* — Ministry of Health of the Kyrgyz Republic / National Center of Cardiology and
+  Therapy, *Central Asian Journal of Global Health* (2017), PubMed
+  https://pubmed.ncbi.nlm.nih.gov/28290823/ (full text cached at `data/tmp/KyrgyzstanSTEPS.docx`; extracted
+  text `data/tmp/KGZ_steps.txt`). The abstract's "24-64" is a typo — Methods state the target population is
+  **25-64**. Kyrgyzstan's only national measured BMI &ge; 30 point.
+
+---
+
 ## Cross-country comparability notes
 
 - **Age base differs**: NZ 15+, UK/US 16+, Australia/Canada 18+, Ireland 18-64 (note the upper cap),
@@ -1449,6 +1991,14 @@ and can be read directly.
   is &ge;20, 2016/2021 are 18+), Colombia 18-64 (ENSIN, note the upper cap), Poland 20-74 (WOBASZ),
   Malaysia 18+ (NHMS), Singapore **18-74** (the NPHS base; the older NHS series is 18-69),
   Ecuador **19-59** (ENSANUT caps at 59 — no 60+, runs low), Kenya 18-69 (STEPS caps at 69).
+  **Pacific (WHO STEPS):** Tonga/Samoa/Solomon Islands/Kiribati 25-64, Vanuatu 25-64, Cook Islands
+  25-64 &rarr; **18-64** (age seam at the 2013-15 wave), Nauru/Tuvalu **18-69**.
+- **The Pacific is the high end of the whole panel**: Nauru (70.2), Cook Islands (69.8), Tonga (67.6-68.7),
+  Samoa (65.2), Tuvalu (62.2) and Kiribati (50.6) are the most obese series anywhere here — Polynesian and
+  Micronesian populations. The **Melanesian** Pacific runs far lower (Solomon Islands 32.8, Vanuatu 18.8),
+  and **Fiji** (32.1) sits in between, dragged down by its large lower-obesity Indo-Fijian population.
+  Several Pacific series also break the panel's usual large female skew — **Nauru** has no significant
+  sex difference, and **Cook Islands** is near-parity (men 68.7 / women 70.7).
 - **Coverage / basis caveats**: GBR = England (HSE) only; Norway = HUNT, one county (Nord-Trøndelag),
   not national; Sweden = an employed occupational cohort, not a probability sample; **Denmark = the
   only self-reported series** (understates — not comparable head-to-head); Argentina = ENNyS 2,

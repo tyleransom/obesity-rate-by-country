@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Fiji,FJI,2011,32.1,crude,measured,published,25-64,national,STEPS 2011,"women far above men (women ~40 / men ~22); n=2,586; response 53%; rose 8.5 points since the 2002 STEPS (~23.6); multiethnic - iTaukei obesity (men 28.9 / women 52.9) ~2-3x Indo-Fijian (men 9.4 / women 26.6)"

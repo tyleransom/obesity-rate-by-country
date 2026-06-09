@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Ghana,GHA,2023,13.4,crude,measured,published,18-69,national,STEPS 2023,"men 4.5 / women 22.8; first nationwide STEPS; n=5,438; overweight 20.9 (>=25 = 34.3); urban 16.9 vs rural 8.2"

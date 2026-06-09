@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Vanuatu,VUT,2011,18.8,crude,measured,published,25-64,national,STEPS 2011,"men 13.9 / women 23.3; n=4,413 (BMI); response 94%; fieldwork Aug-Oct 2011; second STEPS (the 1998 SPC NCD survey put obesity ~15.9, village-based, not directly comparable); lowest obesity in the Pacific block (Melanesian)"

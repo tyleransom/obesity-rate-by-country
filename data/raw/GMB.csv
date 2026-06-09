@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Gambia,GMB,2010,12.1,crude,measured,published,25-64,national,STEPS 2010,"men 7.9 / women 16.5; n=4,111 (BMI ~3,533); fieldwork Jan-Mar 2010; response 78%; overweight+obese (>=25) = 39.5"

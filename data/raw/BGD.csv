@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Bangladesh,BGD,2017-2018,5.4,crude,measured,published,18-69,national,STEPS 2018,"men 2.3 / women 8.6; NIPSOM/WHO; first all-3-step national STEPS; measured n=7,208; overweight 25.0-29.9 = 20.5"

@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Togo,TGO,2010,6.2,crude,measured,published,15-64,national,STEPS 2010,"men 2.3 / women 9.8; n=4,370; response 91%; fieldwork Dec 2010-Jan 2011; overweight+obese (>=25) = 21.5; age base 15-64 (vs 18-69 in 2021)"
+Togo,TGO,2021,11.7,crude,measured,published,18-69,national,STEPS 2021,"men 5.3 / women 18.1; n=3,880; response 90%; fieldwork Dec 2021-Feb 2022; overweight+obese (>=25) = 30.8; near-doubling from 2010 is a real rise (both sexes ~2x)"

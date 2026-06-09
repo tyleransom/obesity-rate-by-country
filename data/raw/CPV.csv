@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Cabo Verde,CPV,2020,14.3,crude,measured,published,18-69,national,IDNT II,"WHO STEPS (II Inquérito Doenças Não Transmissíveis); men 6.7 / women 22.5; n=3,721; response 64%; overweight+obese (>=25) = 44.2; report cites IDNT 2007 obesity 10.5%"

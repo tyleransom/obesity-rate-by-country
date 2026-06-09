@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Senegal,SEN,2015,6.4,crude,measured,published,18-69,national,STEPS 2015,"men 2.5 / women 10.0; first national STEPS; n=6,306; fieldwork Aug-Dec 2015; overweight+obese (>=25) = 22.1"

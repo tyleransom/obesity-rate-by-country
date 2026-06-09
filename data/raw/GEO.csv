@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Georgia,GEO,2010,25.1,crude,measured,published,18-64,national,STEPS 2010,"men 21.8 / women 28.5; n=6,497 (18-64); Georgia's first national STEPS, fieldwork Aug-Dec 2010"
+Georgia,GEO,2016,33.2,crude,measured,published,18-69,national,STEPS 2016,"men 30.2 / women 36.0; n=5,554 (18-69); large rise vs 2010 (25.1) but age base widened to 18-69, so part of the +8pp is an age artifact (adds heavier 65-69); secular rise still real"
