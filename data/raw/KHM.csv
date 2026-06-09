@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Cambodia,KHM,2010,1.9,crude,measured,published,25-64,national,STEPS 2010,"men 1.1 / women 2.7; ages 25-64; overweight+obese (>=25) = 13.5; first national NCD STEPS"

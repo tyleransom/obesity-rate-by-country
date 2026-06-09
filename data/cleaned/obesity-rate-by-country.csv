@@ -26,6 +26,7 @@ Brazil,BRA,2013,2013,20.8,crude,measured,published,18+,national,TRUE,PNS,NA
 Brazil,BRA,2019,2019,25.9,crude,measured,published,18+,national,TRUE,PNS,NA
 Burkina Faso,BFA,2013,2013,4.5,crude,measured,published,25-64,national,FALSE,STEPS 2013,"men 2.9 / women 6.0; n~4,800; fieldwork Sep-Nov 2013; overweight 13.4 (>=25 = 17.9)"
 Cabo Verde,CPV,2020,2020,14.3,crude,measured,published,18-69,national,FALSE,IDNT II,"WHO STEPS (II Inquérito Doenças Não Transmissíveis); men 6.7 / women 22.5; n=3,721; response 64%; overweight+obese (>=25) = 44.2; report cites IDNT 2007 obesity 10.5%"
+Cambodia,KHM,2010,2010,1.9,crude,measured,published,25-64,national,FALSE,STEPS 2010,men 1.1 / women 2.7; ages 25-64; overweight+obese (>=25) = 13.5; first national NCD STEPS
 Canada,CAN,1971,1970-1972,9.7,crude,measured,published,18-79,national,FALSE,Nutrition Canada Survey,historical; pre-CHMS
 Canada,CAN,1978.5,1978-1979,13.8,crude,measured,published,18-79,national,FALSE,Canada Health Survey,historical; pre-CHMS
 Canada,CAN,2004,2004,23.1,crude,measured,published,18-79,national,FALSE,CCHS-Nutrition,NA
@@ -107,6 +108,7 @@ Kenya,KEN,2015,2015,9.1,crude,measured,published,18-69,national,FALSE,STEPS 2015
 Kiribati,KIR,2005,2004-2006,50.6,crude,measured,published,25-64,national,FALSE,STEPS 2004-2006,"men 41.7 / women 58.9; n=1,755 (BMI, 25-64); response 88%; fieldwork May 2004-Sep 2006; overweight (BMI>=25) 81.5; Micronesian"
 Kuwait,KWT,2014,2014,40.3,crude,measured,published,18-69,national,FALSE,STEPS 2014,Kuwaiti nationals only (excludes expatriate majority); men 36.5 / women 44.0; ~8 in 10 overweight or obese; n=3915
 Kyrgyzstan,KGZ,2013,2013,23.1,crude,measured,published,25-64,national,FALSE,STEPS 2013,"men 17.6 / women 29.0 (p<0.05); n=2,623; nationally representative (130 PSUs of 1,884, PPS, 40% urban/60% rural); age base 25-64 (narrower than the 18-69 of the rest of Central Asia); MoH / National Center of Cardiology report"
+Laos,LAO,2013,2013,5.6,crude,measured,published,18-64,national,FALSE,STEPS 2013,"men 3.5 / women 7.1; n=2,531; ages 18-64; overweight+obese (>=25) = 19.7; first national NCD STEPS (Pengpid & Peltzer 2018)"
 Lebanon,LBN,1997,1997,16.6,crude,measured,reconstructed,20+,national,FALSE,Sibai 1997,first national epidemiological study; 50/50 reconstruction of men 14.3 / women 18.8 (no published both-sexes total)
 Lebanon,LBN,2008.5,2008-2009,26.1,crude,measured,published,20+,national,FALSE,AUB 2008-09,"AUB national STEPwise survey; men 26.4 / women 25.9; n=2,608"
 Libya,LBY,2009,2009,30.5,crude,measured,published,25-64,national,FALSE,STEPS 2009,"WHO/MoH national STEPS (Feb-Nov 2009); men 21.4 / women 40.1; mean BMI 27.7; n=3,590"
@@ -132,6 +134,7 @@ Morocco,MAR,2000,2000,13.2,crude,measured,published,20+,national,TRUE,MoH survey
 Morocco,MAR,2017.5,2017-2018,20,crude,measured,published,18+,national,TRUE,STEPS 2017-18,"WHO/MoH national STEPS; men 11.0 / women 29.0; mean BMI 25.9; n=5,429; response 89%"
 Mozambique,MOZ,2005,2005,4.7,crude,measured,reconstructed,25-64,national,FALSE,STEPS 2005,50/50 average of men 2.3 / women 7.0 (no published both-sexes total); restricted to 25-64 for cross-wave comparability
 Mozambique,MOZ,2014.5,2014-2015,9,crude,measured,reconstructed,25-64,national,FALSE,STEPS 2014-15,50/50 average of men 5.0 / women 13.0; n=2595 (18-64); restricted to 25-64 for comparability
+Myanmar,MMR,2014,2014,5.5,crude,measured,published,25-64,national,FALSE,STEPS 2014,"men 2.6 / women 8.4; n=8,757; ages 25-64; mean BMI 22.3; overweight+obese (>=25) = 22.4; fieldwork Sep-Dec 2014, 52 townships"
 Nauru,NRU,2015.5,2015-2016,70.2,crude,measured,published,18-69,national,FALSE,STEPS 2015-2016,"men 71.0 / women 69.4; n=1,036 (BMI, 18-69); overweight (BMI>=25) 90.1; the highest measured obesity in the whole panel; rose from 63.6 in the 2004 first STEPS (on a matched 18-64 base)"
 Nepal,NPL,2019,2019,4.3,crude,measured,published,15-69,national,FALSE,STEPS 2019,"men 3.2 / women 5.3; NHRC/WHO; n=5,593; overweight+obese (>=25) = 24.3"
 Netherlands,NLD,1978,1976-1980,5.6,crude,measured,reconstructed,37-43,sub-national,TRUE,CBHP,50/50 sex avg (men 4.9 / women 6.2); narrow 37-43 age band
@@ -270,4 +273,7 @@ United States,USA,2017.5,2017-2018,42.8,crude,measured,published,20+,national,FA
 United States,USA,2022,2021-2023,40.3,crude,measured,published,20+,national,FALSE,NHANES,NA
 Uzbekistan,UZB,2019,2019,23.5,crude,measured,published,18-69,national,FALSE,STEPS 2019,"men 21.5 / women 25.5; n=3,686 (BMI, 18-69); second national STEPS (first 2014 used non-standard age bands, gave 20.2); report in Russian"
 Vanuatu,VUT,2011,2011,18.8,crude,measured,published,25-64,national,FALSE,STEPS 2011,"men 13.9 / women 23.3; n=4,413 (BMI); response 94%; fieldwork Aug-Oct 2011; second STEPS (the 1998 SPC NCD survey put obesity ~15.9, village-based, not directly comparable); lowest obesity in the Pacific block (Melanesian)"
+Vietnam,VNM,2009,2009,0.8,crude,measured,published,25-64,national,TRUE,STEPS 2009,"men 0.8 / women 0.8; n=14,706; ages 25-64 (Pham et al. 2023 Lancet Reg Health WP analysis of STEPS 2009/2015)"
+Vietnam,VNM,2015,2015,1.7,crude,measured,published,25-64,national,TRUE,STEPS 2015,men 1.7 / women 1.7; ages restricted to 25-64 for comparability with 2009 (full survey 18-69); Pham et al. 2023
+Vietnam,VNM,2021,2021,2.1,crude,measured,published,18-69,national,TRUE,STEPS 2021,men 2.1 / women 2.2; ages 18-69; overweight+obese (>=25) = 19.5; age base 18-69 vs 25-64 in 2009/2015 -> age-base seam
 Zambia,ZMB,2017,2017,7.5,crude,measured,published,18-69,national,FALSE,STEPS 2017,first national STEPS; men 3.0 / women 12.3 (large female skew); overweight 24.2; n=4302; STEPS caps at 69 (no 70+)

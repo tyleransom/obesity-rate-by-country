@@ -4,28 +4,29 @@ Harmonized panel of **adult obesity prevalence** (% of adults with body mass ind
 &ge; 30 kg/m&sup2;) drawn from each country's own national **measured** height/weight
 surveys.
 
-**Scope** (snapshot): 92 countries and 272 survey observations, earliest US 1900-1901,
+**Scope** (snapshot): 96 countries and 278 survey observations, earliest US 1900-1901,
 latest 2024-25; covers all 19 G20 national economies, the high-obesity Pacific island
-states, and the Caucasus & Central Asia. A companion file adds sex-specific rates for 85 of them.
+states, the Caucasus & Central Asia, and mainland Southeast Asia. A companion file adds
+sex-specific rates for 89 of them.
 
-## Countries covered (92)
+## Countries covered (96)
 
 Algeria&dagger; · Argentina&dagger; · Armenia&dagger; · Australia · Azerbaijan&dagger; · Bahrain&dagger; · Bangladesh&dagger; ·
-Benin&dagger; · Brazil&dagger; · Burkina Faso&dagger; · Cabo Verde&dagger; · Canada&dagger; · Chile&dagger; · China&dagger; ·
+Benin&dagger; · Brazil&dagger; · Burkina Faso&dagger; · Cabo Verde&dagger; · Cambodia&dagger; · Canada&dagger; · Chile&dagger; · China&dagger; ·
 Colombia · Cook Islands&dagger; · Côte d'Ivoire&dagger; · Denmark · Ecuador&dagger; · Egypt&dagger; · Eswatini&dagger; ·
 Ethiopia&dagger; · Fiji&dagger; · Finland&dagger; · France&dagger; · Gambia&dagger; · Georgia&dagger; · Germany&dagger; · Ghana&dagger; ·
 India&dagger; · Indonesia · Iran&dagger; · Ireland&dagger; · Israel&dagger; · Italy&dagger; · Japan&dagger; · Jordan&dagger; ·
-Kazakhstan · Kenya&dagger; · Kiribati&dagger; · Kuwait&dagger; · Kyrgyzstan&dagger; · Lebanon&dagger; · Libya&dagger; ·
-Malawi&dagger; · Malaysia&dagger; · Mexico&dagger; · Mongolia&dagger; · Morocco&dagger; · Mozambique&dagger; · Nauru&dagger; ·
+Kazakhstan · Kenya&dagger; · Kiribati&dagger; · Kuwait&dagger; · Kyrgyzstan&dagger; · Laos&dagger; · Lebanon&dagger; · Libya&dagger; ·
+Malawi&dagger; · Malaysia&dagger; · Mexico&dagger; · Mongolia&dagger; · Morocco&dagger; · Mozambique&dagger; · Myanmar&dagger; · Nauru&dagger; ·
 Nepal&dagger; · Netherlands&dagger; · New Zealand&dagger; · Niger&dagger; · Norway&dagger; · Oman&dagger; · Palestine&dagger; ·
 Peru&dagger; · Philippines&dagger; · Poland&dagger; · Qatar&dagger; · Russia&dagger; · Rwanda&dagger; · Samoa&dagger; ·
 Saudi Arabia&dagger; · Senegal&dagger; · Sierra Leone&dagger; · Singapore&dagger; · Solomon Islands&dagger; ·
 South Africa&dagger; · South Korea&dagger; · Spain&dagger; · Sri Lanka&dagger; · Sweden · Syria&dagger; · Tajikistan&dagger; ·
 Tanzania&dagger; · Thailand&dagger; · Togo&dagger; · Tonga&dagger; · Tunisia&dagger; · Turkmenistan&dagger; · Tuvalu&dagger; ·
 Türkiye&dagger; · Uganda&dagger; · United Arab Emirates&dagger; · United Kingdom&dagger; · United States ·
-Uzbekistan&dagger; · Vanuatu&dagger; · Zambia&dagger;
+Uzbekistan&dagger; · Vanuatu&dagger; · Vietnam&dagger; · Zambia&dagger;
 
-&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (85 countries). The seven
+&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (89 countries). The seven
 without a dagger have no by-sex row in the companion file: Australia, Colombia, Denmark, Indonesia,
 Sweden and the United States (no published by-sex split in the source), and Kazakhstan (its 2021-22
 total is reconstructed from urban/rural figures, with no sex breakdown).
@@ -39,6 +40,12 @@ The Caucasus & Central Asia block (Armenia, Azerbaijan, Georgia, Kazakhstan, Kyr
 Tajikistan, Turkmenistan, Uzbekistan — all WHO STEPS, mostly mid-panel at 13-33%) adds four
 multi-wave series: Mongolia (2005-2019), Georgia (2010-2016) and Turkmenistan (2013-2018), with
 Mongolia's 2009&rarr;2013 jump (12.5&rarr;19.7%) and Georgia's climb to 33.2% the steepest moves.
+
+Mainland Southeast Asia (Cambodia, Laos, Myanmar, Vietnam — all WHO STEPS) joins the region's
+earlier entries (Thailand, Indonesia, Malaysia, Philippines, Singapore) at the **low end of the
+panel**: BMI &ge; 30 prevalence runs just 1.9-5.6%, reflecting Asian body composition (most national
+reports instead headline the much higher Asian &ge; 25 cutoff). Vietnam adds the block's one
+multi-wave series — 2009&rarr;2021, 0.8&rarr;2.1% — though on a shifting age base (25-64 &rarr; 18-69).
 
 ## Why this exists
 
@@ -57,7 +64,7 @@ obesity-rate-by-country/
 ├── data/
 │   ├── raw/                 one CSV per country (the actual survey data points)
 │   │   ├── README.md        per-country source documentation
-│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 92 total)
+│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 96 total)
 │   └── cleaned/
 │       └── obesity-rate-by-country.csv   long-format panel (built by src/combine.R)
 ├── src/

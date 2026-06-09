@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Myanmar,MMR,2014,5.5,crude,measured,published,25-64,national,STEPS 2014,"men 2.6 / women 8.4; n=8,757; ages 25-64; mean BMI 22.3; overweight+obese (>=25) = 22.4; fieldwork Sep-Dec 2014, 52 townships"

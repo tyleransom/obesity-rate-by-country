@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Laos,LAO,2013,5.6,crude,measured,published,18-64,national,STEPS 2013,"men 3.5 / women 7.1; n=2,531; ages 18-64; overweight+obese (>=25) = 19.7; first national NCD STEPS (Pengpid & Peltzer 2018)"

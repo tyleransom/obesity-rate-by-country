@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Vietnam,VNM,2009,0.8,crude,measured,published,25-64,national,STEPS 2009,"men 0.8 / women 0.8; n=14,706; ages 25-64 (Pham et al. 2023 Lancet Reg Health WP analysis of STEPS 2009/2015)"
+Vietnam,VNM,2015,1.7,crude,measured,published,25-64,national,STEPS 2015,"men 1.7 / women 1.7; ages restricted to 25-64 for comparability with 2009 (full survey 18-69); Pham et al. 2023"
+Vietnam,VNM,2021,2.1,crude,measured,published,18-69,national,STEPS 2021,"men 2.1 / women 2.2; ages 18-69; overweight+obese (>=25) = 19.5; age base 18-69 vs 25-64 in 2009/2015 -> age-base seam"

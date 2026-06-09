@@ -1973,6 +1973,70 @@ and can be read directly.
 
 ---
 
+## Vietnam — `VNM.csv`  (national; WHO STEPS 2009 / 2015 / 2021, measured) — 3-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. AGE-BASE SEAM: the 2009 and 2015
+  points are on **25-64**; the 2021 point is on **18-69** (the full STEPS adult base). Add to this that
+  Vietnam sits at the **low end of the whole panel** — Asian body composition means very few adults cross
+  the Western BMI &ge; 30 line (most "overweight/obesity" in Vietnamese reports is headlined on the Asian
+  &ge; 23/25 cutoff, which is roughly **8-10x** the &ge; 30 figure; do not conflate).
+- 2009 = 0.8, 2015 = 1.7 — both **published both-sexes totals** restricted to **ages 25-64** for
+  comparability (men 0.8 / women 0.8 in 2009; men 1.7 / women 1.7 in 2015). The 2009 STEPS covered 25-64
+  (n = 14,706); the 2015 STEPS covered 18-69 but was re-tabulated to 25-64 in the source analysis. SOURCE:
+  Pham T, Bui L, Giovannucci E, et al., "Prevalence of obesity and abdominal obesity and their association
+  with metabolic-related conditions in Vietnamese adults: an analysis of Vietnam STEPS survey 2009 and 2015",
+  *Lancet Regional Health – Western Pacific* (2023), https://pmc.ncbi.nlm.nih.gov/articles/PMC10400857/.
+- 2021 = 2.1 — **published both-sexes total**, men 2.1 / women 2.2 (near sex-parity, unusual for the panel),
+  overweight+obese (BMI &ge; 25) 19.5, ages **18-69**, n = 3,717. SOURCE: *National survey on the risk
+  factors of noncommunicable diseases in Viet Nam (STEPS), 2021*, via the World Obesity Federation Global
+  Obesity Observatory (https://data.worldobesity.org/country/vietnam-232/). The 0.8 &rarr; 2.1 rise is real
+  (roughly 2.5x over 12 years) but small in absolute terms; the 2009/2015 vs 2021 age-base difference inflates
+  the last step slightly (18-69 includes lower-obesity under-25s, so if anything it understates the climb).
+
+---
+
+## Myanmar — `MMR.csv`  (national; WHO STEPS 2014, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The *National Survey
+  on Diabetes Mellitus and Risk Factors for Noncommunicable Diseases (NCDs) in Myanmar 2014* (Ministry of
+  Health / WHO / World Diabetes Foundation) was a multistage cluster sample over 52 townships; fieldwork
+  Sep–Dec 2014, n = 8,757, response 94% (risk factors) / 91% (physical measurements). Height/weight measured.
+- 2014 = 5.5 — **published both-sexes total**, men 2.6 / women 8.4 (women ~3.2x men), mean BMI 22.3,
+  overweight+obese (BMI &ge; 25) 22.4. SOURCE: WHO/MoH Myanmar, *2014 STEPS Fact Sheet Myanmar* (Overweight
+  and Obesity panel), https://www.who.int/publications/m/item/2014-steps-fact-sheet-myanmar (scanned PDF;
+  local copy `data/tmp/myanmar-2014-steps-factsheet.pdf`, read as image — no text layer). Myanmar's only
+  national measured BMI &ge; 30 point; the 2009 STEPS was sub-national and is not stitched on.
+
+---
+
+## Cambodia — `KHM.csv`  (national; WHO STEPS 2010, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The 2010 Cambodia
+  STEPS (Department of Preventive Medicine, Ministry of Health, with WHO) was the country's first national
+  NCD risk-factor survey; multistage sample, height/weight measured.
+- 2010 = 1.9 — **published both-sexes total**, men 1.1 / women 2.7, overweight+obese (BMI &ge; 25) 13.5.
+  SOURCE: World Obesity Federation Global Obesity Observatory tabulation of Cambodia STEPS 2010
+  (https://data.worldobesity.org/tables/prevalence-of-adult-overweight-obesity-2.pdf). SINGLE POINT — the
+  more recent **Cambodia DHS 2021-22** and **World Health Survey Plus 2023** measure women of reproductive
+  age (or use 20-49 bands), not a clean both-sexes adult &ge; 30 total, so no second wave is added.
+
+---
+
+## Laos — `LAO.csv`  (national; WHO STEPS 2013, adults 18-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-64**. The 2013 Lao PDR
+  STEPS was a nationally representative stratified cluster sample (n = 2,531, ages 18-64, ~59% female);
+  height/weight measured at Step 2.
+- 2013 = 5.6 — **published both-sexes total**, men 3.5 / women 7.1, overweight+obese (BMI &ge; 25) 19.7.
+  SOURCE: World Obesity Federation Global Obesity Observatory tabulation of Lao PDR STEPS 2013
+  (https://data.worldobesity.org/tables/prevalence-of-adult-overweight-obesity-2.pdf); underlying study
+  Pengpid S & Peltzer K, "The prevalence of underweight and overweight/obesity and its correlates among
+  adults in Laos: a cross-sectional national population-based survey, 2013", *Eating and Weight Disorders*
+  (2019), https://pubmed.ncbi.nlm.nih.gov/30225825/. Lao reports often headline the **Asian &ge; 25** cutoff
+  (~40% of adults) — that is ~7x the &ge; 30 figure; do not conflate. Laos's only national measured &ge; 30 point.
+
+---
+
 ## Cross-country comparability notes
 
 - **Age base differs**: NZ 15+, UK/US 16+, Australia/Canada 18+, Ireland 18-64 (note the upper cap),
