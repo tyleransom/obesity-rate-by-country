@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Maldives,MDV,2016-2017,13.6,crude,measured,reconstructed,15-49,national,DHS 2016-17,"50/50 reconstruction of men 7.9 / women 19.3 (DHS Program API, 15-49); n=3,706 men / 6,667 women"
+Maldives,MDV,2020-2021,18.1,crude,measured,published,15-69,national,STEPS 2020-21,"WHO/MoH national STEPS; published both-sexes total; men 14.1 / women 22.8 (15-69)"

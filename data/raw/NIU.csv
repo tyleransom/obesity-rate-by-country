@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Niue,NIU,2011,61.0,crude,measured,published,15+,national,STEPS 2011,"WHO STEPS (census of adults 15+, n=916); published both-sexes total; men 59.2 / women 62.7; factsheet reports BMI>=30 directly (not the Polynesian >=32 cutoff); among the highest in the panel"

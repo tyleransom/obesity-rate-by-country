@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Mauritius,MUS,2009,16.0,age-standardised,measured,published,25-74,national,NCD Survey 2009,"age- & gender-standardised to 2008 pop, European BMI>=30 cutpoint; both-sexes total as restated in the 2015 NCD Survey report (16.0 in 2009 rose to 19.1 in 2015)"
+Mauritius,MUS,2015,19.1,age-standardised,measured,published,25-74,national,NCD Survey 2015,"age- & gender-standardised to 2008 pop, European BMI>=30 cutpoint; men 11.1 / women 25.8; report gives only standardised (no crude); ethnic-specific cutpoints give a higher 45.5 (not used, not BMI>=30)"

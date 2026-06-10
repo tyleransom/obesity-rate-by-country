@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Marshall Islands,MHL,2002,31.6,crude,measured,published,15-64,national,STEPS 2002,"WHO STEPS; published both-sexes total (Table 5.3.1, 670/1,954); men 26.6 / women 37.1; later STEPS 2017 & 2023 exist (panel future work)"

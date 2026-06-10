@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Ukraine,UKR,2019,24.8,crude,measured,published,18-69,national,STEPS 2019,"WHO STEPS; published both-sexes total; men 20.1 / women 29.8; mean BMI 26.8; n=4,409; nationally representative of government-controlled areas (excludes Crimea and non-government-controlled Donetsk/Luhansk)"

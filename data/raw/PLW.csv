@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Palau,PLW,2011-2013,42.9,crude,measured,published,25-64,national,STEPS 2011-13,"WHO STEPS; published both-sexes total (918/2,133); men 40.4 / women 45.5; among the highest in the panel; ethnic-Palauan subgroup runs higher (~51/55), not used"

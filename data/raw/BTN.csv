@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Bhutan,BTN,2019,11.4,crude,measured,published,15-69,national,STEPS 2019,"WHO STEPS; published both-sexes total; men 8.4 / women 14.8; mean BMI 24.8; earlier STEPS in 2007 & 2014 (obesity flat-to-down); World Obesity table's 12.5 (labelled 2023) does not match this primary"

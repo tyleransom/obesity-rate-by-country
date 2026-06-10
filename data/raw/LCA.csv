@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Saint Lucia,LCA,2012,31.9,crude,measured,published,18-69,national,STEPS 2012,"WHO/PAHO STEPS; published both-sexes total; men 17.1; women not separately in hand"
+Saint Lucia,LCA,2019-2020,34.9,crude,measured,published,18-69,national,STEPS 2019-20,"WHO/PAHO STEPS (fieldwork Dec 2019-Oct 2020); published both-sexes total; men 20.6 / women 46.1; n=2,964; up from 31.9 in 2012"

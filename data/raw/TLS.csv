@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Timor-Leste,TLS,2016,1.1,crude,measured,reconstructed,15-49,national,DHS 2016,"50/50 reconstruction of men 0.8 / women 1.5 (DHS Program API, 15-49); World Obesity table lists the sexes swapped (M1.5/F0.7) but DHS API has women 1.5 > men 0.8, consistent with the universal female skew; 2009-10 DHS was women-only (0.8), no male anthropometry; n=3,992 men / 11,523 women"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Belarus,BLR,2016,25.4,crude,measured,published,18-69,national,STEPS 2016,"WHO STEPS (first national); published both-sexes total; men 20.1 / women 30.2; n=5,760; World Obesity consolidated table's 18.9 (labelled 2020) is erroneous"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Iraq,IRQ,2015,33.9,crude,measured,published,18+,national,STEPS 2015,"WHO/MoH national STEPS; men 25.9 / women 43.0; n=3,916 (18+); 2005-06 STEPS reported overweight+obesity combined only (66.9%), no clean BMI>=30"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Papua New Guinea,PNG,2007-2008,6.8,crude,measured,published,15-64,national,STEPS 2007-08,"WHO STEPS; published both-sexes total; overweight 32; n=2,944; men 5.1 / women 8.7 (by-sex per World Obesity, not separately primary-verified); total corroborated by PNG NCD systematic review"

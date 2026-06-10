@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Moldova,MDA,2021,22.7,crude,measured,published,18-69,national,STEPS 2021,"WHO STEPS; published both-sexes total; men 21.4 / women 24.0; no significant change since the 2013 STEPS (women down ~15.8% relative)"

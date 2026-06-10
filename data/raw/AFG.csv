@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Afghanistan,AFG,2018,17.2,crude,measured,published,18-69,national,STEPS 2018,"WHO/MoH national STEPS; men 12.1 / women 23.7; n=3,779 (18-69)"
