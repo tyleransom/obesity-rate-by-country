@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Malta,MLT,2014-2015,34.1,crude,measured,published,18-70,national,SAHHTEK,"men 36.9 / women 31.3; national health examination survey (Cuschieri), ages 18-70"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Greece,GRC,2013-2016,32.1,crude,measured,published,18+,national,EMENO,"men 30.5 / women 33.6; EMENO National Health Examination Survey"

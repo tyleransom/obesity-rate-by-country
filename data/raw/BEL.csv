@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Belgium,BEL,2018,21.0,crude,measured,published,18+,national,BELHES 2018,"1st Belgian Health Examination Survey; measured (self-reported HIS gave 15.9)"

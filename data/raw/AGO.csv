@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Angola,AGO,2023-2024,6.0,crude,measured,reconstructed,20-49,national,IIMS 2023-24,"Angola IIMS (DHS-type); reconstructed both-sexes (M/F average; survey publishes obesity by sex only); men 2.6 / women 9.4; 20-49 cap (no 50+), runs low"

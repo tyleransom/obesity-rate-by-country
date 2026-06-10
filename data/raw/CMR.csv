@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Cameroon,CMR,2003,13.0,crude,measured,reconstructed,15+,sub-national,Cameroon Diabetes Baseline Survey 2003,"SUB-NATIONAL: 4 urban districts (Yaounde, Douala, Garoua, Bamenda), urban-only so runs high; reconstructed both-sexes (M/F average); men 6.5 / women 19.5; n=10011; national DHS is women-only"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Serbia,SRB,2013,22.4,crude,measured,published,19+,national,NHS 2013,"national health survey with measured anthropometry, n=12460 adults"

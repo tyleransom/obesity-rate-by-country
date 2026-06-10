@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Lesotho,LSO,2023-2024,20.4,crude,measured,reconstructed,20-49,national,LDHS 2023-24,"Lesotho DHS; reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 4.6 / women 35.4 (very large female skew); DHS 20-49 cap (no 50+), runs low"

@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Panama,PAN,2003,18.1,crude,measured,published,18+,national,ENV II,"men 14.4 / women 21.8; Encuesta de Niveles de Vida (living-standards survey)"
+Panama,PAN,2008,20.3,crude,measured,published,18+,national,ENV III,"men 16.9 / women 23.8"
+Panama,PAN,2010,24.1,crude,measured,published,18+,sub-national,PREFREC,"men 18.3 / women 30.0; Panama + Colon provinces only (57.4% of pop)"

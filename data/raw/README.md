@@ -1,8 +1,10 @@
 # Sources and provenance — per country
 
 Adult obesity prevalence = % of adults with **BMI &ge; 30 kg/m&sup2;**, total (both sexes),
-from **measured** height/weight unless explicitly noted. Two basis exceptions: **China and Italy**
-are **age-standardised** (not crude; neither publishes crude BMI &ge; 30), and **Denmark** is the one
+from **measured** height/weight unless explicitly noted. Basis exceptions: **China and Italy**
+are **age-standardised** (not crude; neither publishes crude BMI &ge; 30), as are the **two oldest
+USA points** (1960-62 & 1971-74, whose crude is not recoverable from microdata — see USA section);
+and **Denmark** is the one
 **self-reported** series (calibration-corrected) — included for coverage but not comparable head-to-head
 with the measured countries. Everything else is crude + measured. `survey_period` is the period exactly
 as the source reports it.
@@ -25,15 +27,17 @@ and 4.4.3 are the primary source for the Malaysia 2023 point and its sex split),
 Resumen Ejecutivo** `Publicacion ENSANUT 2011-2013 tomo 1.pdf` (Gráfico 21 / §4.2.4 — the adult base,
 measurement and exceso de peso 62.8%) plus the **ENSANUT 2018 Principales resultados**
 `Principales resultados ENSANUT_2018.pdf` (child-only; confirms the official summary carries no adult
-&ge; 30 figure).
+&ge; 30 figure), and the Cuba **III ENFR 2010-2011** full report `encuesta_nacional_completo.pdf`
+(Tabla 99 is the primary source for the Cuba both-sexes &ge; 30 point).
 
 ## CSV columns
 
 Beyond `country, iso3, survey_period, obesity_pct`, each raw point carries seven quality columns
 that encode, in closed vocabularies, the comparability caveats spelled out per country below:
 
-- **`basis`** — `crude` (default) or `age-standardised` (only **China** & **Italy** — neither
-  publishes crude BMI &ge; 30).
+- **`basis`** — `crude` (default) or `age-standardised` (**China** & **Italy** — neither publishes
+  crude BMI &ge; 30 — plus the two oldest **USA** points, 1960-62 & 1971-74, whose crude is not
+  recoverable from microdata).
 - **`measurement`** — `measured` (default) or `self-reported` (only **Denmark**).
 - **`derivation`** — `published` (a source-reported both-sexes total), `reconstructed` (the 50/50
   male/female average of by-sex figures — flagged "RECONSTRUCTED" in the sections below), or `anchor`
@@ -60,16 +64,38 @@ and can be read directly.
 
 ---
 
-## USA — `USA.csv`  (adults 20+, NHANES; 1900 anchor)
+## USA — `USA.csv`  (NHANES; **crude** BMI &ge; 30; 1900 anchor)
 
 - 1900-1901 = 3.0 — anthropometric anchor, **not** NHANES. Derived from Helmchen & Henderson
   (2004, *Ann Hum Biol*), who report measured obesity of 3.3–5.9% among white male Union Army
   veterans aged 40–69 (12,312 men examined 1890–1900); adjusted down for younger adults (Komlos
-  & Brabec 2010, *Am J Hum Biol*) and across sex/race to ~3% for all US adults.
-- 1960-1962 onward = NHANES / NHES measured survey waves (BMI &ge; 30, adults 20+).
-  SOURCE: Fryar et al. (2020), NCHS,
-  https://www.cdc.gov/nchs/data/hestat/obesity-adult-17-18/obesity-adult.htm
-  (the 2021-2023 point is from the subsequent NHANES release).
+  & Brabec 2010, *Am J Hum Biol*) and across sex/race to ~3% for all US adults. `age_group` 20+.
+- **BASIS NOTE (corrected 2026-06):** earlier versions of this series carried NCHS's
+  **age-standardised, ages 20-74** figures (Health E-Stat Table 1, "All Obesity" column) while
+  *labelling* them crude/20+. The published reference (Fryar, Afful & Saif, *NCHS Health E-Stat*
+  111, 2026, https://www.cdc.gov/nchs/data/hestat/hestat111.pdf ; and the 2020 17-18 release,
+  https://www.cdc.gov/nchs/data/hestat/obesity-adult-17-18/obesity-adult.htm ) tabulates only
+  **age-adjusted** by-sex trends, with crude given for the latest cycle only. So the whole USA
+  series has now been recomputed as **crude** to match the rest of the panel.
+- 1976-1980 through 2021-2023 = **crude BMI &ge; 30**, computed directly from NHANES public-use
+  microdata (weighted % with BMI &ge; 30 among adults 20+, MEC exam weights, pregnant women
+  excluded). The method reproduces NCHS's *published crude totals* to the decimal where NCHS
+  reports them (2015-16 = 39.8, 2017-18 = 42.5, 2021-23 = 40.3) and the matching sample sizes,
+  which validates the cycles where NCHS publishes age-adjusted only. Files: continuous NHANES
+  DEMO/BMX XPT (`wwwn.cdc.gov/Nchs/Data/Nhanes/Public/{startyear}/DataFiles/`); NHANES III
+  exam.dat + adult.dat (pregnancy excluded via `MAPF12R`); NHANES II `nhanes2/DU5301.txt`.
+- AGE-BASE SEAM: NHANES I/II (1971-74, 1976-80) had **no 75+**, so those points are `20-74`;
+  1988-1994 onward are `20+`. Hence `age_base_varies = TRUE` for all USA rows.
+- 1960-1962 (NHES) and 1971-1974 (NHANES I) are kept as the **published age-standardised** by-sex
+  figures (NCHS Table 1; `basis = age-standardised`) because crude is **not reliably recoverable**
+  from their microdata: NHES stores stature only as ponderal-index ratios (recovered height is
+  distorted — crude obesity backs out to ~3.9% vs the known ~13.4%), and the NHANES I public file
+  carries **no exam weight** (unweighted crude is biased, n does not match the published analytic
+  sample). These two are the only USA rows not on a crude basis.
+- BY SEX (`data/cleaned/obesity-by-sex.csv`): men/women BMI &ge; 30, same basis/age as the totals
+  above — crude microdata for 1976-2023, published age-standardised (NCHS Table 1) for 1960-62 &
+  1971-74. The 50/50 men/women average tracks the both-sexes total to within ~0.2 pp (the total
+  is the directly population-weighted prevalence, not the simple sex average).
 - The NCHS source also reports **severe obesity** (BMI &ge; 40); not carried here (this repo is
   BMI &ge; 30 only).
 
@@ -1361,6 +1387,247 @@ and can be read directly.
 
 ---
 
+## Botswana — `BWA.csv`  (national; WHO STEPS 2014, adults 15-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-69**. The **2014
+  Botswana STEPS Survey** (Ministry of Health / WHO; fieldwork Jul-Aug 2014) was a population-based
+  multistage probability sample across **26 districts**; height/weight measured. n = 4,074, response
+  rate 64%. AGE BASE: 15-69 — includes adolescents 15-17, no 70+.
+- 2014 = 11.8 — **published both-sexes total** [95% CI 10.5-13.1], men 5.1 (3.6-6.6) / women 19.1
+  (large female skew), overweight+obese (BMI &ge; 25) 30.6. SOURCE: Botswana STEPS 2014 final report
+  (fact-sheet "Percentage who are Obese (BMI &ge; 30 kg/m2)" = 11.8% both / 5.1% men / 19.1% women),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/botswana/steps/steps-botswana-2014-report-final.pdf
+  (cached at `data/tmp/BWA_steps_2014_report.pdf`). Botswana's only national measured BMI &ge; 30 point.
+
+---
+
+## Comoros — `COM.csv`  (national; WHO STEPS 2011, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2011
+  Comoros STEPS Survey** (NCD risk-factor surveillance) measured height/weight on a national probability
+  sample. AGE BASE: 25-64.
+- 2011 = 13.5 — **published both-sexes total**, men 5.5 / women 22.4 (large female skew), overweight
+  (BMI 25.0-29.9) 25.9 (overweight+obese 39.4). SOURCE: WHO STEPS Comoros 2011, as compiled on the World
+  Obesity Federation Global Obesity Observatory, https://data.worldobesity.org/country/comoros/ (the 2011
+  STEPS both-sexes obesity figure of 13.5% is restated in Lancet Reg Health Africa (2025),
+  https://www.thelancet.com/journals/lanafr/article/PIIS3050-5011(25)00012-4/fulltext). Comoros's only
+  national measured BMI &ge; 30 point.
+
+---
+
+## Liberia — `LBR.csv`  (national; WHO STEPS 2022, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2022
+  Liberia STEPS Survey** (Ministry of Health; Liberia's second STEPS, after 2011) was a multistage
+  probability sample; height/weight measured. n = 4,069, response rate 99%. AGE BASE: 18-69.
+- 2022 = 19.9 — **published both-sexes total**, men 17.7 / women 22.2. **Unusually high male obesity for
+  West Africa** — but it is the directly measured report figure (the 2022 report, p.63, states "6.3% of
+  men were underweight, 60.2% had normal weight and 17.7% were obese ... 5.2% of women were underweight,
+  49.3% had normal weight and 22.2% were obese"). Notably women's obesity **fell** from **28.7%** in the
+  2011 STEPS to 22.2% in 2022, while men's rose from 15.4% to 17.7%. SOURCE: *Liberia Stepwise Survey for
+  Non Communicable Diseases Risk Factors, 2022 Report* (Ministry of Health, Republic of Liberia),
+  https://files.aho.afro.who.int/afahobckpcontainer/production/files/Country_data_Liberia_stepswise_survey_2022_Final_Report_1.pdf
+  (cached at `data/tmp/LBR_steps_2022_report.pdf`); both-sexes 19.9 per the World Obesity Global Obesity
+  Observatory Liberia report card (same survey). Only the 2022 point is added (clean published total); the
+  2011 by-sex figures are noted as context, not stitched on.
+
+---
+
+## Sao Tome and Principe — `STP.csv`  (national; WHO STEPS 2008, adults 25-64, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-64**. The **2008 Sao
+  Tome and Principe STEPS Survey** was the country's first national NCD risk-factor survey; height/weight
+  measured. n = 2,457 (median age 37). AGE BASE: 25-64.
+- 2008 = 11.7 — **published both-sexes total**, men 6.6 / women 16.5, overweight (BMI 25.0-29.9) 23.3.
+  SOURCE: WHO STEPS Sao Tome 2008, compiled on the World Obesity Global Obesity Observatory,
+  https://data.worldobesity.org/country/sao-tome-and-principe/. A **2019** repeat STEPS exists (Pires et
+  al., *BMC Public Health* 2023, https://pmc.ncbi.nlm.nih.gov/articles/PMC10499519/; overweight+obese rose
+  37.3&rarr;51.0) but reports only **combined** overweight+obesity, not obesity alone, so it is **not
+  stitched on** — only the 2008 BMI &ge; 30 point is added.
+
+---
+
+## Seychelles — `SYC.csv`  (national; Seychelles Heart Study V 2023, adults 18-74, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-74**. The **2023
+  Seychelles National Survey of NCDs (Seychelles Heart Study V)** — Public Health Authority, Ministry of
+  Health — was a national probability sample; height/weight measured. AGE BASE: 18-74.
+- 2023 = 38.0 — **published both-sexes total**, men 27.2 / women 48.6 (large female skew). **Among the
+  highest obesity in Africa**, up sharply from ~4% (men) / ~13% (women) in 2000. SOURCE: Seychelles Heart
+  Study V (2023), compiled on the World Obesity Global Obesity Observatory,
+  https://data.worldobesity.org/country/seychelles-190/report-card.pdf; trajectory described in WHO AFRO,
+  "Seychelles accelerates response to rising rates of obesity" (2024),
+  https://www.afro.who.int/countries/seychelles/news/seychelles-accelerates-response-rising-rates-obesity.
+  Seychelles's only national measured BMI &ge; 30 point.
+
+---
+
+## Sudan — `SDN.csv`  (national; WHO STEPS 2016, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The **2016 Sudan
+  STEPS Survey** was the country's **first national** NCD risk-factor survey; height/weight measured on a
+  nationally representative sample. n = 7,722. AGE BASE: 18-69.
+- 2016 = 10.3 — **published both-sexes total**, men 6.7 / women 14.9, overweight+obese (BMI &ge; 25) 17.9.
+  SOURCE: Federal Ministry of Health / WHO, restated in "Prevalence and correlates of multiple
+  non-communicable diseases risk factors among male and female adults in Sudan: results of the first
+  national STEPS survey in 2016", *PLoS One* (2022), https://pmc.ncbi.nlm.nih.gov/articles/PMC9652629/.
+  Sudan's only national measured BMI &ge; 30 point.
+
+---
+
+# Sub-Saharan Africa — DHS-based points (RECONSTRUCTED both-sexes, 15-49/20-49 age cap)
+
+The six entries below come from **Demographic and Health Surveys** (DHS / IIMS / EDSG / EDSGE) rather
+than WHO STEPS. They are **measured** and **national**, but differ from the STEPS points in two ways
+that are flagged in every row's quality columns and notes:
+
+1. **Reconstructed both-sexes.** DHS reports publish obesity (BMI &ge; 30) **by sex only** (no single
+   both-sexes total), so the panel value is the **50/50 male/female average** (`derivation =
+   reconstructed`), same convention as Mozambique / Japan / the early Brazil points. The by-sex figures
+   themselves are published and go verbatim into `obesity-by-sex.csv`.
+2. **Age cap.** DHS anthropometry covers **15-49** (women) — sometimes 20-49, and men to 15-59 — so
+   there is **no 50+/60+ tail**. This truncates the highest-obesity ages and makes these points run
+   **low** relative to the STEPS 18-69 / 25-64 points; do not read a DHS point against a STEPS point as
+   a real level difference (cf. the Ecuador 19-59 caveat).
+
+Figures are the survey-specific **crude** observations as compiled on the World Obesity Federation Global
+Obesity Observatory (https://data.worldobesity.org/) from each DHS final report — deliberately the raw
+national-survey numbers, **not** the WHO HEAT / GHO modelled estimates (which run several points higher
+for these same countries and are excluded by design).
+
+**Every by-sex figure below was re-verified against the primary survey** — either the DHS final-report
+nutritional-status table directly, or the **DHS Program API** (`api.dhsprogram.com`, indicators
+`AN_NUTS_W_OBS` / `AN_NUTS_M_OBS`). All six match to the decimal. Note on age base: Lesotho and Angola
+report adult BMI on a **20-49** base (their final-report tables), which is what is used here; the DHS
+API's default **15-49** cut for those two runs ~5-6 pp lower for women (LSO 28.9, AGO 7.3) and is *not*
+what the panel uses.
+
+## Angola — `AGO.csv`  (national; IIMS 2023-24, adults 20-49, measured) — DHS-type, reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**, adults **20-49**. *Inquérito de Indicadores
+  Múltiplos e de Saúde* (IIMS Angola 2023-24; INE / MINSA / ICF), height/weight measured; fieldwork Aug
+  2023-Jan 2024, 16,243 households, 99% response.
+- 2023-24 = 6.0 — **reconstructed** 50/50 average of men **2.6** / women **9.4**. 20-49 age cap.
+  **Primary-verified:** INE / MINSA *IIMS 2023-2024 — Relatório Final* (May 2025), Quadro 11.14.1
+  (women 20-49, obesa &ge;30,0 = **9,4**) and Quadro 11.14.3 (men 20-49 = **2,6**),
+  https://www.ine.gov.ao/ (final report PDF); summary in *Relatório de Indicadores Básicos* [PR162],
+  https://dhsprogram.com/pubs/pdf/PR162/PR162.pdf.
+
+---
+
+## Equatorial Guinea — `GNQ.csv`  (national; EDSGE-I 2011, adults 15-49/15-59, measured) — DHS, reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**. *Encuesta Demográfica y de Salud de Guinea
+  Ecuatorial* (EDSGE-I 2011; the country's **first** DHS; fieldwork Jul-Nov 2011); height/weight
+  measured. **Mixed age base between sexes** (men 15-59, women 15-49).
+- 2011 = 8.3 — **reconstructed** from men **4.5** (15-59) / women **12.7** (15-49). SOURCE: Ministerio de
+  Sanidad y Bienestar Social / ICF International, *EDSGE-I 2011 — Informe Final* [FR271] (DHS Program,
+  2012), https://dhsprogram.com/pubs/pdf/fr271/fr271.pdf (by-sex obesity via World Obesity Observatory,
+  https://data.worldobesity.org/country/equatorial-guinea-62/).
+
+---
+
+## Gabon — `GAB.csv`  (national; EDSG-III 2019-21, adults 15-49, measured) — DHS, reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-49**. *Troisième Enquête
+  Démographique et de Santé du Gabon* (EDSG-III 2019-2021; DGS / ICF); height/weight measured. COVID
+  split the fieldwork into two phases (Nov 2019-Mar 2020, then Jun-Oct 2021).
+- 2019-21 = 16.2 — **reconstructed** 50/50 average of men **8.0** / women **24.7**. 15-49 age cap.
+  SOURCE: Direction Générale de la Statistique / ICF, *EDSG-III 2019-2021* (DHS Program); key-indicators
+  report at https://dhsprogram.com/pubs/pdf/PR137/PR137.pdf. **Primary-verified** via the DHS Program API
+  (the full rapport final is not posted as an extractable report): `api.dhsprogram.com` EDSG-III 2019
+  returns women obese &ge;30.0 = **24.7** (Total) and men = **8.0** (Total 15-49) — exact match.
+
+---
+
+## Lesotho — `LSO.csv`  (national; LDHS 2023-24, adults 20-49, measured) — DHS, reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**, adults **20-49**. Lesotho Demographic and
+  Health Survey 2023-24 (the country's **fourth** DHS; Ministry of Health / ICF); height/weight measured.
+- 2023-24 = 20.4 — **reconstructed** 50/50 average of men **4.6** / women **35.4** (very large female
+  skew — among the widest male/female obesity gaps in the panel). 20-49 age cap. SOURCE: Ministry of
+  Health Lesotho / ICF, *2023-24 LDHS — Final Report* [FR391] (DHS Program, 2024),
+  https://dhsprogram.com/pubs/pdf/FR391/FR391.pdf.
+
+---
+
+## Namibia — `NAM.csv`  (national; NDHS 2013, adults 15-49, measured) — DHS, reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-49**. Namibia Demographic and
+  Health Survey 2013 (MoHSS / NSA / NIP / ICF International); height/weight measured.
+- 2013 = 8.4 — **reconstructed** 50/50 average of men **3.4** / women **13.2**. 15-49 age cap. SOURCE:
+  MoHSS / ICF International, *Namibia DHS 2013 — Final Report* [FR298] (DHS Program, 2014),
+  https://dhsprogram.com/pubs/pdf/FR298/FR298.pdf.
+
+---
+
+## Zimbabwe — `ZWE.csv`  (national; ZDHS 2015, adults 15-49, measured) — DHS, reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15-49**. Zimbabwe Demographic and
+  Health Survey 2015 (ZIMSTAT / ICF International; 9,955 women 15-49 and 8,396 men 15-54 interviewed,
+  fieldwork Jul-Dec 2015); height/weight measured. The ZDHS-2015 women's obesity (~12.3%, restated in
+  Mangemba & San Sebastián, *IJERPH* 16:2758, https://pmc.ncbi.nlm.nih.gov/articles/PMC6695964/) matches
+  the World Obesity women's figure (12.6%), anchoring the by-sex numbers to the primary report.
+- 2015 = 7.7 — **reconstructed** 50/50 average of men **2.3** / women **12.6**. 15-49 age cap. SOURCE:
+  ZIMSTAT / ICF International, *Zimbabwe DHS 2015 — Final Report* [FR322] (DHS Program, 2016),
+  https://dhsprogram.com/pubs/pdf/FR322/FR322.pdf.
+
+---
+
+# Sub-Saharan Africa — SUB-NATIONAL points (only both-sexes measured option for these countries)
+
+Cameroon, Mauritania, and Congo have **no national both-sexes** measured survey — their recurring national
+surveys are women-only DHS. The only measured points covering **both sexes** are older **sub-national**
+STEPS-type surveys (capital city or a few urban districts), added here with `coverage = sub-national`,
+the same convention as Côte d'Ivoire (Abidjan). Urban/capital coverage **runs high** vs the true national
+level (urban obesity > rural); do not read these against the national STEPS/DHS points as a level
+comparison. Chad's analogous 2007 figure was **not** added — its survey/coverage could not be traced to a
+citable primary (only hospital-based N'Djamena studies surfaced).
+
+## Cameroon — `CMR.csv`  (SUB-NATIONAL: 4 urban districts; Diabetes Baseline Survey 2003, adults 15+, measured) — reconstructed
+
+- **BMI &ge; 30**, **crude**, **measured**, adults **15+**, **sub-national**. The **Cameroon Burden of
+  Diabetes Baseline Survey 2003** (WHO STEPS approach) sampled **4 urban districts** — Yaoundé, Douala,
+  Garoua, Bamenda; height/weight measured. n = 10,011 (6,004 women, 4,007 men, 4,189 households).
+  **Urban-only** — not nationally representative.
+- 2003 = 13.0 — **reconstructed** 50/50 average of men **6.5** / women **19.5** (urban). Overweight+obese
+  >25% of men, ~50% of women. SOURCE: Kamadjeu et al., "Anthropometry measures and prevalence of obesity
+  in the urban adult population of Cameroon", *BMC Public Health* 6:228 (2006),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC1579217/. Cameroon's national surveys (e.g. DHS 2018) measure
+  women only, so this urban survey is the only both-sexes BMI &ge; 30 point.
+
+---
+
+## Congo (Brazzaville) — `COG.csv`  (SUB-NATIONAL: Brazzaville; WHO STEPS 2004, adults 25-64, measured)
+
+- **BMI &ge; 30**, **crude**, **measured**, adults **25-64**, **sub-national**. The **2004 Congo STEPS
+  Survey** covered **Brazzaville (the capital) only**; height/weight measured. n = 2,030.
+- 2004 = 8.6 — **published both-sexes total** (Tableau XVII: 178 obese / 2,079 = 8.6%), men **2.5**
+  (26/1,039) / women **14.6** (152/1,040) (Tableau XVIII). SOURCE: Ministère de la Santé / WHO, *Enquête
+  sur l'HTA et les autres facteurs de risque cardiovasculaires à Brazzaville (STEPS), Mai 2004*,
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/congo/steps/2004-steps-congo-report.pdf
+  (cached at `data/tmp/COG_steps_2004_brazzaville_report.pdf`); catalog
+  https://extranet.who.int/ncdsmicrodata/index.php/catalog/623. The report PDF is image-based
+  (not text-extractable); figures were **OCR-verified directly from the report tables** (so the women's
+  rate is the report's 14.6%, correcting the World Obesity transcription of 15.0). Congo's national DHS
+  is women-only.
+
+---
+
+## Mauritania — `MRT.csv`  (SUB-NATIONAL: Nouakchott; WHO STEPS 2006, adults 15-64, measured)
+
+- **BMI &ge; 30**, **crude**, **measured**, adults **15-64**, **sub-national**. The **2006 Mauritania
+  STEPS Survey** covered **Nouakchott (the capital) only** (fieldwork Jan-Jun 2006); height/weight
+  measured.
+- 2006 = 20.9 — **published both-sexes total**, men 8.6 / women 31.5 (large female skew), overweight
+  (BMI &ge; 25) 46.6, mean BMI 25.5. SOURCE: WHO STEPS Mauritania (Nouakchott) 2006 Fact Sheet
+  ("Percentage who are obese (BMI &ge; 30 kg/m2)" = 20.9% / men 8.6% / women 31.5%),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/mauritania/steps/2006-steps-mauritania-factsheet-en.pdf
+  (cached at `data/tmp/MRT_steps_2006_nouakchott_factsheet.pdf`). Mauritania's national DHS (EDS 2019-21)
+  measures women only, so this Nouakchott survey is the only both-sexes BMI &ge; 30 point.
+
+---
+
 ## Kuwait — `KWT.csv`  (national; WHO STEPS 2014, adults 18-69, measured) — KUWAITI NATIONALS
 
 - Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **18-69**. The **2014 Kuwait STEPS
@@ -2037,6 +2304,278 @@ and can be read directly.
 
 ---
 
+## Uruguay — `URY.csv`  (national STEPS 2013 + urban ENSO 2 2006, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**. COVERAGE/AGE SEAM: the two points come from two
+  different survey series with different coverage and age bases — treat the trend loosely.
+- 2006 = 20.0 — **ENSO 2** (Segunda Encuesta Nacional de Sobrepeso y Obesidad), a probability sample of
+  **urban** Uruguay (91% of the population), ages **18-65**, N = 900, height/weight measured at home.
+  Reported as "~20% of adults with IMC &gt; 30" (rounded). Sub-national (urban-only) coverage — runs a
+  touch high vs a fully national base. SOURCE: Pisabarro R et al., "Segunda Encuesta Nacional de Sobrepeso
+  y Obesidad (ENSO 2) adultos (18-65 años o más)", *Rev Med Urug* (2009),
+  http://www.scielo.edu.uy/scielo.php?script=sci_arttext&pid=S1688-03902009000100003.
+- 2013 = 23.7 — **published both-sexes total**, men 22.1 / women 25.1, ages **15-64**, from the **2ª Encuesta
+  Nacional de Factores de Riesgo de Enfermedades No Transmisibles (2ª ENFRENT)**, the WHO STEPS-based national
+  NCD risk-factor survey (MSP, fieldwork 2013). Overweight+obesity (BMI &ge; 25) 58.5% at 15-64 (64.9% at
+  25-64). SOURCE: Ministerio de Salud Pública, *2ª Encuesta Nacional de Factores de Riesgo de Enfermedades
+  No Transmisibles* (Tabla 22),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/uruguay/steps/2da_encuesta_nacional_final_web22.pdf.
+
+---
+
+## Bolivia — `BOL.csv`  (national; WHO STEPS 2019, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. The 2019 Bolivia
+  STEPS (Ministerio de Salud y Deportes, with PAHO/WHO) was the country's **first** national NCD risk-factor
+  survey; multistage sample, n = 4,472 (IMC recorded for 4,101), height/weight measured at Step 2.
+- 2019 = 26.2 — **published both-sexes total**, men 20.8 / women 31.8 (women run well above men). The report
+  itself tabulates obesity by age/sex (men 18-44 = 19.1, 45-69 = 24.8; women 18-44 = 26.9, 45-69 = 42.4); the
+  26.2 both-sexes 18-69 total is the WHO STEPS fact-sheet figure. SOURCES: Ministerio de Salud y Deportes,
+  *Primera Encuesta Nacional de Factores de Riesgo de Enfermedades No Transmisibles — STEPS Bolivia 2019*
+  (Tabla 34),
+  https://cdn.who.int/media/docs/default-source/ncds/ncd-surveillance/data-reporting/bolivia/steps-bolivia-2019-country-report-es.pdf;
+  both-sexes total via World Obesity Federation Global Obesity Observatory tabulation of Bolivia STEPS 2019.
+
+---
+
+## Paraguay — `PRY.csv`  (national; ENFR/STEPS 2011 & 2022, measured) — 2-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. AGE-BASE SEAM: the 2011 point is on
+  **15-74** (the 1ª ENFR base); the 2022 point is on **18-69** (the 2ª ENFR base).
+- 2011 = 23.9 — **published both-sexes total**, men 20.2 / women 26.0, ages **15-74**, from the **1ª Encuesta
+  Nacional de Factores de Riesgo (STEPwise 2011)**, a nationally representative three-stage probability sample,
+  height/weight measured at home; analytic n = 2,501 (of 2,538 measured). SOURCE: Cañete F et al.,
+  "Epidemiología de la obesidad en el Paraguay", *An Fac Cienc Méd (Asunción)* 49(2) (2016),
+  https://dvent.mspbs.gov.py/wp-content/uploads/2021/07/Epidemiologia-de-la-Obesidad.pdf.
+- 2022 = 32.4 — **published both-sexes total**, men 27.5 / women 36.9, ages **18-69**, from the **2ª Encuesta
+  Nacional de Factores de Riesgo de Enfermedades No Transmisibles (ENFR 2022, STEPwise)**, INE/MSPBS with
+  PAHO/WHO, fieldwork Jun–Oct 2022, n = 5,095, height/weight measured. SOURCE: INE/MSPBS, *Segunda Encuesta
+  Nacional sobre Factores de Riesgo de Enfermedades No Transmisibles 2022*,
+  https://www.ine.gov.py/Publicaciones/Biblioteca/documento/223/ENFR%202022.pdf.
+
+---
+
+## Costa Rica — `CRI.csv`  (URBAN; ELANS 2014-2015, adults 20-65, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**. COVERAGE: **urban-only** (sub-national) — Costa Rica
+  has no national STEPS, and the national nutrition surveys (ENN 1996, 2008-2009) headline only combined
+  overweight+obesity (BMI &ge; 25), not a clean both-sexes &ge; 30 total. The cleanest measured &ge; 30 point
+  is the urban ELANS sample.
+- 2014-2015 = 29.1 — **published both-sexes total**, ages **20-65**, urban Costa Rica, n = 677 (the Costa Rica
+  arm of the **Estudio Latinoamericano de Nutrición y Salud / ELANS**), height/weight measured; fieldwork Nov
+  2014 – May 2015. Excess weight (BMI &ge; 25) 63.0% men / 73.8% women. Urban coverage runs high vs a fully
+  national base; treat loosely. SOURCE: Fonseca-Camacho D et al., "Perfil antropométrico y prevalencia de
+  sobrepeso y obesidad en la población urbana de Costa Rica entre los 20 y 65 años… resultados del Estudio
+  Latino Americano de Nutrición y Salud", *Nutr Hosp* (2020),
+  https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S0212-16112020000400017.
+
+---
+
+## Jamaica — `JAM.csv`  (national; Jamaica Health and Lifestyle Survey I/II/III, measured) — 3-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. The **JHLS** is Jamaica's recurring
+  national NCD risk-factor survey (height/weight measured). MINOR AGE SEAM: JHLS I and II are tabulated on
+  **15-74**; the JHLS III headline obesity figure is on **15+** (no upper cap) — but Jamaica has very few
+  adults over 74, so the 15+ value &asymp; the 15-74 value, and the trend is effectively comparable.
+- 2000-2001 = 19.7 (JHLS I), 2007-2008 = 25.3 (JHLS II) — **published both-sexes totals**, ages 15-74;
+  men 9.6 / women 29.9 in 2000-01, men 12.4 / women 37.7 in 2007-08 (a very large female skew — women run
+  ~3x men). SOURCE: Cunningham-Myrie et al. and the JHLS trend tables; figures as reported by Ferguson TS
+  et al. via PAHO/UWI summaries (https://pmc.ncbi.nlm.nih.gov/articles/PMC10016753/).
+- 2016-2017 = 28.6 (JHLS III) — **published both-sexes total**, ages **15+**, overweight+obesity (BMI &ge; 25)
+  67.6% women vs 38.8% men. SOURCE: Ministry of Health & Wellness Jamaica, *The Jamaica Health and Lifestyle
+  Survey 2016-17 (JHLS III) — Technical Report* (§Overweight/Obesity), data collection completed 2017,
+  https://www.moh.gov.jm/wp-content/uploads/2024/03/Jamaica-Health-and-Lifestyle-Survey-2016-17-JHLSIII-Electronic.pdf.
+
+---
+
+## Barbados — `BRB.csv`  (national; Health of the Nation 2012-2013, adults 25+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25+** (note the higher age
+  floor — no 15-24s, so this runs a touch high vs a 15+/18+ base). The **Health of the Nation (HotN)** study
+  was a cross-sectional national NCD risk-factor survey (George Alleyne Chronic Disease Research Centre /
+  Ministry of Health), fieldwork Oct 2011 – Dec 2013 (commonly cited as 2012-13), n = 1,234 aged &ge; 25,
+  height/weight measured.
+- 2012-2013 = 33.8 — **published both-sexes total**, men 23.4 / women 43.4 (women ~1.9x men). Overweight+obese
+  (BMI &ge; 25) 57.5% men / 74.2% women. SOURCE: Howitt C, Hambleton I, Rose A, Unwin N et al., *The Barbados
+  Health of the Nation Study: Core Findings* (2015), Table 16,
+  https://www.health.gov.bb/attachments/Health_Of_The_Nation_Survey.pdf (dataset: Zenodo 13863823).
+
+---
+
+## Panama — `PAN.csv`  (national ENV 2003/2008 + sub-national PREFREC 2010, adults 18+, measured) — 3-point panel
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **18+**. COVERAGE: the 2003 and 2008 points
+  are **national**; the 2010 PREFREC point is **sub-national** (Panama + Colón provinces only, 57.4% of the
+  population) and runs high — treat the last step loosely.
+- 2003 = 18.1 (ENV II), 2008 = 20.3 (ENV III) — **published both-sexes totals**, national *Encuesta de Niveles
+  de Vida* (living-standards surveys) with measured anthropometry; men 14.4 / women 21.8 (2003), men 16.9 /
+  women 23.8 (2008).
+- 2010 = 24.1 (PREFREC) — **published both-sexes total**, men 18.3 / women 30.0, a sub-national cardiovascular
+  risk-factor study (Gorgas Memorial Institute / MINSA) over the trans-isthmian Panama + Colón zone, fieldwork
+  Oct 2010 – Jan 2011, height/weight measured. SOURCE (all three): Mc Donald Posso AJ et al., "Diabetes in
+  Panama… / Prevalence and Associated Factors of Obesity among Panamanian Adults 1982-2010",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC3951445/.
+
+---
+
+## Dominican Republic — `DOM.csv`  (national; EFRICARD II 2011, adults 18+, measured) — single point, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. **EFRICARD II** (Estudio
+  de Factores de Riesgo Cardiovascular) was a national cardiovascular risk-factor survey with measured
+  height/weight.
+- 2011 = 25.4 — **RECONSTRUCTED** as the 50/50 average of the by-sex figures (men 21.7 / women 29.0); the
+  source reports obesity by sex, not a single both-sexes total. Women run well above men. SOURCE: EFRICARD II
+  2011, as reported in MSP Dominican Republic / World Obesity Federation Global Obesity Observatory
+  (https://data.worldobesity.org/country/dominican-republic-58/).
+
+---
+
+## El Salvador — `SLV.csv`  (national; ENECA-ELS 2015, adults 20+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **20+**. The **ENECA-ELS 2015**
+  (Encuesta Nacional de Enfermedades Crónicas no Transmisibles en Población Adulta de El Salvador, INS/MINSAL
+  with PAHO/WHO) was a stratified national probability sample (age strata 20-40 / 41-60 / 60+), height/weight
+  measured.
+- 2015 = 27.3 — **published both-sexes total** ("Prevalencia de Obesidad" 27.3, 95% CI 25.0-29.8), men 19.2 /
+  women 31.8. SOURCE: INS/MINSAL, *ENECA-ELS 2015*, via the WHO NCD surveillance repository,
+  https://extranet.who.int/ncdccs/Data/SLV_C7_Encuesta%20INS2015%20final%20(1).pdf.
+
+---
+
+## Cuba — `CUB.csv`  (national; III ENFR 2010-2011, adults 15+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **15+**. The **III Encuesta
+  Nacional de Factores de Riesgo y Actividades Preventivas de Enfermedades No Transmisibles (Cuba 2010-2011)**
+  (INHA / MINSAP / ONEI) was a national stratified multistage cluster sample, height/weight measured; report
+  published by Editorial Ciencias Médicas, La Habana (2015).
+- 2010-2011 = 15.0 — **published both-sexes total** (95% CI 14.0-16.1), from Tabla 99 ("población total").
+  Overweight+obese (BMI &ge; 25) 44.8%. Obesity skews female; for the 20+ subpopulation men 11.4 / women 18.1.
+  Cuba's national obesity sits **far below its Caribbean neighbours** (Jamaica 28.6, Barbados 33.8, Dominican
+  Republic 25.4) and below most of Latin America — the lowest measured point in the region here. SOURCE: INHA,
+  *III Encuesta Nacional de Factores de Riesgo… Cuba 2010-2011* (local copy
+  `data/tmp/encuesta_nacional_completo.pdf`, the report's `encuesta_completo.pdf`; ResearchGate id 325370475).
+  (The older I/II ENFR 1995/2001 mostly report overweight, not a clean both-sexes &ge; 30 total, so no earlier
+  wave is stitched on; the often-quoted "Cuba ~24.6%" is the **modelled** WHO estimate, not used.)
+
+---
+
+## Portugal — `PRT.csv`  (national; INSEF 2015, adults 25-74, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **25-74** (note the 25 floor and
+  74 cap). **INSEF 2015** (1.º Inquérito Nacional de Saúde com Exame Físico) was Portugal's first national
+  **health examination survey** (the EHES protocol), INSA; probabilistic sample n = 4,911, height/weight
+  measured.
+- 2015 = 28.7 — **published both-sexes total** (95% CI 26.8-30.6), women 32.1 / men ~25 (obesity higher in
+  women, though overweight is higher in men). SOURCE: Gaio V et al., "Prevalência de excesso de peso e de
+  obesidade em Portugal: resultados do INSEF 2015", INSA,
+  https://repositorio.insa.pt/handle/10400.18/5588.
+
+---
+
+## Greece — `GRC.csv`  (national; EMENO 2013-2016, adults 18+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. **EMENO** (National
+  Survey of Morbidity and Risk Factors) was a national **health examination survey**, multistage stratified
+  random sample from the 2011 Census, fieldwork May 2013 – Jun 2016, n = 6,006 (4,822 with BMI), height/weight
+  measured.
+- 2013-2016 = 32.1 — **published both-sexes crude total**, men 30.5 / women 33.6. SOURCE: Touloumi G et al.,
+  "High prevalence of cardiovascular risk factors in adults living in Greece: the EMENO National Health
+  Examination Survey", *BMC Public Health* (2020), https://pmc.ncbi.nlm.nih.gov/articles/PMC7648277/.
+  (NOTE: the older 2006 Kapantais "first national" survey is **self-reported** — not stitched on.)
+
+---
+
+## Romania — `ROU.csv`  (national; PREDATORR 2014, adults 20-79, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **20-79**. **PREDATORR** (Study
+  on the Prevalence of Diabetes, Prediabetes, Overweight, Obesity, dyslipidaemia, hyperuricaemia and chronic
+  kidney disease in Romania) was a national stratified cluster random-sample epidemiological study, height/weight
+  measured.
+- 2014 = 31.4 — **published both-sexes total**, n = 2,728 (the **crude** prevalence; the often-quoted 31.9 is
+  the age- and sex-adjusted figure). SOURCE: Popa S, Moţa M et al. (PREDATORR), "Prevalence of
+  overweight/obesity, abdominal obesity and metabolic syndrome… : PREDATORR study", *J Endocrinol Invest*
+  (2016), https://pubmed.ncbi.nlm.nih.gov/27126310/.
+
+---
+
+## Malta — `MLT.csv`  (national; SAHHTEK health examination survey 2014-2015, adults 18-70, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-70** (note the 70 cap).
+  **SAHHTEK** was a nationwide cross-sectional **health examination survey** (University of Malta, Cuschieri
+  et al.); randomized age/gender-representative sample (~1% per town) from the national registry, 4,000 invited
+  (49% participated), height/weight measured; fieldwork Nov 2014 – Nov 2015. Malta is the EU's most obese
+  member state.
+- 2014-2015 = 34.1 — **published both-sexes total** (95% CI 32.6-35.6), men 36.9 / women 31.3 (note: men run
+  *above* women here, the opposite of most of the panel). Overweight+obese (BMI &ge; 25) 69.8%. SOURCE:
+  Cuschieri S et al., "Prevalence of obesity in Malta", *Obesity Science & Practice* (2016),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC5192534/.
+
+---
+
+## Czechia — `CZE.csv`  (national; Czech post-MONICA 2016/17, adults 25-64, measured) — single point, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, adults **25-64**. The **Czech post-MONICA** study is a
+  recurring representative random population sample (1% samples drawn from nine Czech districts, treated as
+  nationally representative), height/weight measured.
+- 2016-2017 = 32.7 — **RECONSTRUCTED** as the 50/50 average of the by-sex figures (men 37.7 / women 27.6); the
+  source reports obesity by sex, not a single both-sexes total. Unusually for the panel, **men run well above
+  women** here, and Czech male obesity nearly doubled since the 1985 MONICA baseline (men 19.7 / women 28.0).
+  SOURCE: Cífková R et al., "30-year trends in major cardiovascular risk factors in the Czech population, Czech
+  MONICA and Czech post-MONICA, 1985-2016/17", *PLoS One* (2020),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC7213700/.
+
+---
+
+## Luxembourg — `LUX.csv`  (national; ORISCAV-LUX 2007-2009, adults 18-69, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-69**. **ORISCAV-LUX** (Observation
+  of Cardiovascular Risk Factors in Luxembourg) was the first nationwide cardiovascular risk-factor survey
+  (Luxembourg Institute of Health); stratified random representative sample, height/weight measured.
+- 2007-2009 = 20.9 — **published both-sexes total** in a representative adult sample. SOURCE: Alkerwi A et al.
+  (ORISCAV-LUX), "First nationwide survey on cardiovascular risk factors in Grand-Duchy of Luxembourg",
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC2925827/ (metabolic-syndrome companion:
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC3024931/). Repeat waves (EHES-LUX 2013-15, ORISCAV-LUX 2 2016-18)
+  show a roughly flat ~20-21% and are not stitched on.
+
+---
+
+## Croatia — `HRV.csv`  (national; Croatian Adult Health Survey 2003, adults 18+, measured) — single point, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. The **Croatian Adult
+  Health Survey (CAHS) 2003** was a nationally representative survey with measured height/weight; Croatia is
+  among the EU's most obese member states.
+- 2003 = 20.4 — **RECONSTRUCTED** as the 50/50 average of the by-sex figures (men 20.2 / women 20.6 — near
+  sex-parity here). SOURCE: CAHS 2003, as reported in Musić Milanović S et al., "Health behavior factors
+  associated with obesity in the adult population in Croatia", https://pubmed.ncbi.nlm.nih.gov/19563149/.
+
+---
+
+## Belgium — `BEL.csv`  (national; BELHES 2018, adults 18+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. The first **Belgian
+  Health Examination Survey (BELHES) 2018** (Sciensano) measured height/weight on a representative sample
+  (calibrated scale to 0.5 kg, stadiometer to 0.1 cm) drawn from the Health Interview Survey participants.
+- 2018 = 21.0 — **published both-sexes total** from measured data. (The parallel self-reported Health Interview
+  Survey understated this at 15.9 — a clean illustration of the self-report gap; the panel uses the measured
+  figure.) SOURCE: Belgian Health Examination Survey / Sciensano, "Weight status",
+  https://www.healthybelgium.be/en/health-status/determinants-of-health/weight-status; method paper
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC7268416/.
+
+---
+
+## Serbia — `SRB.csv`  (national; National Health Survey 2013, adults 19+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **19+**. The **2013 Serbian
+  National Health Survey** followed EUROSTAT/EHIS design but — unlike most EHIS rounds — **measured** weight,
+  height and waist circumference using standard procedures; stratified two-stage national random sample,
+  n = 12,460 adults.
+- 2013 = 22.4 — **published both-sexes total**. SOURCE: Maksimović M et al., "Comparison of different
+  anthropometric measures in the adult population in Serbia… : data from the National Health Survey 2013",
+  *Public Health Nutrition* (2016), https://pubmed.ncbi.nlm.nih.gov/26865391/; see also
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC5770809/.
+
+---
+
 ## Cross-country comparability notes
 
 - **Age base differs**: NZ 15+, UK/US 16+, Australia/Canada 18+, Ireland 18-64 (note the upper cap),
@@ -2054,7 +2593,12 @@ and can be read directly.
   Philippines 20+ &rarr; **20-59** (FNRI base shifts at the 2018-2019 ENNS), Iran 20+/18+ (STEPS 2011
   is &ge;20, 2016/2021 are 18+), Colombia 18-64 (ENSIN, note the upper cap), Poland 20-74 (WOBASZ),
   Malaysia 18+ (NHMS), Singapore **18-74** (the NPHS base; the older NHS series is 18-69),
-  Ecuador **19-59** (ENSANUT caps at 59 — no 60+, runs low), Kenya 18-69 (STEPS caps at 69).
+  Ecuador **19-59** (ENSANUT caps at 59 — no 60+, runs low), Kenya 18-69 (STEPS caps at 69),
+  Uruguay 15-64 (the 2006 ENSO 2 point is 18-65), Bolivia 18-69, Paraguay 15-74 &rarr; **18-69** (age seam
+  at the 2022 ENFR), Costa Rica 20-65 (ELANS), Jamaica 15-74 (the JHLS III point is 15+),
+  Barbados **25+** (higher age floor — runs high), Panama 18+, Dominican Republic 18+, El Salvador 20+,
+  Portugal 25-74 (note the 25 floor / 74 cap), Greece 18+, Romania 20-79, Malta 18-70 (note the 70 cap),
+  Czechia 25-64, Luxembourg 18-69, Croatia 18+, Belgium 18+, Serbia 19+, Cuba 15+.
   **Pacific (WHO STEPS):** Tonga/Samoa/Solomon Islands/Kiribati 25-64, Vanuatu 25-64, Cook Islands
   25-64 &rarr; **18-64** (age seam at the 2013-15 wave), Nauru/Tuvalu **18-69**.
 - **The Pacific is the high end of the whole panel**: Nauru (70.2), Cook Islands (69.8), Tonga (67.6-68.7),
@@ -2066,8 +2610,22 @@ and can be read directly.
 - **Coverage / basis caveats**: GBR = England (HSE) only; Norway = HUNT, one county (Nord-Trøndelag),
   not national; Sweden = an employed occupational cohort, not a probability sample; **Denmark = the
   only self-reported series** (understates — not comparable head-to-head); Argentina = ENNyS 2,
-  **urban localities &ge;5,000 only** (no rural coverage). Treat these loosely against the fully
-  national measured probability-sample countries.
+  **urban localities &ge;5,000 only** (no rural coverage); Costa Rica = ELANS, **urban-only** (no national
+  &ge; 30 survey exists); Uruguay's 2006 ENSO 2 point = **urban** (91% of pop), a different series from the
+  national 2013 ENFRENT; Panama's 2010 PREFREC point = **Panama + Colón provinces only** (the 2003/2008 ENV
+  points are national); Dominican Republic = EFRICARD II **RECONSTRUCTED** (50/50 of the by-sex figures);
+  Czechia = post-MONICA **RECONSTRUCTED** (50/50 of the by-sex figures, a 9-district representative sample);
+  Croatia = CAHS 2003 **RECONSTRUCTED** (50/50 of the by-sex figures).
+  Treat these loosely against the fully national measured probability-sample countries.
+- **Europe is measured-only, deliberately**: most European countries' recurring national surveys (EHIS /
+  Eurostat) are **self-reported** and were *not* used. Every European series here comes from a **measured**
+  health examination survey (EHES/national HES, MONICA, ORISCAV, STEPS, or a measured-anthropometry NHS such
+  as Serbia's). Belgium 2018 illustrates the gap: measured 21.0 vs self-reported 15.9. Countries with only
+  self-reported national data (Hungary, Cyprus, Lithuania and most of the Baltics, Switzerland/Austria —
+  whose measured data is city-cohort only) are intentionally **absent**.
+- **Sex pattern**: almost the entire panel skews female (women more obese than men) — extreme in the Caribbean
+  (Jamaica/Barbados women ~2-3x men) and Latin America. The exceptions where **men run higher** are **Malta**
+  (M 36.9 / W 31.3) and **Czechia** (M 37.7 / W 27.6) — both recent European measured surveys.
 - **Basis**: all series are **crude** except **China** (standardised to the 2010 China census) and
   **Italy** (standardised to the Italian population) — the two series not on a crude basis; neither
   country publishes crude BMI &ge; 30.

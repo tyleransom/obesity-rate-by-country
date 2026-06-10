@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Sao Tome and Principe,STP,2008,11.7,crude,measured,published,25-64,national,STEPS 2008,"first national STEPS (n=2457); men 6.6 / women 16.5; overweight (BMI>=25) 23.3; 2019 follow-up reports only combined overweight+obesity so not added"

@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Equatorial Guinea,GNQ,2011,8.3,crude,measured,reconstructed,15-49,national,EDSGE-I 2011,"Equatorial Guinea DHS (EDSGE-I); reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 4.5 (15-59) / women 12.7 (15-49); mixed age base between sexes"

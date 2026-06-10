@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Cuba,CUB,2010-2011,15.0,crude,measured,published,15+,national,III ENFR 2010-2011,"men ~11.4 / women ~18.1 (20+); overweight+obese (BMI>=25) 44.8%; well below Caribbean neighbors"

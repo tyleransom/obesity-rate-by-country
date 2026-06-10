@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Croatia,HRV,2003,20.4,crude,measured,reconstructed,18+,national,CAHS 2003,"50/50 of men 20.2 / women 20.6; Croatian Adult Health Survey, representative measured sample"

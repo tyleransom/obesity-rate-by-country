@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Jamaica,JAM,2000-2001,19.7,crude,measured,published,15-74,national,JHLS I,"men 9.6 / women 29.9; Jamaica Health and Lifestyle Survey I"
+Jamaica,JAM,2007-2008,25.3,crude,measured,published,15-74,national,JHLS II,"men 12.4 / women 37.7"
+Jamaica,JAM,2016-2017,28.6,crude,measured,published,15+,national,JHLS III,"women far higher; overweight+obesity 67.6% women vs 38.8% men; 15+ headline ~ 15-74 value"

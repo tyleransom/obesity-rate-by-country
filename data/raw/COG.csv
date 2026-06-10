@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Congo,COG,2004,8.6,crude,measured,published,25-64,sub-national,STEPS 2004 Brazzaville,"SUB-NATIONAL: Brazzaville (capital) only; published both-sexes total (Tableau XVII, 178/2079); men 2.5 / women 14.6 (Tableau XVIII); n=2079; OCR-verified from report; national DHS is women-only"

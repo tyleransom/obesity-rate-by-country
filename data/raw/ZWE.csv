@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Zimbabwe,ZWE,2015,7.7,crude,measured,reconstructed,15-49,national,ZDHS 2015,"reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 2.3 / women 12.6 (ZDHS women ~12.3); DHS 15-49 cap (no 50+), runs low"

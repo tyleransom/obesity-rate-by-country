@@ -184,3 +184,50 @@ Vietnam,VNM,2021,2.1,2.2,0.1,crude,measured,published,18-69,national,STEPS 2021,
 Myanmar,MMR,2014,2.6,8.4,5.8,crude,measured,published,25-64,national,STEPS 2014,"women ~3.2x men; fact sheet Overweight/Obesity panel"
 Cambodia,KHM,2010,1.1,2.7,1.6,crude,measured,published,25-64,national,STEPS 2010,"first national NCD STEPS"
 Laos,LAO,2013,3.5,7.1,3.6,crude,measured,published,18-64,national,STEPS 2013,"Pengpid & Peltzer 2019"
+Uruguay,URY,2013,22.1,25.1,3.0,crude,measured,published,15-64,national,2da ENFRENT,
+Bolivia,BOL,2019,20.8,31.8,11.0,crude,measured,published,18-69,national,STEPS 2019,
+Paraguay,PRY,2011,20.2,26.0,5.8,crude,measured,published,15-74,national,1ra ENFR (STEPS),"Cañete et al. analysis"
+Paraguay,PRY,2022,27.5,36.9,9.4,crude,measured,published,18-69,national,2da ENFR (STEPS),
+Jamaica,JAM,2000-2001,9.6,29.9,20.3,crude,measured,published,15-74,national,JHLS I,
+Jamaica,JAM,2007-2008,12.4,37.7,25.3,crude,measured,published,15-74,national,JHLS II,
+Barbados,BRB,2012-2013,23.4,43.4,20.0,crude,measured,published,25+,national,HotN,
+Panama,PAN,2003,14.4,21.8,7.4,crude,measured,published,18+,national,ENV II,
+Panama,PAN,2008,16.9,23.8,6.9,crude,measured,published,18+,national,ENV III,
+Panama,PAN,2010,18.3,30.0,11.7,crude,measured,published,18+,sub-national,PREFREC,"Panama + Colon provinces only"
+Dominican Republic,DOM,2011,21.7,29.0,7.3,crude,measured,published,18+,national,EFRICARD II,
+El Salvador,SLV,2015,19.2,31.8,12.6,crude,measured,published,20+,national,ENECA-ELS,
+Cuba,CUB,2010-2011,11.4,18.1,6.7,crude,measured,published,20+,national,III ENFR 2010-2011,"20+ subpopulation; 15+ both-sexes total is 15.0"
+Greece,GRC,2013-2016,30.5,33.6,3.1,crude,measured,published,18+,national,EMENO,
+Malta,MLT,2014-2015,36.9,31.3,-5.6,crude,measured,published,18-70,national,SAHHTEK,"men > women"
+Czechia,CZE,2016-2017,37.7,27.6,-10.1,crude,measured,published,25-64,national,post-MONICA,"men > women"
+Croatia,HRV,2003,20.2,20.6,0.4,crude,measured,published,18+,national,CAHS 2003,
+Botswana,BWA,2014,5.1,19.1,14.0,crude,measured,published,15-69,national,STEPS 2014,"large female skew"
+Comoros,COM,2011,5.5,22.4,16.9,crude,measured,published,25-64,national,STEPS 2011,"women 4x men"
+Liberia,LBR,2022,17.7,22.2,4.5,crude,measured,published,18-69,national,STEPS 2022,"high male obesity for region; women fell from 28.7 in 2011"
+Sao Tome and Principe,STP,2008,6.6,16.5,9.9,crude,measured,published,25-64,national,STEPS 2008,
+Seychelles,SYC,2023,27.2,48.6,21.4,crude,measured,published,18-74,national,Seychelles Heart Study V 2023,"among highest in Africa"
+Sudan,SDN,2016,6.7,14.9,8.2,crude,measured,published,18-69,national,STEPS 2016,
+Zimbabwe,ZWE,2015,2.3,12.6,10.3,crude,measured,published,15-49,national,ZDHS 2015,"DHS 15-49 cap"
+Namibia,NAM,2013,3.4,13.2,9.8,crude,measured,published,15-49,national,NDHS 2013,"DHS 15-49 cap"
+Gabon,GAB,2019-2021,8.0,24.7,16.7,crude,measured,published,15-49,national,EDSG-III 2019-21,"DHS 15-49 cap"
+Lesotho,LSO,2023-2024,4.6,35.4,30.8,crude,measured,published,20-49,national,LDHS 2023-24,"very large female skew; DHS 20-49 cap"
+Angola,AGO,2023-2024,2.6,9.4,6.8,crude,measured,published,20-49,national,IIMS 2023-24,"DHS 20-49 cap"
+Equatorial Guinea,GNQ,2011,4.5,12.7,8.2,crude,measured,published,15-49,national,EDSGE-I 2011,"men 15-59 / women 15-49"
+Cameroon,CMR,2003,6.5,19.5,13.0,crude,measured,published,15+,sub-national,Cameroon Diabetes Baseline Survey 2003,"SUB-NATIONAL urban (4 cities)"
+Congo,COG,2004,2.5,14.6,12.1,crude,measured,published,25-64,sub-national,STEPS 2004 Brazzaville,"SUB-NATIONAL Brazzaville only"
+Mauritania,MRT,2006,8.6,31.5,22.9,crude,measured,published,15-64,sub-national,STEPS 2006 Nouakchott,"SUB-NATIONAL Nouakchott only"
+United States,USA,1960-1962,10.7,15.8,5.1,age-standardised,measured,published,20-74,national,NHES,"age-standardised by-sex (NCHS Table 1); crude not recoverable from microdata"
+United States,USA,1971-1974,12.1,16.6,4.5,age-standardised,measured,published,20-74,national,NHANES I,"age-standardised by-sex (NCHS Table 1); public file lacks exam weight, crude not reliable"
+United States,USA,1976-1980,12.0,16.6,4.6,crude,measured,published,20-74,national,NHANES II,"crude, computed from NHANES II microdata; survey had no 75+"
+United States,USA,1988-1994,19.5,25.0,5.5,crude,measured,published,20+,national,NHANES III,"crude, computed from NHANES III microdata"
+United States,USA,1999-2000,26.5,33.2,6.7,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2001-2002,27.2,32.7,5.5,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2003-2004,30.8,33.1,2.3,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2005-2006,32.9,35.5,2.6,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2007-2008,32.0,35.3,3.3,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2009-2010,35.3,36.2,0.9,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2011-2012,33.7,36.5,2.8,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2013-2014,35.2,40.5,5.3,crude,measured,published,20+,national,NHANES,"crude, computed from NHANES microdata"
+United States,USA,2015-2016,38.0,41.5,3.5,crude,measured,published,20+,national,NHANES,"crude; total matches NCHS published crude (39.8)"
+United States,USA,2017-2018,43.0,42.1,-0.9,crude,measured,published,20+,national,NHANES,"crude; total matches NCHS published crude (42.5)"
+United States,USA,2021-2023,39.2,41.3,2.1,crude,measured,published,20+,national,NHANES,"crude; total matches NCHS published crude (40.3)"

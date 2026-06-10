@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Sudan,SDN,2016,10.3,crude,measured,published,18-69,national,STEPS 2016,"first national STEPS; men 6.7 / women 14.9; n=7722; overweight (BMI>=25) 17.9"

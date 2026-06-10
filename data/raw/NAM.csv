@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Namibia,NAM,2013,8.4,crude,measured,reconstructed,15-49,national,NDHS 2013,"reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 3.4 / women 13.2; DHS 15-49 cap (no 50+), runs low"

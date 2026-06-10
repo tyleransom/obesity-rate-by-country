@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Romania,ROU,2014,31.4,crude,measured,published,20-79,national,PREDATORR,"crude; cf 31.9 age/sex-adjusted; national epidemiological study, n=2728"

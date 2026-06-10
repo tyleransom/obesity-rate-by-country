@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Botswana,BWA,2014,11.8,crude,measured,published,15-69,national,STEPS 2014,"men 5.1 / women 19.1; n=4074 across 26 districts; age base 15-69 (incl 15-17, no 70+)"

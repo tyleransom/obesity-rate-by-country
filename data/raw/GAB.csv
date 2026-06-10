@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Gabon,GAB,2019-2021,16.2,crude,measured,reconstructed,15-49,national,EDSG-III 2019-21,"Gabon DHS (EDSG-III, third); reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 8.0 / women 24.7; DHS 15-49 cap (no 50+), runs low"

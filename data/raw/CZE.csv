@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Czechia,CZE,2016-2017,32.7,crude,measured,reconstructed,25-64,national,post-MONICA,"50/50 of men 37.7 / women 27.6; Czech post-MONICA representative population sample"

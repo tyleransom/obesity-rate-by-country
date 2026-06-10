@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Dominican Republic,DOM,2011,25.4,crude,measured,reconstructed,18+,national,EFRICARD II,"50/50 of men 21.7 / women 29.0; national cardiovascular risk-factor study"

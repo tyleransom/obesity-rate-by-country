@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Portugal,PRT,2015,28.7,crude,measured,published,25-74,national,INSEF 2015,"women 32.1 / men ~25; 1st Portuguese Health Examination Survey (EHES-based)"

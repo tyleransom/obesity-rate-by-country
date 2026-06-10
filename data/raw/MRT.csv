@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Mauritania,MRT,2006,20.9,crude,measured,published,15-64,sub-national,STEPS 2006 Nouakchott,"SUB-NATIONAL: Nouakchott (capital) only; published both-sexes total; men 8.6 / women 31.5 (large female skew); overweight (BMI>=25) 46.6; national DHS is women-only so this is the only both-sexes point"

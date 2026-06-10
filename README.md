@@ -4,32 +4,44 @@ Harmonized panel of **adult obesity prevalence** (% of adults with body mass ind
 &ge; 30 kg/m&sup2;) drawn from each country's own national **measured** height/weight
 surveys.
 
-**Scope** (snapshot): 96 countries and 278 survey observations, earliest US 1900-1901,
+**Scope** (snapshot): 130 countries and 318 survey observations, earliest US 1900-1901,
 latest 2024-25; covers all 19 G20 national economies, the high-obesity Pacific island
-states, the Caucasus & Central Asia, and mainland Southeast Asia. A companion file adds
-sex-specific rates for 89 of them.
+states, the Caucasus & Central Asia, mainland Southeast Asia, Latin America & the
+Caribbean, a broad Sub-Saharan Africa block, and Europe (measured examination surveys
+only). A companion file adds sex-specific rates for 118 of them.
 
-## Countries covered (96)
+## Countries covered (130)
 
-Algeria&dagger; · Argentina&dagger; · Armenia&dagger; · Australia · Azerbaijan&dagger; · Bahrain&dagger; · Bangladesh&dagger; ·
-Benin&dagger; · Brazil&dagger; · Burkina Faso&dagger; · Cabo Verde&dagger; · Cambodia&dagger; · Canada&dagger; · Chile&dagger; · China&dagger; ·
-Colombia · Cook Islands&dagger; · Côte d'Ivoire&dagger; · Denmark · Ecuador&dagger; · Egypt&dagger; · Eswatini&dagger; ·
-Ethiopia&dagger; · Fiji&dagger; · Finland&dagger; · France&dagger; · Gambia&dagger; · Georgia&dagger; · Germany&dagger; · Ghana&dagger; ·
-India&dagger; · Indonesia · Iran&dagger; · Ireland&dagger; · Israel&dagger; · Italy&dagger; · Japan&dagger; · Jordan&dagger; ·
-Kazakhstan · Kenya&dagger; · Kiribati&dagger; · Kuwait&dagger; · Kyrgyzstan&dagger; · Laos&dagger; · Lebanon&dagger; · Libya&dagger; ·
-Malawi&dagger; · Malaysia&dagger; · Mexico&dagger; · Mongolia&dagger; · Morocco&dagger; · Mozambique&dagger; · Myanmar&dagger; · Nauru&dagger; ·
-Nepal&dagger; · Netherlands&dagger; · New Zealand&dagger; · Niger&dagger; · Norway&dagger; · Oman&dagger; · Palestine&dagger; ·
-Peru&dagger; · Philippines&dagger; · Poland&dagger; · Qatar&dagger; · Russia&dagger; · Rwanda&dagger; · Samoa&dagger; ·
-Saudi Arabia&dagger; · Senegal&dagger; · Sierra Leone&dagger; · Singapore&dagger; · Solomon Islands&dagger; ·
-South Africa&dagger; · South Korea&dagger; · Spain&dagger; · Sri Lanka&dagger; · Sweden · Syria&dagger; · Tajikistan&dagger; ·
-Tanzania&dagger; · Thailand&dagger; · Togo&dagger; · Tonga&dagger; · Tunisia&dagger; · Turkmenistan&dagger; · Tuvalu&dagger; ·
-Türkiye&dagger; · Uganda&dagger; · United Arab Emirates&dagger; · United Kingdom&dagger; · United States ·
-Uzbekistan&dagger; · Vanuatu&dagger; · Vietnam&dagger; · Zambia&dagger;
+Algeria&dagger; · Angola&dagger; · Argentina&dagger; · Armenia&dagger; · Australia · Azerbaijan&dagger; · Bahrain&dagger; ·
+Bangladesh&dagger; ·
+Barbados&dagger; · Belgium · Benin&dagger; · Bolivia&dagger; · Botswana&dagger; · Brazil&dagger; · Burkina Faso&dagger; · Cabo Verde&dagger; ·
+Cambodia&dagger; · Cameroon&dagger; ·
+Canada&dagger; · Chile&dagger; · China&dagger; · Colombia · Comoros&dagger; · Congo&dagger; · Cook Islands&dagger; · Costa Rica ·
+Côte d'Ivoire&dagger; ·
+Croatia&dagger; ·
+Cuba&dagger; · Czechia&dagger; · Denmark · Dominican Republic&dagger; · Ecuador&dagger; · Egypt&dagger; · El Salvador&dagger; ·
+Equatorial Guinea&dagger; · Eswatini&dagger; · Ethiopia&dagger; · Fiji&dagger; · Finland&dagger; · France&dagger; · Gabon&dagger; · Gambia&dagger; ·
+Georgia&dagger; · Germany&dagger; · Ghana&dagger; · Greece&dagger; ·
+India&dagger; · Indonesia · Iran&dagger; · Ireland&dagger; · Israel&dagger; · Italy&dagger; · Jamaica&dagger; · Japan&dagger; · Jordan&dagger; ·
+Kazakhstan · Kenya&dagger; · Kiribati&dagger; · Kuwait&dagger; · Kyrgyzstan&dagger; · Laos&dagger; · Lebanon&dagger; · Lesotho&dagger; ·
+Liberia&dagger; · Libya&dagger; ·
+Luxembourg · Malawi&dagger; · Malaysia&dagger; · Malta&dagger; · Mauritania&dagger; · Mexico&dagger; · Mongolia&dagger; · Morocco&dagger; ·
+Mozambique&dagger; ·
+Myanmar&dagger; · Namibia&dagger; · Nauru&dagger; · Nepal&dagger; · Netherlands&dagger; · New Zealand&dagger; · Niger&dagger; · Norway&dagger; ·
+Oman&dagger; ·
+Palestine&dagger; · Panama&dagger; · Paraguay&dagger; · Peru&dagger; · Philippines&dagger; · Poland&dagger; · Portugal · Qatar&dagger; ·
+Romania · Russia&dagger; · Rwanda&dagger; · Samoa&dagger; · Sao Tome and Principe&dagger; · Saudi Arabia&dagger; · Senegal&dagger; ·
+Serbia · Seychelles&dagger; · Sierra Leone&dagger; · Singapore&dagger; · Solomon Islands&dagger; · South Africa&dagger; ·
+South Korea&dagger; · Spain&dagger; · Sri Lanka&dagger; · Sudan&dagger; · Sweden ·
+Syria&dagger; · Tajikistan&dagger; · Tanzania&dagger; · Thailand&dagger; · Togo&dagger; · Tonga&dagger; · Tunisia&dagger; · Turkmenistan&dagger; ·
+Tuvalu&dagger; · Türkiye&dagger; · Uganda&dagger; · United Arab Emirates&dagger; · United Kingdom&dagger; · United States&dagger; ·
+Uruguay&dagger; · Uzbekistan&dagger; · Vanuatu&dagger; · Vietnam&dagger; · Zambia&dagger; · Zimbabwe&dagger;
 
-&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (89 countries). The seven
-without a dagger have no by-sex row in the companion file: Australia, Colombia, Denmark, Indonesia,
-Sweden and the United States (no published by-sex split in the source), and Kazakhstan (its 2021-22
-total is reconstructed from urban/rural figures, with no sex breakdown).
+&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (118 countries). The 12
+without a dagger have no by-sex row in the companion file: Australia, Belgium, Colombia, Costa Rica,
+Denmark, Indonesia, Luxembourg, Portugal, Romania, Serbia and Sweden (no published both-sexes-separated
+split in the source used), and Kazakhstan (its 2021-22 total is reconstructed from urban/rural figures,
+with no sex breakdown).
 
 The Pacific island states (Cook Islands, Fiji, Kiribati, Nauru, Samoa, Solomon Islands, Tonga,
 Tuvalu, Vanuatu — all WHO STEPS) anchor the **top of the panel**: Nauru (70.2%), Cook Islands
@@ -46,6 +58,19 @@ earlier entries (Thailand, Indonesia, Malaysia, Philippines, Singapore) at the *
 panel**: BMI &ge; 30 prevalence runs just 1.9-5.6%, reflecting Asian body composition (most national
 reports instead headline the much higher Asian &ge; 25 cutoff). Vietnam adds the block's one
 multi-wave series — 2009&rarr;2021, 0.8&rarr;2.1% — though on a shifting age base (25-64 &rarr; 18-69).
+
+Latin America & the Caribbean (Bolivia, Uruguay, Paraguay, Costa Rica; Jamaica, Barbados, Panama,
+Dominican Republic, El Salvador, Cuba — STEPS, national health-examination and risk-factor surveys)
+sit mostly **mid-to-high** (24-34%), with multi-wave series for Jamaica (2000-2017), Panama
+(2003-2010) and Paraguay (2011-2022). The Caribbean shows the panel's **largest female skew** (Jamaica
+and Barbados women run 2-3x men), while **Cuba (15.0%)** is the regional low — well under its neighbours.
+
+The residual-Europe block (Belgium, Croatia, Czechia, Greece, Luxembourg, Malta, Portugal, Romania,
+Serbia) is **measured-only by design**: most European countries' recurring national surveys (EHIS) are
+*self-reported* and were excluded, so each series here comes from a measured examination survey (EHES /
+national HES, MONICA, ORISCAV, or a measured-anthropometry NHS). **Malta (34.1%) and Czechia (32.7%)**
+are the panel's rare **male-skewed** series. Belgium illustrates the gap the design avoids — measured
+21.0% vs the self-reported 15.9%.
 
 ## Why this exists
 
@@ -64,7 +89,7 @@ obesity-rate-by-country/
 ├── data/
 │   ├── raw/                 one CSV per country (the actual survey data points)
 │   │   ├── README.md        per-country source documentation
-│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 96 total)
+│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 130 total)
 │   └── cleaned/
 │       └── obesity-rate-by-country.csv   long-format panel (built by src/combine.R)
 ├── src/
@@ -84,7 +109,7 @@ Each `data/raw/<ISO3>.csv` has eleven columns — four core columns plus seven
 | `iso3`         | ISO 3166-1 alpha-3 code (the file name) |
 | `survey_period`| reporting period as published — a single year (`2004`) or a range (`1988-1994`) |
 | `obesity_pct`  | % of adults with BMI &ge; 30, total (both sexes) |
-| `basis`        | `crude` or `age-standardised` (standardised only for China & Italy) |
+| `basis`        | `crude` or `age-standardised` (standardised for China, Italy & the two oldest USA points) |
 | `measurement`  | `measured` or `self-reported` (self-reported only for Denmark) |
 | `derivation`   | `published` (source-reported total), `reconstructed` (50/50 male/female average), or `anchor` (derived non-survey figure — USA 1900) |
 | `age_group`    | adult age base as published, e.g. `20+`, `18-79`, `35-74` |
@@ -105,13 +130,16 @@ age_group, coverage, source, note`.
 giving the **sex-specific** BMI &ge; 30 prevalences — `men_pct, women_pct, women_minus_men_pp`
 plus the same quality columns as the main panel (`basis, measurement, derivation, age_group,
 coverage, source, note`) — for the country-years where the sources report them. (`derivation` is
-`published` throughout: these are source-reported by-sex figures — it's the *totals* in the main
-panel that are sometimes `reconstructed` as their 50/50 average.) It exists because the
+`published` throughout: these are by-sex figures from the source — reported directly, or computed
+from its public microdata as for the US — it's the *totals* in the main panel that are sometimes
+`reconstructed` as their 50/50 average.) It exists because the
 male/female gap is itself a striking cross-country pattern: tiny or male-favouring in rich Western
 countries, reversing over time in East Asia (China/Japan), enormous and female-skewed in South
-Africa (+30 pp), Eswatini (+22 pp), Egypt (+24 pp) and across sub-Saharan Africa (women 4-6x men in
-Ghana, Tanzania, Senegal), and — unusually — near-parity at very high levels in the Pacific, where
-Nauru is even slightly male-skewed. The per-row `basis` notes crude vs age-standardised and any age
+Africa (+30 pp), Eswatini (+22 pp), Egypt (+24 pp), the Caribbean (Jamaica +25 pp, Barbados +20 pp,
+women 2-3x men) and across sub-Saharan Africa (women 4-6x men in Ghana, Tanzania, Senegal), and —
+unusually — near-parity at very high levels in the Pacific, where Nauru is even slightly male-skewed.
+A handful of recent European measured surveys run the **other** way (men higher): Malta (-5.6 pp) and
+Czechia (-10.1 pp). The per-row `basis` notes crude vs age-standardised and any age
 caveat; see `data/raw/README.md` for full provenance of each figure.
 
 ## Reproduce / rebuild
@@ -137,14 +165,16 @@ point, so the raw CSVs can be reproduced from the primary sources.
 
 These are **heterogeneous national surveys**, not a single harmonized instrument:
 
-- **Age ranges differ**: e.g. NZ adults are 15+, UK/US 16+, Australia/Canada 18+.
+- **Age ranges differ**: e.g. NZ adults are 15+, UK 16+, Australia/Canada 18+, US 20+ (20-74 for
+  the pre-1988 NHANES waves, which had no 75+).
 - **Crude vs age-standardized**: values here are **crude** prevalence (to match the basis
   most national headline figures and the US NHANES series use), not age-standardized.
 - **Measured vs self-reported**: all points aim to be from *measured* height/weight; self-reported
   waves (which understate obesity) are excluded — with **one exception, Denmark**, the only
   self-reported series, included for coverage and flagged as such (not comparable head-to-head).
-  A couple of series are **age-standardised** rather than crude (China, Italy). All flagged per point
-  in `data/raw/README.md`.
+  A few series are **age-standardised** rather than crude (China, Italy, and the two oldest US
+  points — 1960-62 & 1971-74 — whose crude is not recoverable from microdata). All flagged per
+  point in `data/raw/README.md`.
 - **Coverage**: some early anchors are one-off or sub-national surveys (e.g. the UK series
   is **England** via the Health Survey for England; Australia's 1980 point is capital-cities
   only). All such caveats are documented per point in `data/raw/README.md`.

@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Uruguay,URY,2006,20.0,crude,measured,published,18-65,sub-national,ENSO 2,"urban Uruguay (91% of pop), N=900; reported as ~20%; separate survey series from ENFRENT"
+Uruguay,URY,2013,23.7,crude,measured,published,15-64,national,2da ENFRENT,"men 22.1 / women 25.1; WHO STEPS-based 2nd national NCD risk-factor survey"

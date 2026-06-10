@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Comoros,COM,2011,13.5,crude,measured,published,25-64,national,STEPS 2011,"first/only national STEPS; men 5.5 / women 22.4 (large female skew); overweight (BMI>=25) 25.9; only national measured BMI>=30 point"

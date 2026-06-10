@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Paraguay,PRY,2011,23.9,crude,measured,published,15-74,national,1ra ENFR (STEPS),"men 20.2 / women 26.0; Cañete et al. analysis of 1st national risk-factor survey, n=2501"
+Paraguay,PRY,2022,32.4,crude,measured,published,18-69,national,2da ENFR (STEPS),"men 27.5 / women 36.9; 2nd national NCD risk-factor survey"
