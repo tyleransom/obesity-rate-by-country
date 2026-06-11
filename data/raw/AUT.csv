@@ -1,0 +1,4 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Austria,AUT,2006-2007,14.4,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected (ATHIS); obesity = grades I-III; men 13.7 / women 15.2"
+Austria,AUT,2014,16.1,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected; men 17.2 / women 15.2"
+Austria,AUT,2019,18.9,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected; men 20.0 / women 17.8 (men overtook women in 2014)"

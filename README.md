@@ -4,49 +4,49 @@ Harmonized panel of **adult obesity prevalence** (% of adults with body mass ind
 &ge; 30 kg/m&sup2;) drawn from each country's own national **measured** height/weight
 surveys.
 
-**Scope** (snapshot): 148 countries and 341 survey observations, earliest US 1900-1901,
+**Scope** (snapshot): 156 countries and 352 survey observations, earliest US 1900-1901,
 latest 2024-25; covers all 19 G20 national economies, the high-obesity Pacific island
 states, the Caucasus & Central Asia, mainland Southeast Asia, Latin America & the
 Caribbean, a broad Sub-Saharan Africa block, and Europe (measured examination surveys
-only). A companion file adds sex-specific rates for 136 of them.
+only). A companion file adds sex-specific rates for 154 of them.
 
-## Countries covered (148)
+## Countries covered (156)
 
 Afghanistan&dagger; · Albania&dagger; · Algeria&dagger; · Angola&dagger; · Argentina&dagger; ·
-Armenia&dagger; · Australia · Azerbaijan&dagger; · Bahrain&dagger; · Bangladesh&dagger; ·
-Barbados&dagger; · Belarus&dagger; · Belgium · Benin&dagger; · Bhutan&dagger; · Bolivia&dagger; ·
+Armenia&dagger; · Australia&dagger; · Austria&dagger; · Azerbaijan&dagger; · Bahrain&dagger; · Bangladesh&dagger; ·
+Barbados&dagger; · Belarus&dagger; · Belgium&dagger; · Benin&dagger; · Bhutan&dagger; · Bolivia&dagger; ·
 Botswana&dagger; · Brazil&dagger; · Burkina Faso&dagger; · Cabo Verde&dagger; · Cambodia&dagger; ·
-Cameroon&dagger; · Canada&dagger; · Chile&dagger; · China&dagger; · Colombia · Comoros&dagger; ·
-Congo&dagger; · Cook Islands&dagger; · Costa Rica · Croatia&dagger; · Cuba&dagger; · Czechia&dagger; ·
-Côte d'Ivoire&dagger; · Denmark · Dominican Republic&dagger; · DR Congo&dagger; · Ecuador&dagger; ·
-Egypt&dagger; · El Salvador&dagger; · Equatorial Guinea&dagger; · Eswatini&dagger; ·
+Cameroon&dagger; · Canada&dagger; · Chile&dagger; · China&dagger; · Colombia&dagger; · Comoros&dagger; ·
+Congo&dagger; · Cook Islands&dagger; · Costa Rica&dagger; · Croatia&dagger; · Cuba&dagger; · Czechia&dagger; ·
+Côte d'Ivoire&dagger; · Denmark&dagger; · Dominican Republic&dagger; · DR Congo&dagger; · Ecuador&dagger; ·
+Egypt&dagger; · El Salvador&dagger; · Equatorial Guinea&dagger; · Estonia&dagger; · Eswatini&dagger; ·
 Ethiopia&dagger; · Fiji&dagger; · Finland&dagger; · France&dagger; · Gabon&dagger; · Gambia&dagger; ·
-Georgia&dagger; · Germany&dagger; · Ghana&dagger; · Greece&dagger; · Guyana&dagger; · India&dagger; ·
-Indonesia · Iran&dagger; · Iraq&dagger; · Ireland&dagger; · Israel&dagger; · Italy&dagger; ·
+Georgia&dagger; · Germany&dagger; · Ghana&dagger; · Greece&dagger; · Guyana&dagger; · Hungary&dagger; ·
+Iceland&dagger; · India&dagger; · Indonesia · Iran&dagger; · Iraq&dagger; · Ireland&dagger; · Israel&dagger; · Italy&dagger; ·
 Jamaica&dagger; · Japan&dagger; · Jordan&dagger; · Kazakhstan · Kenya&dagger; · Kiribati&dagger; ·
-Kuwait&dagger; · Kyrgyzstan&dagger; · Laos&dagger; · Lebanon&dagger; · Lesotho&dagger; ·
-Liberia&dagger; · Libya&dagger; · Luxembourg · Malawi&dagger; · Malaysia&dagger; · Maldives&dagger; ·
+Kuwait&dagger; · Kyrgyzstan&dagger; · Laos&dagger; · Latvia&dagger; · Lebanon&dagger; · Lesotho&dagger; ·
+Liberia&dagger; · Libya&dagger; · Lithuania&dagger; · Luxembourg&dagger; · Malawi&dagger; · Malaysia&dagger; · Maldives&dagger; ·
 Malta&dagger; · Marshall Islands&dagger; · Mauritania&dagger; · Mauritius&dagger; · Mexico&dagger; ·
-Moldova&dagger; · Mongolia&dagger; · Morocco&dagger; · Mozambique&dagger; · Myanmar&dagger; ·
+Moldova&dagger; · Mongolia&dagger; · Montenegro&dagger; · Morocco&dagger; · Mozambique&dagger; · Myanmar&dagger; ·
 Namibia&dagger; · Nauru&dagger; · Nepal&dagger; · Netherlands&dagger; · New Zealand&dagger; ·
 Niger&dagger; · Niue&dagger; · Norway&dagger; · Oman&dagger; · Palau&dagger; · Palestine&dagger; ·
 Panama&dagger; · Papua New Guinea&dagger; · Paraguay&dagger; · Peru&dagger; · Philippines&dagger; ·
-Poland&dagger; · Portugal · Qatar&dagger; · Romania · Russia&dagger; · Rwanda&dagger; ·
+Poland&dagger; · Portugal&dagger; · Qatar&dagger; · Romania&dagger; · Russia&dagger; · Rwanda&dagger; ·
 Saint Lucia&dagger; · Saint Vincent and the Grenadines&dagger; · Samoa&dagger; ·
-Sao Tome and Principe&dagger; · Saudi Arabia&dagger; · Senegal&dagger; · Serbia · Seychelles&dagger; ·
+Sao Tome and Principe&dagger; · Saudi Arabia&dagger; · Senegal&dagger; · Serbia&dagger; · Seychelles&dagger; ·
 Sierra Leone&dagger; · Singapore&dagger; · Solomon Islands&dagger; · South Africa&dagger; ·
-South Korea&dagger; · Spain&dagger; · Sri Lanka&dagger; · Sudan&dagger; · Sweden · Syria&dagger; ·
+South Korea&dagger; · Spain&dagger; · Sri Lanka&dagger; · Sudan&dagger; · Sweden&dagger; · Syria&dagger; ·
 Tajikistan&dagger; · Tanzania&dagger; · Thailand&dagger; · Timor-Leste&dagger; · Togo&dagger; ·
 Tonga&dagger; · Tunisia&dagger; · Turkmenistan&dagger; · Tuvalu&dagger; · Türkiye&dagger; ·
 Uganda&dagger; · Ukraine&dagger; · United Arab Emirates&dagger; · United Kingdom&dagger; ·
-United States&dagger; · Uruguay&dagger; · Uzbekistan&dagger; · Vanuatu&dagger; · Vietnam&dagger; ·
-Zambia&dagger; · Zimbabwe&dagger;
+United States&dagger; · Uruguay&dagger; · Uzbekistan&dagger; · Vanuatu&dagger; · Venezuela&dagger; ·
+Vietnam&dagger; · Zambia&dagger; · Zimbabwe&dagger;
 
-&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (136 countries). The 12
-without a dagger have no by-sex row in the companion file: Australia, Belgium, Colombia, Costa Rica,
-Denmark, Indonesia, Luxembourg, Portugal, Romania, Serbia and Sweden (no published both-sexes-separated
-split in the source used), and Kazakhstan (its 2021-22 total is reconstructed from urban/rural figures,
-with no sex breakdown).
+&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (154 countries). The 2
+without a dagger have no by-sex row in the companion file: **Indonesia** (the RISKESDAS sex split is
+published only at the &ge; 25 Asian cut-off, not at BMI &ge; 30) and **Kazakhstan** (its 2021-22 total is
+reconstructed from urban/rural figures, with no sex breakdown). Some daggered countries carry by-sex for
+only part of their series (e.g. Denmark's intermediate SUSY waves and Colombia 2005 are persons-only).
 
 The Pacific island states (Cook Islands, Fiji, Kiribati, Nauru, Samoa, Solomon Islands, Tonga,
 Tuvalu, Vanuatu — all WHO STEPS) anchor the **top of the panel**: Nauru (70.2%), Cook Islands
@@ -88,6 +88,12 @@ enters as a third *age-standardised* series (its NCD survey publishes no crude B
 (ethnic-specific cutoffs only), Madagascar/Guinea/Burundi (women-only DHS), and dependent territories
 that are not WHO member states (e.g. Tokelau).
 
+A further round adds **Venezuela** (EVESCAM 24.6%) and fills in measured Europe — **Hungary** (the OTAP
+nutritional-status survey), the **Baltic republics** (Estonia 8.0%, Latvia 13.5%, Lithuania 14.9%, from a
+1997 measured survey), **Iceland** (the Reykjavik Heart Association cohort, used as broadly national) and
+**Montenegro** (the EU Menu survey) — plus **Austria** as a *second self-reported* series (with Denmark,
+both bias-corrected). After this, only **Indonesia** and **Kazakhstan** lack a sex-specific companion row.
+
 ## Why this exists
 
 The widely used cross-country obesity products (WHO Global Health Observatory, and the
@@ -126,7 +132,7 @@ Each `data/raw/<ISO3>.csv` has eleven columns — four core columns plus seven
 | `survey_period`| reporting period as published — a single year (`2004`) or a range (`1988-1994`) |
 | `obesity_pct`  | % of adults with BMI &ge; 30, total (both sexes) |
 | `basis`        | `crude` or `age-standardised` (standardised for China, Italy, Mauritius & the two oldest USA points) |
-| `measurement`  | `measured` or `self-reported` (self-reported only for Denmark) |
+| `measurement`  | `measured` or `self-reported` (self-reported only for Denmark and Austria) |
 | `derivation`   | `published` (source-reported total), `reconstructed` (50/50 male/female average), or `anchor` (derived non-survey figure — USA 1900) |
 | `age_group`    | adult age base as published, e.g. `20+`, `18-79`, `35-74` |
 | `coverage`     | `national`, `sub-national` (GBR=England, NOR=one county, AUS 1980, NLD pre-2009 RIVM monitoring towns, SYR=Aleppo city), or `non-probability` (SWE occupational cohort) |
@@ -186,8 +192,9 @@ These are **heterogeneous national surveys**, not a single harmonized instrument
 - **Crude vs age-standardized**: values here are **crude** prevalence (to match the basis
   most national headline figures and the US NHANES series use), not age-standardized.
 - **Measured vs self-reported**: all points aim to be from *measured* height/weight; self-reported
-  waves (which understate obesity) are excluded — with **one exception, Denmark**, the only
-  self-reported series, included for coverage and flagged as such (not comparable head-to-head).
+  waves (which understate obesity) are excluded — with **two exceptions, Denmark and Austria** (the only
+  self-reported series, both bias-corrected), included for coverage by request and flagged as such (not
+  comparable head-to-head).
   A few series are **age-standardised** rather than crude (China, Italy and Mauritius, whose
   national reports publish no crude BMI &ge; 30; and the two oldest US points — 1960-62 & 1971-74 —
   whose crude is not recoverable from microdata). All flagged per point in `data/raw/README.md`.

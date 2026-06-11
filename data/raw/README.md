@@ -151,6 +151,19 @@ and can be read directly.
   https://www.aihw.gov.au/reports/overweight-obesity/overweight-and-obesity/data
   NOTE: in 2022 a large share of height/weight was self-reported/imputed (AIHW note) — a minor
   break from the fully-measured earlier waves.
+- BY SEX (`obesity-by-sex.csv`): four waves carry a both-sexes-separated crude BMI &ge; 30 split, each
+  reconciling to the persons total above:
+  - 1999-2000 = men 19.3 / women 22.2 — AusDiab, BMI-based (not waist), adults 25+. Cameron et al.,
+    "Overweight and obesity in Australia: the 1999-2000 AusDiab study", *MJA* 178(9):427 (2003).
+  - 2014-15 = men 28.4 / women 27.4 (men &gt; women); 2017-18 = men 32.5 / women 30.2 — ABS NHS,
+    crude "Obese" proportions, persons 18+, from the ABS "Waist circumference and BMI, 2017-18" release.
+  - 2022 = men 32.5 / women 30.9 — ABS National Health Survey 2022, Data cube **NHSDC08** ("Body Mass
+    Index, waist circumference, height and weight, by age and sex"), Table 8.3 crude proportions, 18+
+    (41.8% of BMI imputed/self-reported in 2022).
+  - https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/2022
+  NO by-sex split is included for 1980, 1989, 1995, 2007-08 and 2011-12: the 1980/1989 NHF points are
+  sub-national/approximate, and the older ABS single-year BMI-by-sex cubes (1995, 2007-08, 2011-12) are
+  no longer served on the current ABS site and the AIHW data-table compilation is not machine-reachable.
 
 ## New Zealand — `NZL.csv`  (national 2011/12+; NZ Health Survey, adults 15+)
 
@@ -538,12 +551,16 @@ and can be read directly.
   skew leaner). Treat as indicative, not strictly comparable to the probability-sample countries.
   SOURCE: Hemmingsson et al. (2021), "Prevalence and time trends of overweight, obesity and severe
   obesity in 447,925 Swedish adults, 1995-2017", https://pmc.ncbi.nlm.nih.gov/articles/PMC8135248/
+- BY SEX (`obesity-by-sex.csv`): 2017 only = men 18.1 / women 14.4 (men &gt; women, as usual for an
+  employed cohort). NOTE: the paper's sex-specific table sums to 16.6 for 2016-17, vs the 17.0 headline
+  used for the persons total; 1995 is not reported by sex. Same Hemmingsson et al. (2021) source.
 
 ## Denmark — `DNK.csv`  (national; SUSY, adults 16+, SELF-REPORTED) — the one self-reported series here
 
-- READ THIS FIRST — BASIS EXCEPTION: Denmark is the **only self-reported series in the panel**. Every
-  other country's self-reported source (France ObÉpi, Brazil VIGITEL, Spain ENSE, UK self-report
-  waves, Sweden's official figures, etc.) was *excluded*; Denmark is included **by request** because
+- READ THIS FIRST — BASIS EXCEPTION: Denmark is **one of only two self-reported series in the panel**
+  (the other is **Austria**/ATHIS). Every other country's self-reported source (France ObÉpi, Brazil
+  VIGITEL, Spain ENSE, UK self-report waves, Sweden's official figures, etc.) was *excluded*; Denmark and
+  Austria are included **by request** for coverage. Denmark is included because
   it is the only way to cover the country — Denmark has no usable measured national survey (the
   measured DANHES 2007-2008 had a ~10% participation rate in 13 municipalities). Do **not** compare
   Denmark's level head-to-head with the measured countries: self-report understates obesity, so the
@@ -560,6 +577,9 @@ and can be read directly.
   SOURCE: "Changes in adult obesity prevalence in Denmark, 1987-2021: age-period-cohort analysis of
   nationally representative data", *Eur J Public Health* 33(3):463.
   https://academic.oup.com/eurpub/article/33/3/463/7058153
+- BY SEX (`obesity-by-sex.csv`): only the two exact waves carry a split — 1987 = men 5.7 / women 6.5,
+  2021 = men 18.8 / women 18.0 (men edge out women by 2021). The authors found **no sex-differential
+  effect** and pooled the sexes for the intermediate waves, so 1994-2017 stay persons-only. Self-report.
 
 ## Türkiye — `TUR.csv`  (national; WHO STEPS, adults 15+, measured)
 
@@ -696,6 +716,9 @@ and can be read directly.
   and publishes &ge; 30 mostly in figures / by sex (e.g. Roemling & Qaim, *Appetite* 2012, headline a
   &ge; 27 cutoff), so it is **not** added — RISKESDAS is fully national (514 districts) with a clean
   published &ge; 30 both-sexes total. The large female excess (as in India/Japan/Korea) holds in both.
+- NO BY-SEX row (`obesity-by-sex.csv`): RISKESDAS publishes its sex split only at the &ge; 25 Asian
+  cutoff, not at BMI &ge; 30, so a both-sexes-separated &ge; 30 series that reconciles to the totals
+  above is not recoverable. Persons-only for now (women run well above men, per the &ge; 25 split).
 
 ## Saudi Arabia — `SAU.csv`  (national; Al-Nuaim 1990-93, CADISS 1995-2000, SHIS 2013, measured)
 
@@ -972,6 +995,11 @@ and can be read directly.
   &rarr; 16.5 (2010) trend is restated in Escobar-Velásquez et al., "Desigualdad social y obesidad en
   la población adulta colombiana", *Arch Med* 17(2) (2017),
   https://www.redalyc.org/journal/2738/273854673013/273854673013.pdf.
+- BY SEX (`obesity-by-sex.csv`): 2015 = men 14.4 / women 22.4 (official ENSIN 2015, reconciles to the
+  18.7 total); 2010 = men 14.1 / women 17.4 (Escobar-Velásquez et al., whose ENSIN 2010 total reads as
+  16.1 vs the 16.5 used here). **2005 is persons-only** — no official both-sexes-separated split was
+  recoverable. Avoid the Spijker/Castro-Prieto quasi-cohort by-sex figures: they are re-estimated at
+  ages 20-64 and run ~2 pp above the official ENSIN totals.
 
 ## Poland — `POL.csv`  (national; WOBASZ 2003-2005 & WOBASZ II 2013-2014, adults 20-74, measured) — RECONSTRUCTED
 
@@ -2368,6 +2396,10 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   sobrepeso y obesidad en la población urbana de Costa Rica entre los 20 y 65 años… resultados del Estudio
   Latino Americano de Nutrición y Salud", *Nutr Hosp* (2020),
   https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S0212-16112020000400017.
+- BY SEX (`obesity-by-sex.csv`): men 23.5 / women 35.6 (BMI &ge; 30), from the ELANS multi-country
+  anthropometric profile (Kovalskys et al., *Front Nutr* 2021, Table 1, Costa Rica column),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC8606788/. Sex-average (~29.5) sits just above the 29.1 total;
+  urban/sub-national, so loose either way.
 
 ---
 
@@ -2469,6 +2501,8 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   women, though overweight is higher in men). SOURCE: Gaio V et al., "Prevalência de excesso de peso e de
   obesidade em Portugal: resultados do INSEF 2015", INSA,
   https://repositorio.insa.pt/handle/10400.18/5588.
+- BY SEX (`obesity-by-sex.csv`): men 25.0 / women 32.1 (the INSEF paper reports "32% vs 25%");
+  sex-average ~28.6 matches the 28.7 total.
 
 ---
 
@@ -2495,6 +2529,11 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   the age- and sex-adjusted figure). SOURCE: Popa S, Moţa M et al. (PREDATORR), "Prevalence of
   overweight/obesity, abdominal obesity and metabolic syndrome… : PREDATORR study", *J Endocrinol Invest*
   (2016), https://pubmed.ncbi.nlm.nih.gov/27126310/.
+- BY SEX (`obesity-by-sex.csv`): men 29.4 / women 34.1 — from PREDATORR **Table 2**, which reports
+  **age- and sex-adjusted** percentages only (the paper gives no crude by-sex, nor a crude total). These
+  are therefore flagged `basis = age-standardised` even though the panel total above is crude 31.4; the
+  two bases are nearly identical for Romania (adjusted total 31.9 vs crude 31.4), so the by-sex average
+  (31.75) still reconciles to the panel point within tolerance. The full text was obtained via ILL.
 
 ---
 
@@ -2536,6 +2575,9 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   https://pmc.ncbi.nlm.nih.gov/articles/PMC2925827/ (metabolic-syndrome companion:
   https://pmc.ncbi.nlm.nih.gov/articles/PMC3024931/). Repeat waves (EHES-LUX 2013-15, ORISCAV-LUX 2 2016-18)
   show a roughly flat ~20-21% and are not stitched on.
+- BY SEX (`obesity-by-sex.csv`): men 23.0 / women 18.7 — **men &gt; women**, unusual for the panel (the
+  source notes obesity, hypertension, lipids and smoking all higher in men). Sex-average 20.85 matches
+  the 20.9 total. Same Alkerwi et al. (PMC2925827).
 
 ---
 
@@ -2560,6 +2602,8 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   figure.) SOURCE: Belgian Health Examination Survey / Sciensano, "Weight status",
   https://www.healthybelgium.be/en/health-status/determinants-of-health/weight-status; method paper
   https://pmc.ncbi.nlm.nih.gov/articles/PMC7268416/.
+- BY SEX (`obesity-by-sex.csv`): men 20 / women 23 (measured; the source rounds to whole %, difference
+  not statistically significant). Sex-average ~21.5 vs the 21.0 total — a rounding-level gap.
 
 ---
 
@@ -2573,6 +2617,8 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   anthropometric measures in the adult population in Serbia… : data from the National Health Survey 2013",
   *Public Health Nutrition* (2016), https://pubmed.ncbi.nlm.nih.gov/26865391/; see also
   https://pmc.ncbi.nlm.nih.gov/articles/PMC5770809/.
+- BY SEX (`obesity-by-sex.csv`): men 21.4 / women 23.3; sex-average 22.35 matches the 22.4 total. Same
+  National Health Survey 2013 source.
 
 ---
 
@@ -2821,6 +2867,108 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   overweight/obesity among adults in Afghanistan: prevalence and correlates from a national survey in 2018",
   *J Health Popul Nutr* 40:24 (2021), https://pmc.ncbi.nlm.nih.gov/articles/PMC8180065/ . Afghanistan's only
   national measured BMI &ge; 30 point.
+
+---
+
+## Venezuela — `VEN.csv`  (national; EVESCAM 2014-2017, adults 20+, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **20+**. **EVESCAM**
+  (*Estudio Venezolano de Salud Cardio-Metabólica* / Venezuelan Study of Cardio-Metabolic Health) was a
+  nationally representative cross-sectional survey using multi-stage stratified sampling (parish as the
+  primary sampling unit); height/weight objectively measured with a calibrated scale and portable
+  stadiometer. n = 3,420 adults &ge; 20 analysed (4,454 screened), fieldwork July 2014 – January 2017.
+- 2014-2017 = 24.6 — **published both-sexes total** (95% CI 21.6–27.7), men 22.2 / women 26.7. SOURCE:
+  González-Rivas JP et al., "Dietary intake and cardiometabolic risk factors among Venezuelan adults: a
+  nationally representative analysis", *Nutrients* 12(10):3138 (2020),
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC7566137/ (EVESCAM). Venezuela's only clean national measured
+  BMI &ge; 30 point — the country has no WHO STEPS round and its DHS-type surveys measure women only.
+
+---
+
+## Hungary — `HUN.csv`  (national; OTAP 2009 & 2014, adults 18+, measured) — 2-point panel, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18+**. **OTAP** (Országos
+  Táplálkozás és Tápláltsági Állapot Vizsgálat / Hungarian Diet and Nutritional Status Survey) is the
+  **measured-anthropometry** sub-sample nested in Hungary's national health-examination survey, run every
+  ~5 years (OTÁP/OTAP **2009** and **2014**), representative by age and sex; height/weight measured (not
+  the self-reported ELEF/EHIS headline). This is why Hungary is **in** the panel despite its recurring
+  ELEF survey being self-report — OTAP is the measured arm. CAVEAT: response rate ~35% (2009, n = 1,165).
+- 2009 = 28.3 and 2014 = 29.9 — **RECONSTRUCTED** as the 50/50 male/female average of the published
+  by-sex obesity (2009 men 26.2 / women 30.4; 2014 men 28.2 / women 31.5). SOURCE: Erdei G, Kovács VA,
+  Bakacs M, Martos É, "Hungarian Diet and Nutritional Status Survey — the OTAP2009 study", *Orv Hetil*
+  153(27):1023 (2012), https://pubmed.ncbi.nlm.nih.gov/22735373/; and the OTAP2014 follow-up, *Orv Hetil*
+  158(13):533 (2017), https://pubmed.ncbi.nlm.nih.gov/28366082/. Women run above men in both waves.
+- NOT USED: the **ELEF / Austrian-style EHIS** self-reported obesity (~21% in 2019) is excluded on the
+  panel's measured-only rule. Hungary's by-sex (`obesity-by-sex.csv`) carries both OTAP waves directly.
+
+---
+
+## Iceland — `ISL.csv`  (Icelandic Heart Association Reykjavik cohort, measured) — broadly national, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, ages **25-84**. COVERAGE caveat (same shape as
+  **Norway/HUNT**): Iceland has **no national STEPS**, and its recurring national health survey is
+  **self-reported**; the only clean *measured* source is the **Icelandic Heart Association** population
+  studies based in the **greater Reykjavik** area (REFINE-Reykjavik 2006 + AGES-Reykjavik). Treated as
+  **broadly national** because the capital region holds ~2/3 of the population — but it is a regional
+  cohort, not a probability sample of the whole country, so treat loosely like NOR.
+- 2004-2007 = 22.0 — **RECONSTRUCTED** as the 50/50 male/female average of the measured obesity (men 23
+  / women 21; men slightly higher — uncommon in this panel). SOURCE: Thorsson B et al., "Trends in body
+  weight and diabetes in forty years in Iceland", *Læknablaðið* (Icel Med J) 95(4):259 (2009),
+  https://pubmed.ncbi.nlm.nih.gov/19420407/ (n = 2,410 REFINE + 3,027 AGES). The self-reported national
+  figure (~21-27%) is **not** used, on the panel's measured-only rule.
+
+---
+
+## Baltic Republics — `EST.csv` / `LVA.csv` / `LTU.csv`  (national; Baltic Nutrition Survey 1997, measured) — single points, RECONSTRUCTED
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**. Three parallel cross-sectional
+  surveys run in **summer 1997** with representative national samples drawn from the population registers
+  of **Estonia**, **Latvia** and **Lithuania**; height and weight were **measured** by interviewers to a
+  standard protocol (not self-reported). Adults **19-64** (Lithuania **19-65**). The Baltics' recurring
+  FINBALT/EHIS monitors are self-report and are **not** used; this 1997 survey is the clean measured point.
+- Each total is **RECONSTRUCTED** as the 50/50 male/female average of the published unadjusted (crude)
+  by-sex obesity (Table 1):
+  - **Estonia** = 8.0 (men 9.9 / women **6.0**) — note the **rare** men > women pattern: Estonian women
+    are markedly leaner than Latvian/Lithuanian women (~1/3 the rate), the paper's headline finding.
+  - **Latvia** = 13.5 (men 9.5 / women 17.4).
+  - **Lithuania** = 14.9 (men 11.4 / women 18.3).
+  SOURCE (all three): Pomerleau J, Pudule I, Grinberga D et al., "Patterns of body weight in the Baltic
+  Republics", *Public Health Nutr* 3(1):3-10 (2000), https://pubmed.ncbi.nlm.nih.gov/10786718/
+  (n: EST 1,154 / LVA 2,292 / LTU 2,096 with measured anthropometry). By-sex carried in `obesity-by-sex.csv`.
+
+---
+
+## Montenegro — `MNE.csv`  (national; EFSA EU Menu National Survey 2017-2022, adults 18-74, measured) — single point
+
+- Standard WHO **BMI &ge; 30**, **crude**, **measured**, **national**, adults **18-74**. The Montenegrin
+  **EU Menu** national food-consumption survey (EFSA-funded) drew a **nationally representative** stratified
+  multistage sample across all three regions (Northern/Central/Coastal); body height and weight were
+  **measured** with calibrated instruments to a standard protocol. n = 1,011 (48.2% men / 51.8% women).
+- 2017-2022 = 14.2 — **published both-sexes total**, men 16.9 / women 11.8 (**men > women**, uncommon in
+  the panel — Montenegrin women skew toward normal weight). SOURCE: the EU Menu Montenegro adult survey, as
+  reported in "Energy and macronutrient intakes of Montenegrin adults: insights from the EFSA EU Menu
+  National Survey (2017-2022)", *Front Nutr* (2026),
+  https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1741525/full. Montenegro's NCD
+  monitor is otherwise modelled (NCD-RisC), which the panel does not use; this measured survey is the clean point.
+
+---
+
+## Austria — `AUT.csv`  (national; ATHIS 2006/07 / 2014 / 2019, adults 15+, SELF-REPORTED) — 3-point panel
+
+- BASIS EXCEPTION: Austria is the **second self-reported series** in the panel (with **Denmark** — see
+  that entry). Austria has no measured national survey; the only national source is the **Austrian Health
+  Interview Survey (ATHIS)** (the Austrian EHIS), height/weight **self-reported**. Included **by request**
+  for coverage. Do **not** compare Austria's level head-to-head with the measured countries (self-report
+  understates obesity, even after correction).
+- The figures are **self-reported but bias-corrected** (Statistik Austria applied correcting factors for
+  both sexes in four age groups, from an Austrian validity study) — the same "self-report nudged toward
+  measured" treatment as Denmark's SUSY. **Crude** (not age-standardised), adults **15+**, BMI &ge; 30.
+- 2006-2007 = 14.4, 2014 = 16.1, 2019 = 18.9 — both-sexes obesity (sum of grades I-III, Table 1, crude
+  column). By sex (Tables 2 & 3): men 13.7 / 17.2 / 20.0, women 15.2 / 15.2 / 17.8 — note men **overtook**
+  women by 2014 (women's rate was flat 2006-2014). Net samples 14,474 / 15,771 / 15,461 (response 61/41/51%).
+  SOURCE: Dorner TE, Bernecker O, Haider S, Stein KV, "Steady increase of obesity prevalence in Austria:
+  Analysis of three representative cross-sectional national health interview surveys from 2006 to 2019",
+  *Wien Klin Wochenschr* 135:125-133 (2023), https://doi.org/10.1007/s00508-022-02032-z.
 
 ---
 

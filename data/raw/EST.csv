@@ -1,0 +1,2 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Estonia,EST,1997,8.0,crude,measured,reconstructed,19-64,national,Baltic Nutrition Survey,"reconstructed 50/50 of men 9.9 / women 6.0; Estonian women notably lean (women < men, rare)"

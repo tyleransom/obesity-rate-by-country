@@ -252,3 +252,29 @@ Papua New Guinea,PNG,2007-2008,5.1,8.7,3.6,crude,measured,published,15-64,nation
 Saint Vincent and the Grenadines,VCT,2013-2014,13.2,40.8,27.6,crude,measured,published,18-69,national,STEPS 2013-14,
 Niue,NIU,2011,59.2,62.7,3.5,crude,measured,published,15+,national,STEPS 2011,
 Marshall Islands,MHL,2002,26.6,37.1,10.5,crude,measured,published,15-64,national,STEPS 2002,
+Venezuela,VEN,2014-2017,22.2,26.7,4.5,crude,measured,published,20+,national,EVESCAM,
+Australia,AUS,1999-2000,19.3,22.2,2.9,crude,measured,published,25+,national,AusDiab,"BMI-based (not waist); AusDiab sampled adults 25+"
+Australia,AUS,2014-2015,28.4,27.4,-1.0,crude,measured,published,18+,national,NHS,"men slightly exceed women"
+Australia,AUS,2017-2018,32.5,30.2,-2.3,crude,measured,published,18+,national,NHS,
+Australia,AUS,2022,32.5,30.9,-1.6,crude,measured,published,18+,national,NHS,"large self-report/imputed share (41.8% of BMI imputed in 2022)"
+Serbia,SRB,2013,21.4,23.3,1.9,crude,measured,published,19+,national,NHS 2013,
+Belgium,BEL,2018,20.0,23.0,3.0,crude,measured,published,18+,national,BELHES 2018,"source rounds to whole %; sex difference not significant"
+Portugal,PRT,2015,25.0,32.1,7.1,crude,measured,published,25-74,national,INSEF 2015,"abstract reports men 25 / women 32"
+Luxembourg,LUX,2007-2009,23.0,18.7,-4.3,crude,measured,published,18-69,national,ORISCAV-LUX,"men > women (unusual for the panel)"
+Colombia,COL,2010,14.1,17.4,3.3,crude,measured,published,18-64,national,ENSIN 2010,"by-sex source overall 16.1 vs panel 16.5"
+Colombia,COL,2015,14.4,22.4,8.0,crude,measured,published,18-64,national,ENSIN 2015,"official ENSIN 2015 by sex"
+Denmark,DNK,1987,5.7,6.5,0.8,crude,self-reported,published,16+,national,SUSY,"self-report (corrected); intermediate waves not sex-split in source"
+Denmark,DNK,2021,18.8,18.0,-0.8,crude,self-reported,published,16+,national,SUSY,"self-report; men edge out women"
+Sweden,SWE,2017,18.1,14.4,-3.7,crude,measured,published,25-74,non-probability,HPI,"occupational cohort; sex table sums to 16.6 vs 17.0 headline"
+Costa Rica,CRI,2014-2015,23.5,35.6,12.1,crude,measured,published,20-65,sub-national,ELANS,"urban; ELANS anthropometric table (overall ~29.5)"
+Hungary,HUN,2009,26.2,30.4,4.2,crude,measured,published,18+,national,OTAP2009,"measured; 35% response"
+Hungary,HUN,2014,28.2,31.5,3.3,crude,measured,published,18+,national,OTAP2014,
+Romania,ROU,2014,29.4,34.1,4.7,age-standardised,measured,published,20-79,national,PREDATORR,"age/sex-adjusted (PREDATORR reports only adjusted); panel total 31.4 is crude"
+Iceland,ISL,2004-2007,23.0,21.0,-2.0,crude,measured,published,25-84,sub-national,IHA Reykjavik,"Reykjavik cohort (REFINE+AGES), broadly national; rare men>women"
+Estonia,EST,1997,9.9,6.0,-3.9,crude,measured,published,19-64,national,Baltic Nutrition Survey,"men > women (rare); Estonian women notably lean"
+Latvia,LVA,1997,9.5,17.4,7.9,crude,measured,published,19-64,national,Baltic Nutrition Survey,
+Lithuania,LTU,1997,11.4,18.3,6.9,crude,measured,published,19-65,national,Baltic Nutrition Survey,
+Montenegro,MNE,2017-2022,16.9,11.8,-5.1,crude,measured,published,18-74,national,EU Menu Montenegro,"men > women"
+Austria,AUT,2006-2007,13.7,15.2,1.5,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected; women > men"
+Austria,AUT,2014,17.2,15.2,-2.0,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected; men overtake women"
+Austria,AUT,2019,20.0,17.8,-2.2,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected"

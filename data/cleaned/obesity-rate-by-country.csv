@@ -17,6 +17,9 @@ Australia,AUS,2011.5,2011-2012,27.5,crude,measured,published,18+,national,TRUE,A
 Australia,AUS,2014.5,2014-2015,27.9,crude,measured,published,18+,national,TRUE,NHS,NA
 Australia,AUS,2017.5,2017-2018,31.3,crude,measured,published,18+,national,TRUE,NHS,NA
 Australia,AUS,2022,2022,31.7,crude,measured,published,18+,national,TRUE,NHS,large self-report/imputed share
+Austria,AUT,2006.5,2006-2007,14.4,crude,self-reported,published,15+,national,FALSE,ATHIS,"self-report, bias-corrected (ATHIS); obesity = grades I-III; men 13.7 / women 15.2"
+Austria,AUT,2014,2014,16.1,crude,self-reported,published,15+,national,FALSE,ATHIS,"self-report, bias-corrected; men 17.2 / women 15.2"
+Austria,AUT,2019,2019,18.9,crude,self-reported,published,15+,national,FALSE,ATHIS,"self-report, bias-corrected; men 20.0 / women 17.8 (men overtook women in 2014)"
 Azerbaijan,AZE,2017,2017,20.6,crude,measured,published,18-69,national,FALSE,STEPS 2017,"men 14.7 / women 26.5; n=2,801 (18-69); Azerbaijan's first national STEPS; fieldwork Aug-Oct 2017, response 97.3%"
 Bahrain,BHR,2018,2018,43.2,crude,measured,reconstructed,18+,national,FALSE,Bahrain NHS 2018,Bahraini nationals only (excludes expatriate majority); 50/50 average of men 39.2 / women 47.2; all-resident figure was 36.9 (M 30.9/F 42.5); measured; excludes pregnant women
 Bangladesh,BGD,2017.5,2017-2018,5.4,crude,measured,published,18-69,national,FALSE,STEPS 2018,"men 2.3 / women 8.6; NIPSOM/WHO; first all-3-step national STEPS; measured n=7,208; overweight 25.0-29.9 = 20.5"
@@ -86,6 +89,7 @@ Egypt,EGY,2017,2017,35.7,crude,measured,published,15-69,national,TRUE,STEPS2017,
 Egypt,EGY,2019,2019,39.8,crude,measured,published,18+,national,TRUE,100MillionHealth,"100 Million Seha screening, 49.7M adults; men 29.5 / women 49.5"
 El Salvador,SLV,2015,2015,27.3,crude,measured,published,20+,national,FALSE,ENECA-ELS,men 19.2 / women 31.8; National Survey of Chronic NCDs in the Adult Population
 Equatorial Guinea,GNQ,2011,2011,8.3,crude,measured,reconstructed,15-49,national,FALSE,EDSGE-I 2011,Equatorial Guinea DHS (EDSGE-I); reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 4.5 (15-59) / women 12.7 (15-49); mixed age base between sexes
+Estonia,EST,1997,1997,8,crude,measured,reconstructed,19-64,national,FALSE,Baltic Nutrition Survey,"reconstructed 50/50 of men 9.9 / women 6.0; Estonian women notably lean (women < men, rare)"
 Eswatini,SWZ,2014,2014,20.5,crude,measured,published,15-69,national,FALSE,STEPS 2014,survey published under name Swaziland; men 8.8 / women 30.9 (large female skew); overweight 43.8; n=3281; STEPS sample 15-69 (incl. 15-17; no 70+)
 Ethiopia,ETH,2015,2015,1.2,crude,measured,published,15-69,national,FALSE,STEPS 2015,third Ethiopia STEPS; very low prevalence; men 0.5 / women 2.0; overweight 6.3; n=9801; STEPS sample 15-69 (incl. 15-17; no 70+)
 Fiji,FJI,2011,2011,32.1,crude,measured,published,25-64,national,FALSE,STEPS 2011,"women far above men (women ~40 / men ~22); n=2,586; response 53%; rose 8.5 points since the 2002 STEPS (~23.6); multiethnic - iTaukei obesity (men 28.9 / women 52.9) ~2-3x Indo-Fijian (men 9.4 / women 26.6)"
@@ -104,6 +108,9 @@ Ghana,GHA,2023,2023,13.4,crude,measured,published,18-69,national,FALSE,STEPS 202
 Greece,GRC,2014.5,2013-2016,32.1,crude,measured,published,18+,national,FALSE,EMENO,men 30.5 / women 33.6; EMENO National Health Examination Survey
 Guyana,GUY,2009,2009,15.1,crude,measured,reconstructed,15-49,national,TRUE,DHS 2009,"50/50 reconstruction of men 8.5 / women 21.7 (DHS Program API, 15-49); n=3,250 men / 4,502 women"
 Guyana,GUY,2016,2016,23.6,crude,measured,published,18-69,national,TRUE,STEPS 2016,"Pan American STEPS; published both-sexes total; men 14.0 / women 34.0; n=3,456 (18-69)"
+Hungary,HUN,2009,2009,28.3,crude,measured,reconstructed,18+,national,FALSE,OTAP2009,"reconstructed 50/50 of men 26.2 / women 30.4; OTAP measured-anthropometry sub-sample, 35% response"
+Hungary,HUN,2014,2014,29.9,crude,measured,reconstructed,18+,national,FALSE,OTAP2014,reconstructed 50/50 of men 28.2 / women 31.5
+Iceland,ISL,2005.5,2004-2007,22,crude,measured,reconstructed,25-84,sub-national,FALSE,IHA Reykjavik,"reconstructed 50/50 of men 23 / women 21; Reykjavik IHA cohort (REFINE + AGES), used as broadly national"
 India,IND,2017.5,2017-2018,9.3,crude,measured,published,18-69,national,FALSE,NNMS,single point; no trend; large female excess
 Indonesia,IDN,2007,2007,3.7,crude,measured,published,20+,national,FALSE,RISKESDAS,BMI>=30; national reports headline the >=27 Asian cutoff
 Indonesia,IDN,2013,2013,5.8,crude,measured,published,20+,national,FALSE,RISKESDAS,NA
@@ -138,11 +145,13 @@ Kiribati,KIR,2005,2004-2006,50.6,crude,measured,published,25-64,national,FALSE,S
 Kuwait,KWT,2014,2014,40.3,crude,measured,published,18-69,national,FALSE,STEPS 2014,Kuwaiti nationals only (excludes expatriate majority); men 36.5 / women 44.0; ~8 in 10 overweight or obese; n=3915
 Kyrgyzstan,KGZ,2013,2013,23.1,crude,measured,published,25-64,national,FALSE,STEPS 2013,"men 17.6 / women 29.0 (p<0.05); n=2,623; nationally representative (130 PSUs of 1,884, PPS, 40% urban/60% rural); age base 25-64 (narrower than the 18-69 of the rest of Central Asia); MoH / National Center of Cardiology report"
 Laos,LAO,2013,2013,5.6,crude,measured,published,18-64,national,FALSE,STEPS 2013,"men 3.5 / women 7.1; n=2,531; ages 18-64; overweight+obese (>=25) = 19.7; first national NCD STEPS (Pengpid & Peltzer 2018)"
+Latvia,LVA,1997,1997,13.5,crude,measured,reconstructed,19-64,national,FALSE,Baltic Nutrition Survey,reconstructed 50/50 of men 9.5 / women 17.4
 Lebanon,LBN,1997,1997,16.6,crude,measured,reconstructed,20+,national,FALSE,Sibai 1997,first national epidemiological study; 50/50 reconstruction of men 14.3 / women 18.8 (no published both-sexes total)
 Lebanon,LBN,2008.5,2008-2009,26.1,crude,measured,published,20+,national,FALSE,AUB 2008-09,"AUB national STEPwise survey; men 26.4 / women 25.9; n=2,608"
 Lesotho,LSO,2023.5,2023-2024,20.4,crude,measured,reconstructed,20-49,national,FALSE,LDHS 2023-24,"Lesotho DHS; reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 4.6 / women 35.4 (very large female skew); DHS 20-49 cap (no 50+), runs low"
 Liberia,LBR,2022,2022,19.9,crude,measured,published,18-69,national,FALSE,STEPS 2022,second national STEPS (n=4069); men 17.7 / women 22.2; unusually high male obesity for the region; women obesity fell from 28.7 in 2011 STEPS
 Libya,LBY,2009,2009,30.5,crude,measured,published,25-64,national,FALSE,STEPS 2009,"WHO/MoH national STEPS (Feb-Nov 2009); men 21.4 / women 40.1; mean BMI 27.7; n=3,590"
+Lithuania,LTU,1997,1997,14.9,crude,measured,reconstructed,19-65,national,FALSE,Baltic Nutrition Survey,reconstructed 50/50 of men 11.4 / women 18.3
 Luxembourg,LUX,2008,2007-2009,20.9,crude,measured,published,18-69,national,FALSE,ORISCAV-LUX,"1st nationwide cardiovascular risk-factor survey (LIH), representative sample, measured"
 Malawi,MWI,2009,2009,4.6,crude,measured,published,25-64,national,TRUE,STEPS 2009,men 2.0 / women 7.3 (large female skew); overweight 21.9; n=4845 (BMI); STEPS sample 25-64 (no 65+)
 Malawi,MWI,2017,2017,5.1,crude,measured,published,18-69,national,TRUE,STEPS 2017,second STEPS; men 1.2 / women 9.0 (large female skew); overweight 18.9; n=3799 (BMI); age base 18-69 vs 25-64 in 2009; overweight among 25-64 ~flat (21.9->21.5)
@@ -170,6 +179,7 @@ Mongolia,MNG,2005,2005,9.8,crude,measured,published,15-64,national,TRUE,STEPS 20
 Mongolia,MNG,2009,2009,12.5,crude,measured,published,15-64,national,TRUE,STEPS 2009,"men 11.1 / women 14.1; n=5,638 (15-64)"
 Mongolia,MNG,2013,2013,19.7,crude,measured,published,15-64,national,TRUE,STEPS 2013,"men 15.2 / women 24.2; n=6,013 (15-64); sharp rise from 2009 on the same 15-64 base"
 Mongolia,MNG,2019,2019,18.5,crude,measured,published,15-69,national,TRUE,STEPS 2019,"men 16.6 / women 20.4; n=6,654 (15-69); age base widened to 15-69 (adds older, heavier 65-69) yet obesity fell vs 2013 (19.7) -> plateau is real, not an age artifact"
+Montenegro,MNE,2019.5,2017-2022,14.2,crude,measured,published,18-74,national,FALSE,EU Menu Montenegro,published both-sexes total; men 16.9 / women 11.8 (men > women)
 Morocco,MAR,2000,2000,13.2,crude,measured,published,20+,national,TRUE,MoH survey 2000,"2000 national NCD risk-factor survey, both-sexes total, as cited in the STEPS 2017-18 report background"
 Morocco,MAR,2017.5,2017-2018,20,crude,measured,published,18+,national,TRUE,STEPS 2017-18,"WHO/MoH national STEPS; men 11.0 / women 29.0; mean BMI 25.9; n=5,429; response 89%"
 Mozambique,MOZ,2005,2005,4.7,crude,measured,reconstructed,25-64,national,FALSE,STEPS 2005,50/50 average of men 2.3 / women 7.0 (no published both-sexes total); restricted to 25-64 for cross-wave comparability
@@ -335,6 +345,7 @@ Uruguay,URY,2006,2006,20,crude,measured,published,18-65,sub-national,TRUE,ENSO 2
 Uruguay,URY,2013,2013,23.7,crude,measured,published,15-64,national,TRUE,2da ENFRENT,men 22.1 / women 25.1; WHO STEPS-based 2nd national NCD risk-factor survey
 Uzbekistan,UZB,2019,2019,23.5,crude,measured,published,18-69,national,FALSE,STEPS 2019,"men 21.5 / women 25.5; n=3,686 (BMI, 18-69); second national STEPS (first 2014 used non-standard age bands, gave 20.2); report in Russian"
 Vanuatu,VUT,2011,2011,18.8,crude,measured,published,25-64,national,FALSE,STEPS 2011,"men 13.9 / women 23.3; n=4,413 (BMI); response 94%; fieldwork Aug-Oct 2011; second STEPS (the 1998 SPC NCD survey put obesity ~15.9, village-based, not directly comparable); lowest obesity in the Pacific block (Melanesian)"
+Venezuela,VEN,2015.5,2014-2017,24.6,crude,measured,published,20+,national,FALSE,EVESCAM,published both-sexes total; men 22.2 / women 26.7
 Vietnam,VNM,2009,2009,0.8,crude,measured,published,25-64,national,TRUE,STEPS 2009,"men 0.8 / women 0.8; n=14,706; ages 25-64 (Pham et al. 2023 Lancet Reg Health WP analysis of STEPS 2009/2015)"
 Vietnam,VNM,2015,2015,1.7,crude,measured,published,25-64,national,TRUE,STEPS 2015,men 1.7 / women 1.7; ages restricted to 25-64 for comparability with 2009 (full survey 18-69); Pham et al. 2023
 Vietnam,VNM,2021,2021,2.1,crude,measured,published,18-69,national,TRUE,STEPS 2021,men 2.1 / women 2.2; ages 18-69; overweight+obese (>=25) = 19.5; age base 18-69 vs 25-64 in 2009/2015 -> age-base seam

@@ -1,0 +1,3 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Hungary,HUN,2009,28.3,crude,measured,reconstructed,18+,national,OTAP2009,"reconstructed 50/50 of men 26.2 / women 30.4; OTAP measured-anthropometry sub-sample, 35% response"
+Hungary,HUN,2014,29.9,crude,measured,reconstructed,18+,national,OTAP2014,"reconstructed 50/50 of men 28.2 / women 31.5"
