@@ -4,13 +4,14 @@ Harmonized panel of **adult obesity prevalence** (% of adults with body mass ind
 &ge; 30 kg/m&sup2;) drawn from each country's own national **measured** height/weight
 surveys.
 
-**Scope** (snapshot): 156 countries and 352 survey observations, earliest US 1900-1901,
+**Scope** (snapshot): 159 countries/territories and 382 survey observations, earliest US 1900-1901,
 latest 2024-25; covers all 19 G20 national economies, the high-obesity Pacific island
 states, the Caucasus & Central Asia, mainland Southeast Asia, Latin America & the
 Caribbean, a broad Sub-Saharan Africa block, and Europe (measured examination surveys
-only). A companion file adds sex-specific rates for 154 of them.
+only). The UK is split into its four constituent countries (England, Scotland, Wales,
+Northern Ireland) under ISO 3166-2 codes. A companion file adds sex-specific rates for 157 of them.
 
-## Countries covered (156)
+## Countries covered (159)
 
 Afghanistan&dagger; · Albania&dagger; · Algeria&dagger; · Angola&dagger; · Argentina&dagger; ·
 Armenia&dagger; · Australia&dagger; · Austria&dagger; · Azerbaijan&dagger; · Bahrain&dagger; · Bangladesh&dagger; ·
@@ -38,11 +39,12 @@ Sierra Leone&dagger; · Singapore&dagger; · Solomon Islands&dagger; · South Af
 South Korea&dagger; · Spain&dagger; · Sri Lanka&dagger; · Sudan&dagger; · Sweden&dagger; · Syria&dagger; ·
 Tajikistan&dagger; · Tanzania&dagger; · Thailand&dagger; · Timor-Leste&dagger; · Togo&dagger; ·
 Tonga&dagger; · Tunisia&dagger; · Turkmenistan&dagger; · Tuvalu&dagger; · Türkiye&dagger; ·
-Uganda&dagger; · Ukraine&dagger; · United Arab Emirates&dagger; · United Kingdom&dagger; ·
+Uganda&dagger; · Ukraine&dagger; · United Arab Emirates&dagger; · United Kingdom (England&dagger;,
+Scotland&dagger;, Wales&dagger;, Northern Ireland&dagger;) ·
 United States&dagger; · Uruguay&dagger; · Uzbekistan&dagger; · Vanuatu&dagger; · Venezuela&dagger; ·
 Vietnam&dagger; · Zambia&dagger; · Zimbabwe&dagger;
 
-&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (154 countries). The 2
+&dagger; = also has sex-specific rates in `data/cleaned/obesity-by-sex.csv` (157 countries). The 2
 without a dagger have no by-sex row in the companion file: **Indonesia** (the RISKESDAS sex split is
 published only at the &ge; 25 Asian cut-off, not at BMI &ge; 30) and **Kazakhstan** (its 2021-22 total is
 reconstructed from urban/rural figures, with no sex breakdown). Some daggered countries carry by-sex for
@@ -111,7 +113,7 @@ obesity-rate-by-country/
 ├── data/
 │   ├── raw/                 one CSV per country (the actual survey data points)
 │   │   ├── README.md        per-country source documentation
-│   │   ├── USA.csv  GBR.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 148 total)
+│   │   ├── USA.csv  GB-ENG.csv  CAN.csv  AUS.csv  NZL.csv  …  (one per country, 159 total)
 │   └── cleaned/
 │       └── obesity-rate-by-country.csv   long-format panel (built by src/combine.R)
 ├── src/
@@ -128,14 +130,14 @@ Each `data/raw/<ISO3>.csv` has eleven columns — four core columns plus seven
 | column         | description |
 |----------------|-------------|
 | `country`      | country name |
-| `iso3`         | ISO 3166-1 alpha-3 code (the file name) |
+| `iso3`         | ISO 3166-1 alpha-3 code (the file name); the four UK constituent countries use ISO 3166-2 codes (`GB-ENG`, `GB-SCT`, `GB-WLS`, `GB-NIR`) |
 | `survey_period`| reporting period as published — a single year (`2004`) or a range (`1988-1994`) |
 | `obesity_pct`  | % of adults with BMI &ge; 30, total (both sexes) |
 | `basis`        | `crude` or `age-standardised` (standardised for China, Italy, Mauritius & the two oldest USA points) |
-| `measurement`  | `measured` or `self-reported` (self-reported only for Denmark and Austria) |
+| `measurement`  | `measured` or `self-reported` (self-reported only for Denmark, Austria and Wales) |
 | `derivation`   | `published` (source-reported total), `reconstructed` (50/50 male/female average), or `anchor` (derived non-survey figure — USA 1900) |
 | `age_group`    | adult age base as published, e.g. `20+`, `18-79`, `35-74` |
-| `coverage`     | `national`, `sub-national` (GBR=England, NOR=one county, AUS 1980, NLD pre-2009 RIVM monitoring towns, SYR=Aleppo city), or `non-probability` (SWE occupational cohort) |
+| `coverage`     | `national`, `sub-national` (NOR=one county, AUS 1980, NLD pre-2009 RIVM monitoring towns, SYR=Aleppo city), or `non-probability` (SWE occupational cohort) |
 | `source`       | short survey/study name (e.g. `NHANES`, `HSE`, `ENSANUT`) |
 | `note`         | short free-text caveat (quoted; may be empty) |
 
@@ -192,15 +194,16 @@ These are **heterogeneous national surveys**, not a single harmonized instrument
 - **Crude vs age-standardized**: values here are **crude** prevalence (to match the basis
   most national headline figures and the US NHANES series use), not age-standardized.
 - **Measured vs self-reported**: all points aim to be from *measured* height/weight; self-reported
-  waves (which understate obesity) are excluded — with **two exceptions, Denmark and Austria** (the only
-  self-reported series, both bias-corrected), included for coverage by request and flagged as such (not
-  comparable head-to-head).
+  waves (which understate obesity) are excluded — with **three exceptions: Denmark, Austria** (both
+  bias-corrected) **and Wales** (`GB-WLS`, unadjusted — the only UK nation with no measured national
+  survey), included for coverage by request and flagged as such (not comparable head-to-head).
   A few series are **age-standardised** rather than crude (China, Italy and Mauritius, whose
   national reports publish no crude BMI &ge; 30; and the two oldest US points — 1960-62 & 1971-74 —
   whose crude is not recoverable from microdata). All flagged per point in `data/raw/README.md`.
-- **Coverage**: some early anchors are one-off or sub-national surveys (e.g. the UK series
-  is **England** via the Health Survey for England; Australia's 1980 point is capital-cities
-  only). All such caveats are documented per point in `data/raw/README.md`.
+- **Coverage**: the UK is carried as its **four constituent countries** (England, Scotland, Wales,
+  Northern Ireland), each its own national survey under an ISO 3166-2 code, rather than a single UK
+  series. Some early anchors are one-off or sub-national surveys (e.g. Australia's 1980 point is
+  capital-cities only). All such caveats are documented per point in `data/raw/README.md`.
 - **Gaps**: continuous annual measurement started at different times by country; pre-
   continuous points are isolated survey waves.
 

@@ -1,0 +1,13 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Northern Ireland,GB-NIR,2010-2011,23.4,crude,measured,published,16+,national,HSNI,"earliest HSNI round"
+Northern Ireland,GB-NIR,2011-2012,23.6,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2012-2013,25.1,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2013-2014,23.7,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2014-2015,25.0,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2015-2016,26.4,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2016-2017,27.0,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2017-2018,26.4,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2018-2019,25.0,crude,measured,published,16+,national,HSNI,"revised weighting from 2018/19; earlier years not directly comparable"
+Northern Ireland,GB-NIR,2019-2020,27.4,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2023-2024,27.6,crude,measured,published,16+,national,HSNI,"low unweighted base (n=703)"
+Northern Ireland,GB-NIR,2024-2025,30.3,crude,measured,published,16+,national,HSNI,

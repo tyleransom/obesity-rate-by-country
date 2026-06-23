@@ -95,7 +95,7 @@ if (nrow(recon)) WARN(sprintf("%d by-sex rows exceed adaptive reconciliation tol
 ## [4] README provenance coverage -------------------------------------------
 say("\n[4] README provenance coverage")
 readme <- readLines("../data/raw/README.md", warn = FALSE)
-documented <- unique(na.omit(unlist(lapply(str_match_all(readme, "`([A-Z]{3})\\.csv`"), function(m) m[, 2]))))
+documented <- unique(na.omit(unlist(lapply(str_match_all(readme, "`([A-Z]{2,3}(?:-[A-Z]{3})?)\\.csv`"), function(m) m[, 2]))))
 undoc <- setdiff(names(raw_all), documented)
 if (length(undoc)) FAIL(paste0("raw files with no README section: ", paste(undoc, collapse = ","))) else OK("every raw file has a README section")
 

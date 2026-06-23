@@ -73,36 +73,36 @@ Russia,RUS,2012-2014,27.5,31.4,3.9,crude,measured,published,25-64,national,ESSE-
 Saudi Arabia,SAU,1990-1993,16.0,24.0,8.0,crude,measured,published,15+,national,Al-Nuaim 1990-93,"n=13,177"
 Saudi Arabia,SAU,1995-2000,26.4,44.0,17.6,crude,measured,published,30-70,national,CADISS,"age base 30-70 runs high; n=17,232"
 Saudi Arabia,SAU,2013,24.1,33.5,9.4,crude,measured,published,15+,national,SHIS,"n=10,735"
-United Kingdom,GBR,1980,6.0,9.0,3.0,crude,measured,published,16+,sub-national,NHWS,"England; pre-HSE anchor"
-United Kingdom,GBR,1993,13.2,16.4,3.2,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,1994,13.8,17.3,3.5,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,1995,15.3,17.5,2.2,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,1996,16.4,18.4,2.0,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,1997,17.0,19.7,2.7,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,1998,17.3,21.2,3.9,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,1999,18.7,21.1,2.4,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2000,21.0,21.4,0.4,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2001,21.0,23.5,2.5,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2002,22.1,22.8,0.7,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2003,22.2,23.0,0.8,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2004,22.7,23.2,0.5,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2005,22.1,24.3,2.2,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2006,23.7,24.2,0.5,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2007,23.6,24.4,0.8,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2008,24.1,24.9,0.8,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2009,22.1,23.9,1.8,crude,measured,published,16+,sub-national,HSE,"England; real survey dip"
-United Kingdom,GBR,2010,26.2,26.1,-0.1,crude,measured,published,16+,sub-national,HSE,"England; real survey jump"
-United Kingdom,GBR,2011,23.6,25.9,2.3,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2012,24.4,25.1,0.7,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2013,26.0,23.8,-2.2,crude,measured,published,16+,sub-national,HSE,"England; male-skewed wave"
-United Kingdom,GBR,2014,24.3,26.8,2.5,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2015,26.9,26.8,-0.1,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2016,25.7,26.6,0.9,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2017,27.4,30.0,2.6,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2018,26.2,29.2,3.0,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2019,27.0,29.1,2.1,crude,measured,published,16+,sub-national,HSE,"England"
-United Kingdom,GBR,2022,28.1,29.6,1.5,crude,measured,published,16+,sub-national,HSE,"England; 2020 (no survey) & 2021 (self-report) excluded"
-United Kingdom,GBR,2024,29.2,30.6,1.4,crude,measured,published,16+,sub-national,HSE,"England"
+England,GB-ENG,1980,6.0,9.0,3.0,crude,measured,published,16+,national,NHWS,"pre-HSE anchor"
+England,GB-ENG,1993,13.2,16.4,3.2,crude,measured,published,16+,national,HSE,
+England,GB-ENG,1994,13.8,17.3,3.5,crude,measured,published,16+,national,HSE,
+England,GB-ENG,1995,15.3,17.5,2.2,crude,measured,published,16+,national,HSE,
+England,GB-ENG,1996,16.4,18.4,2.0,crude,measured,published,16+,national,HSE,
+England,GB-ENG,1997,17.0,19.7,2.7,crude,measured,published,16+,national,HSE,
+England,GB-ENG,1998,17.3,21.2,3.9,crude,measured,published,16+,national,HSE,
+England,GB-ENG,1999,18.7,21.1,2.4,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2000,21.0,21.4,0.4,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2001,21.0,23.5,2.5,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2002,22.1,22.8,0.7,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2003,22.2,23.0,0.8,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2004,22.7,23.2,0.5,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2005,22.1,24.3,2.2,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2006,23.7,24.2,0.5,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2007,23.6,24.4,0.8,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2008,24.1,24.9,0.8,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2009,22.1,23.9,1.8,crude,measured,published,16+,national,HSE,"real survey dip"
+England,GB-ENG,2010,26.2,26.1,-0.1,crude,measured,published,16+,national,HSE,"real survey jump"
+England,GB-ENG,2011,23.6,25.9,2.3,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2012,24.4,25.1,0.7,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2013,26.0,23.8,-2.2,crude,measured,published,16+,national,HSE,"male-skewed wave"
+England,GB-ENG,2014,24.3,26.8,2.5,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2015,26.9,26.8,-0.1,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2016,25.7,26.6,0.9,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2017,27.4,30.0,2.6,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2018,26.2,29.2,3.0,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2019,27.0,29.1,2.1,crude,measured,published,16+,national,HSE,
+England,GB-ENG,2022,28.1,29.6,1.5,crude,measured,published,16+,national,HSE,"2020 (no survey) & 2021 (self-report) excluded"
+England,GB-ENG,2024,29.2,30.6,1.4,crude,measured,published,16+,national,HSE,
 Lebanon,LBN,1997,14.3,18.8,4.5,crude,measured,published,20+,national,Sibai 1997,"first national epidemiological study (Obes Res 2003)"
 Lebanon,LBN,2008-2009,26.4,25.9,-0.5,crude,measured,published,20+,national,AUB 2008-09,"AUB national STEPwise; rare male>female gap; n=2,608"
 Jordan,JOR,2019,24.5,40.5,16.0,crude,measured,published,18-69,national,STEPS 2019,"strong female skew; n=5,713"
@@ -278,3 +278,32 @@ Montenegro,MNE,2017-2022,16.9,11.8,-5.1,crude,measured,published,18-74,national,
 Austria,AUT,2006-2007,13.7,15.2,1.5,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected; women > men"
 Austria,AUT,2014,17.2,15.2,-2.0,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected; men overtake women"
 Austria,AUT,2019,20.0,17.8,-2.2,crude,self-reported,published,15+,national,ATHIS,"self-report, bias-corrected"
+Scotland,GB-SCT,2003,22,26,4,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2008,26,27,1,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2009,28,28,0,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2010,27,29,2,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2011,28,28,0,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2012,27,28,1,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2013,26,30,4,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2014,26,29,3,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2015,28,30,2,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2016,29,29,0,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2017,27,30,3,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2018,27,30,3,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2019,29,30,1,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2022,28,30,2,crude,measured,published,16+,national,SHeS,"mixed-mode (measured + adjusted self-report)"
+Scotland,GB-SCT,2023,30,34,4,crude,measured,published,16+,national,SHeS,"mixed-mode (measured + adjusted self-report)"
+Scotland,GB-SCT,2024,27,35,8,crude,measured,published,16+,national,SHeS,"mixed-mode (measured + adjusted self-report)"
+Northern Ireland,GB-NIR,2010-2011,23.4,23.4,0,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2011-2012,25.2,22.1,-3.1,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2012-2013,25.9,24.3,-1.6,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2013-2014,24.5,22.9,-1.6,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2014-2015,26.2,23.8,-2.4,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2015-2016,28.1,24.7,-3.4,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2016-2017,28.8,25.3,-3.5,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2017-2018,26.7,26.1,-0.6,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2018-2019,26,23.9,-2.1,crude,measured,published,16+,national,HSNI,"revised weighting from 2018/19"
+Northern Ireland,GB-NIR,2019-2020,27.8,27.1,-0.7,crude,measured,published,16+,national,HSNI,
+Northern Ireland,GB-NIR,2023-2024,29.4,25.9,-3.5,crude,measured,published,16+,national,HSNI,"low base (n=703)"
+Northern Ireland,GB-NIR,2024-2025,29.3,31.3,2,crude,measured,published,16+,national,HSNI,
+Wales,GB-WLS,2022-2023,25,27,2,crude,self-reported,published,16+,national,NSW,"self-reported (unadjusted)"

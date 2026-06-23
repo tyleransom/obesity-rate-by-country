@@ -44,9 +44,11 @@ that encode, in closed vocabularies, the comparability caveats spelled out per c
   (a derived non-survey figure — only USA 1900-1901).
 - **`age_group`** — adult age base as published (e.g. `20+`, `18-79`, `35-74`); see the
   cross-country comparability note at the foot of this file.
-- **`coverage`** — `national`, `sub-national` (GBR = England, NOR = Nord-Trøndelag county,
+- **`coverage`** — `national`, `sub-national` (NOR = Nord-Trøndelag county,
   AUS 1980 = capital cities, NLD 1976-2002 = RIVM monitoring municipalities, SYR = Aleppo city,
-  CIV = Lagunes/Abidjan regions), or `non-probability` (SWE = occupational cohort).
+  CIV = Lagunes/Abidjan regions), or `non-probability` (SWE = occupational cohort). The four UK
+  constituent countries are each carried as their own national series under ISO 3166-2 codes —
+  `GB-ENG`, `GB-SCT`, `GB-WLS`, `GB-NIR` — rather than a single `GBR` (see those sections below).
 - **`source`** — short survey/study name (same vocabulary as `data/cleaned/obesity-by-sex.csv`).
 - **`note`** — short free-text caveat (double-quoted; may be empty).
 
@@ -99,10 +101,19 @@ and can be read directly.
 - The NCHS source also reports **severe obesity** (BMI &ge; 40); not carried here (this repo is
   BMI &ge; 30 only).
 
-## United Kingdom — `GBR.csv`  (ENGLAND, Health Survey for England, age 16+)
+## United Kingdom — four constituent countries (ISO 3166-2)
 
-- IMPORTANT: this is **England**, not the whole UK — the Health Survey for England (HSE) is the
-  measured national series. Coded `GBR` for convenience; treat as England.
+The UK has no single measured national obesity survey; each of the four constituent countries runs
+its own. Rather than fold England in under `GBR` (which silently mislabelled an England-only series
+as the whole UK), the panel carries all four as separate national series keyed on **ISO 3166-2**
+subdivision codes: `GB-ENG` (England), `GB-SCT` (Scotland), `GB-WLS` (Wales), `GB-NIR` (Northern
+Ireland). This is the only place the `iso3` column uses 3166-2 rather than 3166-1 alpha-3 codes.
+Three are measured (England, Scotland, Northern Ireland); Wales is self-reported (no measured
+national survey exists). They are **not** head-to-head comparable — different surveys, and Wales on
+a different (self-report) basis — and they do not aggregate to a UK total.
+
+### England — `GB-ENG.csv`  (Health Survey for England, age 16+, measured)
+
 - 1980 = 7.5 — pre-HSE anchor, National Heights & Weights Survey (6% men / 9% women). UKHSA.
 - 1993-2024 = HSE, **single-year** % obese (BMI &ge; 30, incl. severe), All adults (both sexes).
   Retains real survey wobble (e.g. 2009 dip 23.0, 2010 jump 26.1). EXCLUDED: 2020 (no survey)
@@ -119,6 +130,53 @@ and can be read directly.
   each year's panel total (e.g. 1993 men 13.2 / women 16.4 &rarr; 14.9; 2024 men 29.2 / women 30.6
   &rarr; 29.9). Crude, measured, England, 16+. The female excess is small (typically 1-3 pp) and a
   few waves are male-skewed (2010, 2013, 2015), unlike the large female skews seen in MENA/Africa.
+
+### Scotland — `GB-SCT.csv`  (Scottish Health Survey, age 16+, measured)
+
+- Scottish Health Survey (SHeS), % with BMI &ge; 30 (obese + morbidly obese), All adults 16+.
+  Whole-number percentages **as published** in the SHeS report. Years: 2003, then annually 2008-2019,
+  2022, 2023, 2024. EXCLUDED: 2020 (data collection disrupted by COVID-19) and 2021 (height/weight
+  self-reported then PHE-adjusted — methodology break, parallel to the excluded England 2021 wave).
+- NOTE: 2003-2019 are fully interviewer-measured. For 2022, 2023 and 2024 SHeS combined
+  interviewer-measured and PHE-adjusted self-reported height/weight (flagged `mixed-mode` in `note`);
+  kept as `measured` since interviewer measurement is the dominant mode and self-report is adjusted
+  to a measured-equivalent.
+  SOURCE: Scottish Government, The Scottish Health Survey 2024 — volume 1, main report, "Chapter 10
+  Obesity tables", Table 10.1 ("Adult BMI, 2003 to 2024, by sex"), row "All 30 and over (%)". Direct
+  file: https://www.gov.scot/publications/scottish-health-survey-2024-volume-1-main-report/documents/
+- BY SEX (in `data/cleaned/obesity-by-sex.csv`): Males and Females "All 30 and over (%)" rows of the
+  same Table 10.1, same years. Both-sexes total is published directly (derivation `published`); the
+  male/female mean reproduces each year's panel total. Crude, measured, 16+.
+
+### Wales — `GB-WLS.csv`  (self-reported; no measured national survey)
+
+- IMPORTANT: Wales is the only UK nation with **no measured** national health survey — both the
+  Welsh Health Survey (WHS, to 2015) and its successor the National Survey for Wales (NSW, 2016/17 on)
+  use **unadjusted self-reported** height/weight, which under-counts obesity relative to the measured
+  England/Scotland/NI series. Carried (flagged `self-reported`) only for coverage, like Denmark and
+  Austria; not comparable head-to-head with the measured series.
+- 2015 = 24 — WHS final round, adults 16+ obese (BMI &ge; 30), self-reported. SOURCE: Welsh Government,
+  Welsh Health Survey 2015: health-related lifestyle results (gov.wales), "Body Mass Index category of
+  adults" (Figure 14).
+- 2022-2023 = 26 — NSW, adults 16+ obese, self-reported (men 25 / women 27, in the by-sex file). NSW is
+  **not** comparable to the WHS series (survey redesign). SOURCE: Welsh Government, National Survey for
+  Wales: April 2022 to March 2023, headline results (gov.wales) — "61% overweight or obese, including
+  26% obese".
+
+### Northern Ireland — `GB-NIR.csv`  (Health Survey Northern Ireland, age 16+, measured)
+
+- Health Survey Northern Ireland (HSNI), % with BMI &ge; 30 = "Obese" (30-&lt;40) + "Morbidly obese"
+  (40+), All adults 16+. Interviewer-measured height/weight. Survey-year labels are NI financial years,
+  written here as full-year ranges (`2010-2011` = 2010/11, etc.; midpoint year used for plotting).
+  Years 2010/11-2019/20 and 2023/24-2024/25; EXCLUDED 2020/21-2022/23 (BMI not collected during COVID).
+- NOTE: from 2018/19 a revised weighting methodology was adopted, so earlier years are not strictly
+  comparable (flagged in `note`). The 2023/24 round has a low unweighted base (n=703); flagged.
+  SOURCE: Department of Health (NI), Health Survey Northern Ireland: First Results 2024/25, "Trend
+  Tables" workbook, sheet "BMI - Adults". Direct file:
+  https://www.health-ni.gov.uk/sites/default/files/2025-11/hsni-trend-tables-24-25.xlsx
+- BY SEX (in `data/cleaned/obesity-by-sex.csv`): Males and Females "Obese" + "Morbidly obese" from the
+  same workbook, same years. Both-sexes total is published directly (derivation `published`). Crude,
+  measured, 16+.
 
 ## Canada — `CAN.csv`  (national; CHMS measured, adults 18-79)
 
@@ -197,7 +255,7 @@ and can be read directly.
   obese (adults 19-64). It is excluded because height/weight were **self-measured by participants at
   home** (a COVID-era change from researcher measurement) — a methodology break — and the rate
   implausibly *falls* from 23.6%, the classic self-measurement understatement this repo screens out
-  (cf. the excluded GBR 2021 and NZL 2021-22 self-report waves).
+  (cf. the excluded GB-ENG 2021 and NZL 2021-22 self-report waves).
   NANS II report: https://irp.cdn-website.com/46a7ad27/files/uploaded/NANS_II_Summary_Report_(May_2024).pdf
 - NOTE: the widely-cited self-reported national series (SLÁN, and the Healthy Ireland Survey) is
   **not** used here — those are self-reported and understate obesity. SLÁN 1998/2002/2007 had a
@@ -535,7 +593,7 @@ and can be read directly.
 - Standard WHO **BMI &ge; 30**, measured. Norway has **no national** measured obesity survey; the
   reference series is the **HUNT Study** — but it covers **one county (Nord-Trøndelag)**, not all of
   Norway (rural-leaning, so likely a touch higher than a true national figure). Treated as broadly
-  representative here, flagged like the GBR=England series.
+  representative here, flagged `sub-national`.
 - 1984-1986 = 10.5, 1995-1997 = 16.4, 2006-2008 = 22.6 — HUNT1/2/3, **RECONSTRUCTED** 50/50 from the
   published by-sex prevalences (men 7.7/14.4/22.1; women 13.3/18.3/23.1). Note men overtook women by
   HUNT3. SOURCE: Midthjell et al. (2013), "Trends in overweight and obesity over 22 years ... the HUNT
@@ -1359,7 +1417,7 @@ and can be read directly.
   two-stage cluster sample (56 clusters × 30 households) representative of the Lagunes regions; n = 4,530
   adults 15-64, height/weight measured at Step 2. Côte d'Ivoire has **no national STEPS** (the only other
   recent measured source is the 2021 DHS, women 15-49 only), so this is the best available measured
-  BMI &ge; 30 point — flagged sub-national, in the same category as GBR (England), SYR (Aleppo), NOR
+  BMI &ge; 30 point — flagged sub-national, in the same category as SYR (Aleppo), NOR
   (one county) and the AUS 1980 capital-cities point.
 - 2005 = 9.1 — **published both-sexes total**, men 5.7 / women 11.6, overweight+obese (BMI &ge; 25) 32.2.
   Because the Lagunes region is **urban/Abidjan-heavy**, this runs **above** what a national Ivorian figure
@@ -3003,9 +3061,11 @@ citable primary (only hospital-based N'Djamena studies surfaced).
   and **Fiji** (32.1) sits in between, dragged down by its large lower-obesity Indo-Fijian population.
   Several Pacific series also break the panel's usual large female skew — **Nauru** has no significant
   sex difference, and **Cook Islands** is near-parity (men 68.7 / women 70.7).
-- **Coverage / basis caveats**: GBR = England (HSE) only; Norway = HUNT, one county (Nord-Trøndelag),
-  not national; Sweden = an employed occupational cohort, not a probability sample; **Denmark = the
-  only self-reported series** (understates — not comparable head-to-head); Argentina = ENNyS 2,
+- **Coverage / basis caveats**: the UK is split into four constituent-country series (`GB-ENG`/`GB-SCT`/
+  `GB-WLS`/`GB-NIR`) — see the United Kingdom section; Norway = HUNT, one county (Nord-Trøndelag),
+  not national; Sweden = an employed occupational cohort, not a probability sample; **Denmark, Austria
+  and Wales (`GB-WLS`) are the self-reported series** (understate — not comparable head-to-head with the
+  measured series); Argentina = ENNyS 2,
   **urban localities &ge;5,000 only** (no rural coverage); Costa Rica = ELANS, **urban-only** (no national
   &ge; 30 survey exists); Uruguay's 2006 ENSO 2 point = **urban** (91% of pop), a different series from the
   national 2013 ENFRENT; Panama's 2010 PREFREC point = **Panama + Colón provinces only** (the 2003/2008 ENV
@@ -3028,7 +3088,9 @@ citable primary (only hospital-based N'Djamena studies surfaced).
 - All values are **crude** (not age-standardised).
 - Pre-continuous-survey points are isolated waves; treat early anchors cautiously (esp. AUS 1980
   capital-cities-only and the US 1890s anthropometric anchor).
-- The UK series is **England** (HSE), not the whole United Kingdom.
+- The UK is represented as its **four constituent countries** under ISO 3166-2 codes (`GB-ENG`,
+  `GB-SCT`, `GB-WLS`, `GB-NIR`), not a single `GBR`/UK series; they are not head-to-head comparable
+  (Wales is self-reported) and do not aggregate to a UK total.
 
 ---
 

@@ -1,0 +1,17 @@
+country,iso3,survey_period,obesity_pct,basis,measurement,derivation,age_group,coverage,source,note
+Scotland,GB-SCT,2003,24,crude,measured,published,16+,national,SHeS,"earliest SHeS round"
+Scotland,GB-SCT,2008,27,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2009,28,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2010,28,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2011,28,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2012,27,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2013,28,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2014,28,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2015,29,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2016,29,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2017,29,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2018,28,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2019,29,crude,measured,published,16+,national,SHeS,
+Scotland,GB-SCT,2022,29,crude,measured,published,16+,national,SHeS,"mixed-mode: interviewer-measured + PHE-adjusted self-report"
+Scotland,GB-SCT,2023,32,crude,measured,published,16+,national,SHeS,"mixed-mode: interviewer-measured + PHE-adjusted self-report"
+Scotland,GB-SCT,2024,31,crude,measured,published,16+,national,SHeS,"mixed-mode: interviewer-measured + PHE-adjusted self-report"

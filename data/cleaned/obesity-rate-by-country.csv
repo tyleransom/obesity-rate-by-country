@@ -88,6 +88,36 @@ Egypt,EGY,2011.5,2011-2012,31.3,crude,measured,published,15-65,national,TRUE,STE
 Egypt,EGY,2017,2017,35.7,crude,measured,published,15-69,national,TRUE,STEPS2017,national STEPwise; men 24.8 / women 48.8; includes ages 15-17
 Egypt,EGY,2019,2019,39.8,crude,measured,published,18+,national,TRUE,100MillionHealth,"100 Million Seha screening, 49.7M adults; men 29.5 / women 49.5"
 El Salvador,SLV,2015,2015,27.3,crude,measured,published,20+,national,FALSE,ENECA-ELS,men 19.2 / women 31.8; National Survey of Chronic NCDs in the Adult Population
+England,GB-ENG,1980,1980,7.5,crude,measured,published,16+,national,FALSE,NHWS,pre-HSE anchor
+England,GB-ENG,1993,1993,14.9,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,1994,1994,15.7,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,1995,1995,16.4,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,1996,1996,17.5,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,1997,1997,18.4,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,1998,1998,19.4,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,1999,1999,20,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2000,2000,21.2,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2001,2001,22.4,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2002,2002,22.5,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2003,2003,22.6,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2004,2004,22.9,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2005,2005,23.2,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2006,2006,23.9,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2007,2007,24,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2008,2008,24.5,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2009,2009,23,crude,measured,published,16+,national,FALSE,HSE,real survey dip
+England,GB-ENG,2010,2010,26.1,crude,measured,published,16+,national,FALSE,HSE,real survey jump
+England,GB-ENG,2011,2011,24.8,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2012,2012,24.7,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2013,2013,24.9,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2014,2014,25.6,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2015,2015,26.9,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2016,2016,26.2,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2017,2017,28.7,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2018,2018,27.7,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2019,2019,28,crude,measured,published,16+,national,FALSE,HSE,NA
+England,GB-ENG,2022,2022,28.9,crude,measured,published,16+,national,FALSE,HSE,2020 (no survey) & 2021 (self-report) excluded
+England,GB-ENG,2024,2024,29.9,crude,measured,published,16+,national,FALSE,HSE,NA
 Equatorial Guinea,GNQ,2011,2011,8.3,crude,measured,reconstructed,15-49,national,FALSE,EDSGE-I 2011,Equatorial Guinea DHS (EDSGE-I); reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 4.5 (15-59) / women 12.7 (15-49); mixed age base between sexes
 Estonia,EST,1997,1997,8,crude,measured,reconstructed,19-64,national,FALSE,Baltic Nutrition Survey,"reconstructed 50/50 of men 9.9 / women 6.0; Estonian women notably lean (women < men, rare)"
 Eswatini,SWZ,2014,2014,20.5,crude,measured,published,15-69,national,FALSE,STEPS 2014,survey published under name Swaziland; men 8.8 / women 30.9 (large female skew); overweight 43.8; n=3281; STEPS sample 15-69 (incl. 15-17; no 70+)
@@ -210,6 +240,18 @@ New Zealand,NZL,2023.5,2023-2024,33.7,crude,measured,published,15+,national,FALS
 New Zealand,NZL,2024.5,2024-2025,34.2,crude,measured,published,15+,national,FALSE,NZ Health Survey,NA
 Niger,NER,2021,2021,4.9,crude,measured,published,18-69,national,FALSE,STEPS 2021,"men 3.9 / women 6.3; n=5,709; overweight+obese (>=25) = 14.8; mean BMI 21.6"
 Niue,NIU,2011,2011,61,crude,measured,published,15+,national,FALSE,STEPS 2011,"WHO STEPS (census of adults 15+, n=916); published both-sexes total; men 59.2 / women 62.7; factsheet reports BMI>=30 directly (not the Polynesian >=32 cutoff); among the highest in the panel"
+Northern Ireland,GB-NIR,2010.5,2010-2011,23.4,crude,measured,published,16+,national,FALSE,HSNI,earliest HSNI round
+Northern Ireland,GB-NIR,2011.5,2011-2012,23.6,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2012.5,2012-2013,25.1,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2013.5,2013-2014,23.7,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2014.5,2014-2015,25,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2015.5,2015-2016,26.4,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2016.5,2016-2017,27,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2017.5,2017-2018,26.4,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2018.5,2018-2019,25,crude,measured,published,16+,national,FALSE,HSNI,revised weighting from 2018/19; earlier years not directly comparable
+Northern Ireland,GB-NIR,2019.5,2019-2020,27.4,crude,measured,published,16+,national,FALSE,HSNI,NA
+Northern Ireland,GB-NIR,2023.5,2023-2024,27.6,crude,measured,published,16+,national,FALSE,HSNI,low unweighted base (n=703)
+Northern Ireland,GB-NIR,2024.5,2024-2025,30.3,crude,measured,published,16+,national,FALSE,HSNI,NA
 Norway,NOR,1985,1984-1986,10.5,crude,measured,reconstructed,25-74,sub-national,FALSE,HUNT1,50/50 sex avg; Nord-Trøndelag county; ~25-74
 Norway,NOR,1996,1995-1997,16.4,crude,measured,reconstructed,25-74,sub-national,FALSE,HUNT2,50/50 sex avg; Nord-Trøndelag county; ~25-74
 Norway,NOR,2007,2006-2008,22.6,crude,measured,reconstructed,25-74,sub-national,FALSE,HUNT3,50/50 sex avg; Nord-Trøndelag county; ~25-74
@@ -251,6 +293,22 @@ Sao Tome and Principe,STP,2008,2008,11.7,crude,measured,published,25-64,national
 Saudi Arabia,SAU,1991.5,1990-1993,22.1,crude,measured,published,15+,national,TRUE,Al-Nuaim 1990-93,"men 16 / women 24; n=13,177"
 Saudi Arabia,SAU,1997.5,1995-2000,35.6,crude,measured,published,30-70,national,TRUE,CADISS,"men 26.4 / women 44.0; age base 30-70 runs high; n=17,232"
 Saudi Arabia,SAU,2013,2013,28.7,crude,measured,published,15+,national,TRUE,SHIS,"men 24.1 / women 33.5; n=10,735; rises vs 1991 on same 15+ base (no real fall)"
+Scotland,GB-SCT,2003,2003,24,crude,measured,published,16+,national,FALSE,SHeS,earliest SHeS round
+Scotland,GB-SCT,2008,2008,27,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2009,2009,28,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2010,2010,28,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2011,2011,28,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2012,2012,27,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2013,2013,28,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2014,2014,28,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2015,2015,29,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2016,2016,29,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2017,2017,29,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2018,2018,28,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2019,2019,29,crude,measured,published,16+,national,FALSE,SHeS,NA
+Scotland,GB-SCT,2022,2022,29,crude,measured,published,16+,national,FALSE,SHeS,mixed-mode: interviewer-measured + PHE-adjusted self-report
+Scotland,GB-SCT,2023,2023,32,crude,measured,published,16+,national,FALSE,SHeS,mixed-mode: interviewer-measured + PHE-adjusted self-report
+Scotland,GB-SCT,2024,2024,31,crude,measured,published,16+,national,FALSE,SHeS,mixed-mode: interviewer-measured + PHE-adjusted self-report
 Senegal,SEN,2015,2015,6.4,crude,measured,published,18-69,national,FALSE,STEPS 2015,"men 2.5 / women 10.0; first national STEPS; n=6,306; fieldwork Aug-Dec 2015; overweight+obese (>=25) = 22.1"
 Serbia,SRB,2013,2013,22.4,crude,measured,published,19+,national,FALSE,NHS 2013,"national health survey with measured anthropometry, n=12460 adults"
 Seychelles,SYC,2023,2023,38,crude,measured,published,18-74,national,FALSE,Seychelles Heart Study V 2023,5th national NCD survey (Public Health Authority); men 27.2 / women 48.6; among the highest obesity in Africa; up from ~8% in 2000
@@ -295,36 +353,6 @@ Türkiye,TUR,2023,2023,25.4,crude,measured,published,15+,national,FALSE,STEPS 20
 Uganda,UGA,2014,2014,4.6,crude,measured,published,18-69,national,FALSE,STEPS 2014,first national STEPS; men 1.8 / women 7.5 (large female skew); overweight 14.5; n=3987; obesity excludes pregnant women; STEPS caps at 69 (no 70+)
 Ukraine,UKR,2019,2019,24.8,crude,measured,published,18-69,national,FALSE,STEPS 2019,"WHO STEPS; published both-sexes total; men 20.1 / women 29.8; mean BMI 26.8; n=4,409; nationally representative of government-controlled areas (excludes Crimea and non-government-controlled Donetsk/Luhansk)"
 United Arab Emirates,ARE,2017.5,2017-2018,36.9,crude,measured,published,18-69,national,FALSE,UAE NHS 2017-18,"Emirati nationals only (excludes expatriate majority); men 32.2 / women 41.8; all-resident figure was 27.8 (M 25.1/F 30.6, non-Emiratis 26.3); STEPS-based NHS, ~10000 households"
-United Kingdom,GBR,1980,1980,7.5,crude,measured,published,16+,sub-national,FALSE,NHWS,England; pre-HSE anchor
-United Kingdom,GBR,1993,1993,14.9,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,1994,1994,15.7,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,1995,1995,16.4,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,1996,1996,17.5,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,1997,1997,18.4,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,1998,1998,19.4,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,1999,1999,20,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2000,2000,21.2,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2001,2001,22.4,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2002,2002,22.5,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2003,2003,22.6,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2004,2004,22.9,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2005,2005,23.2,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2006,2006,23.9,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2007,2007,24,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2008,2008,24.5,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2009,2009,23,crude,measured,published,16+,sub-national,FALSE,HSE,England; real survey dip
-United Kingdom,GBR,2010,2010,26.1,crude,measured,published,16+,sub-national,FALSE,HSE,England; real survey jump
-United Kingdom,GBR,2011,2011,24.8,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2012,2012,24.7,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2013,2013,24.9,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2014,2014,25.6,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2015,2015,26.9,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2016,2016,26.2,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2017,2017,28.7,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2018,2018,27.7,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2019,2019,28,crude,measured,published,16+,sub-national,FALSE,HSE,England
-United Kingdom,GBR,2022,2022,28.9,crude,measured,published,16+,sub-national,FALSE,HSE,England; 2020 (no survey) & 2021 (self-report) excluded
-United Kingdom,GBR,2024,2024,29.9,crude,measured,published,16+,sub-national,FALSE,HSE,England
 United States,USA,1900.5,1900-1901,3,crude,measured,anchor,20+,national,TRUE,Helmchen & Henderson,"anthropometric anchor; derived, not a prevalence survey"
 United States,USA,1961,1960-1962,13.4,age-standardised,measured,published,20-74,national,TRUE,NHES,age-standardised to 2000 US standard; crude not recoverable from microdata (stature stored only as ponderal indices)
 United States,USA,1972.5,1971-1974,14.5,age-standardised,measured,published,20-74,national,TRUE,NHANES I,age-standardised to 2000 US standard; public file lacks an exam weight so crude not reliably computable
@@ -349,5 +377,7 @@ Venezuela,VEN,2015.5,2014-2017,24.6,crude,measured,published,20+,national,FALSE,
 Vietnam,VNM,2009,2009,0.8,crude,measured,published,25-64,national,TRUE,STEPS 2009,"men 0.8 / women 0.8; n=14,706; ages 25-64 (Pham et al. 2023 Lancet Reg Health WP analysis of STEPS 2009/2015)"
 Vietnam,VNM,2015,2015,1.7,crude,measured,published,25-64,national,TRUE,STEPS 2015,men 1.7 / women 1.7; ages restricted to 25-64 for comparability with 2009 (full survey 18-69); Pham et al. 2023
 Vietnam,VNM,2021,2021,2.1,crude,measured,published,18-69,national,TRUE,STEPS 2021,men 2.1 / women 2.2; ages 18-69; overweight+obese (>=25) = 19.5; age base 18-69 vs 25-64 in 2009/2015 -> age-base seam
+Wales,GB-WLS,2015,2015,24,crude,self-reported,published,16+,national,FALSE,WHS,"self-reported (unadjusted); Welsh Health Survey, final round before discontinuation"
+Wales,GB-WLS,2022.5,2022-2023,26,crude,self-reported,published,16+,national,FALSE,NSW,"self-reported (unadjusted); National Survey for Wales, not comparable to WHS (survey change)"
 Zambia,ZMB,2017,2017,7.5,crude,measured,published,18-69,national,FALSE,STEPS 2017,first national STEPS; men 3.0 / women 12.3 (large female skew); overweight 24.2; n=4302; STEPS caps at 69 (no 70+)
 Zimbabwe,ZWE,2015,2015,7.7,crude,measured,reconstructed,15-49,national,FALSE,ZDHS 2015,"reconstructed both-sexes (M/F average; DHS publishes obesity by sex only); men 2.3 / women 12.6 (ZDHS women ~12.3); DHS 15-49 cap (no 50+), runs low"
